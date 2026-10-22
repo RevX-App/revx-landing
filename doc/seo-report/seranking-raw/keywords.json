@@ -1,0 +1,558 @@
+{
+  "archetype": "keyword-table",
+  "title": "Keyword metrics — 20 keyword(s)",
+  "subtitle": "US",
+  "summary": "20 keyword(s), 17 with data (US). Volume 10–201,000.",
+  "columns": [
+    {
+      "key": "volume",
+      "label": "Volume",
+      "format": "integer"
+    },
+    {
+      "key": "cpc",
+      "label": "CPC",
+      "format": "currency"
+    },
+    {
+      "key": "difficulty",
+      "label": "Difficulty",
+      "format": "integer"
+    },
+    {
+      "key": "competition",
+      "label": "Competition",
+      "format": "decimal"
+    },
+    {
+      "key": "intents",
+      "label": "Intent",
+      "format": "intents"
+    }
+  ],
+  "rows": [
+    {
+      "keyword": "mobile mechanic near me",
+      "cells": {
+        "volume": 201000,
+        "cpc": 1.59,
+        "difficulty": 68,
+        "competition": 0.74,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        246000,
+        246000,
+        201000,
+        201000,
+        201000,
+        201000,
+        201000,
+        201000,
+        201000,
+        201000,
+        201000
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mobile mechanic",
+      "cells": {
+        "volume": 110000,
+        "cpc": 1.57,
+        "difficulty": 59,
+        "competition": 0.48,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        135000,
+        135000,
+        110000,
+        110000,
+        110000,
+        110000,
+        110000,
+        110000,
+        110000,
+        110000,
+        110000
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mechanic near me",
+      "cells": {
+        "volume": 49500,
+        "cpc": 2,
+        "difficulty": 73,
+        "competition": 0.69,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        823000,
+        823000,
+        823000,
+        823000,
+        823000,
+        823000,
+        823000,
+        823000,
+        823000,
+        60500,
+        60500,
+        49500
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "check engine light on",
+      "cells": {
+        "volume": 14800,
+        "cpc": 0.02,
+        "difficulty": 80,
+        "competition": 0.09,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        22400,
+        22400,
+        22400,
+        22200,
+        20100,
+        20100,
+        22200,
+        14800,
+        14800,
+        14800,
+        14800
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "grinding noise when braking",
+      "cells": {
+        "volume": 6600,
+        "cpc": 0.65,
+        "difficulty": 49,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        8100,
+        8100,
+        8000,
+        8000,
+        6600,
+        6600,
+        5700,
+        6600,
+        8000,
+        6600,
+        6600
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "car repair estimate",
+      "cells": {
+        "volume": 1900,
+        "cpc": 2.11,
+        "difficulty": 61,
+        "competition": 0.4,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        1600,
+        470,
+        1600,
+        1600,
+        1300,
+        1300,
+        1300,
+        3200,
+        2900,
+        2400,
+        1900
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mobile mechanic app",
+      "cells": {
+        "volume": 590,
+        "cpc": 1.76,
+        "difficulty": 7,
+        "competition": 0.46,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        390,
+        390,
+        390,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "ai mechanic",
+      "cells": {
+        "volume": 590,
+        "cpc": 0.72,
+        "difficulty": 7,
+        "competition": 0.28,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        390,
+        480,
+        480,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mechanic san diego",
+      "cells": {
+        "volume": 480,
+        "cpc": 2.73,
+        "difficulty": 13,
+        "competition": 0.87,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        590,
+        480,
+        480,
+        480,
+        480
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mechanic app",
+      "cells": {
+        "volume": 260,
+        "cpc": 1.55,
+        "difficulty": 8,
+        "competition": 0.42,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        590,
+        590,
+        590,
+        480,
+        590,
+        320,
+        320,
+        480,
+        260,
+        260,
+        260
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "find a mechanic",
+      "cells": {
+        "volume": 260,
+        "cpc": 1.74,
+        "difficulty": 15,
+        "competition": 0.11,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        260,
+        260,
+        210,
+        210,
+        210,
+        210,
+        170,
+        170,
+        210,
+        210,
+        260
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "car noise diagnosis",
+      "cells": {
+        "volume": 260,
+        "cpc": 1.28,
+        "difficulty": 9,
+        "competition": 0.04,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        320,
+        320,
+        260,
+        260,
+        210,
+        210,
+        210,
+        210,
+        210,
+        210,
+        260
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "car diagnosis app",
+      "cells": {
+        "volume": 90,
+        "cpc": 0.61,
+        "difficulty": 27,
+        "competition": 0.19,
+        "intents": [
+          "I"
+        ]
+      },
+      "sparkline": [
+        0,
+        210,
+        30,
+        30,
+        30,
+        390,
+        260,
+        210,
+        210,
+        390,
+        390,
+        90
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "auto repair san diego",
+      "cells": {
+        "volume": 60,
+        "cpc": 2.78,
+        "difficulty": 15,
+        "competition": 0.4,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        40,
+        20,
+        20,
+        20,
+        40,
+        20,
+        20,
+        60,
+        60,
+        30,
+        60
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mobile mechanic san diego",
+      "cells": {
+        "volume": 10,
+        "cpc": 1.58,
+        "difficulty": 3,
+        "competition": 0.84,
+        "intents": [
+          "L",
+          "N"
+        ]
+      },
+      "sparkline": [
+        0,
+        20,
+        10,
+        10,
+        10,
+        10,
+        10,
+        20,
+        10,
+        10,
+        10,
+        10
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "mechanic la jolla",
+      "cells": {
+        "volume": 10,
+        "cpc": 0,
+        "difficulty": 4,
+        "competition": 0.77,
+        "intents": [
+          "L",
+          "C"
+        ]
+      },
+      "sparkline": [
+        0,
+        20,
+        20,
+        20,
+        20,
+        20,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "car repair san diego",
+      "cells": {
+        "volume": 10,
+        "cpc": 2.78,
+        "difficulty": 22,
+        "competition": 0.4,
+        "intents": [
+          "L",
+          "N"
+        ]
+      },
+      "sparkline": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        10
+      ],
+      "dataFound": true
+    },
+    {
+      "keyword": "what is that noise in my car",
+      "cells": {
+        "volume": null,
+        "cpc": null,
+        "difficulty": null,
+        "competition": null,
+        "intents": null
+      },
+      "sparkline": [],
+      "dataFound": false
+    },
+    {
+      "keyword": "ucsd car repair",
+      "cells": {
+        "volume": null,
+        "cpc": null,
+        "difficulty": null,
+        "competition": null,
+        "intents": null
+      },
+      "sparkline": [],
+      "dataFound": false
+    },
+    {
+      "keyword": "ai car diagnosis",
+      "cells": {
+        "volume": null,
+        "cpc": null,
+        "difficulty": null,
+        "competition": null,
+        "intents": null
+      },
+      "sparkline": [],
+      "dataFound": false
+    }
+  ],
+  "notes": [
+    "3 keyword(s) returned no data."
+  ],
+  "sparklineMonths": [
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ]
+}

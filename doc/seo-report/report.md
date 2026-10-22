@@ -103,6 +103,8 @@ Severity reflects pre-launch risk, and every item is evidenced from the build. "
 
 ## 4. Query landscape (live web search, 2026-10-22, US)
 
+> **Update 2026-10-22:** SE Ranking data is now in [seranking-baseline.md](seranking-baseline.md). It replaces the qualitative ranking below with real volumes. The head term is "mobile mechanic near me" (201k/mo), not the city-name phrase (10/mo). The near-term wins are "mobile mechanic app", "ai mechanic" and "mechanic san diego" (difficulty 7–13). AI answers currently associate "RevX" with a hunting crossbow, which raises H1 to the top GEO risk. San Diego local demand is estimated at about 4–5k searches a month, mostly "near me". The local results page is led by small independents, Yelp and Reddit, with the map pack and AI Overview above them (see baseline §6).
+
 | Query family | Who shows up | Read |
 |---|---|---|
 | **Head term:** "mobile mechanic San Diego (app)" | Wrench city pages, YourMechanic, MotorFyx, local shops | Dominated by national marketplaces with city-page networks and years of authority. This is a long-term leadership target, not a launch win. |
@@ -172,3 +174,19 @@ Formal AEO and GEO findings need a pinned AI-search Research Pack, meaning obser
 **Brand collision:**
 - [RevX, AppSamurai](https://appsamurai.com/mobile-ad-networks/revx/)
 - [RevX, Craft](https://craft.co/revx)
+
+## 8. Implementation status (2026-10-22)
+
+| # | Status | What changed |
+|---|---|---|
+| C1 | Fixed | `astro.config.mjs` reads `SITE_URL`, else Vercel's `VERCEL_PROJECT_PRODUCTION_URL`, else localhost. No placeholder domain ships. Verified: a simulated Vercel build emits `https://<prod-host>/` canonical and OG URLs. |
+| C2 | Fixed in code; needs a value | `APP_URL` reads `PUBLIC_APP_URL`. Set it in the Vercel project; until then links stay `#app-url-pending`. |
+| C3 | Fixed | `src/pages/robots.txt.ts` (Allow all, Sitemap line) and `src/pages/sitemap.xml.ts` (indexable pages only). |
+| C4 | Fixed | Legal pages carry `noindex, follow` and their own descriptions. They're excluded from the sitemap. |
+| H1 | Partly fixed | Title, description, hero first sentence and Organization `description`/`alternateName` all pair "RevX" with "San Diego car-repair marketplace". Off-site profiles and `sameAs` still need the real accounts. |
+| H2 | Fixed | Title: "RevX: AI mechanic and mobile mechanics in San Diego". The description leads with the category. |
+| H3 | Fixed | JSON-LD: `Organization` (areaServed San Diego), `WebSite`, `FAQPage` (built from the visible FAQ). No ratings or offers. `logo` and `sameAs` wait on real assets and profiles. |
+| H4 | Fixed | Visible 7-question FAQ with answers traced to handoff §1–2 and PRODUCT.md. Descriptive H2s ("Trust and privacy…", "Roadmap: …"). |
+| H5 | Blocked on owner | Needs real team names and roles, a contact email and social profiles. |
+| M1 | Fixed | `scripts/icons.mjs` renders `favicon-48x48.png`, `apple-touch-icon.png` (180px, full-bleed), `icon-192.png` and `icon-512.png` from `favicon.svg`; added `public/site.webmanifest` and head links. `icon-512.png` is the Organization `logo`. Provenance is embedded. |
+| M2 | Fixed | `og:url`, `og:site_name`, `og:image:width`/`height` (1200×630), `og:image:alt` and `twitter:image:alt`. Each page has its own meta description. |

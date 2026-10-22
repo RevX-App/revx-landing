@@ -19,6 +19,15 @@
       "owner": "RevX team",
       "outcome": "Post-launch lanes need deploy + SE Ranking auth",
       "sha256": "8a92df40514e2ea478c418ec578141f50b83bd533ea430659f94445f99229255"
+    },
+    {
+      "id": "seranking-baseline",
+      "path": "seranking-baseline.md",
+      "title": "SE Ranking keyword and AI share-of-voice baseline",
+      "status": "completed",
+      "owner": "Claude (seo router)",
+      "outcome": "17 keyword volumes, competitor AI SOV, RevX brand collision confirmed; ~8k units",
+      "sha256": "02307333c14a584afe763f121a3348fa227f17a1da1732d25440af76549184d9"
     }
   ]
 }

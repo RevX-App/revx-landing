@@ -5,12 +5,13 @@ import Wordmark from './Wordmark.astro';
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
-<Base title={title}>
+<Base title={title} description={description} noindex>
   <main class="wrap legal">
     <a href="/" class="home" aria-label="RevX home"><Wordmark size="1.75rem" /></a>
     <h1>{title}</h1>

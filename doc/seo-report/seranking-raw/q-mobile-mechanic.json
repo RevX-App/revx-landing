@@ -1,0 +1,279 @@
+{
+  "archetype": "keyword-table",
+  "title": "Question keywords for \"mobile mechanic\"",
+  "subtitle": "US • 12 of 38",
+  "summary": "Question keywords for \"mobile mechanic\" (US): 12 of 38 question keywords.",
+  "columns": [
+    {
+      "key": "volume",
+      "label": "Volume",
+      "format": "integer"
+    },
+    {
+      "key": "cpc",
+      "label": "CPC",
+      "format": "currency"
+    },
+    {
+      "key": "difficulty",
+      "label": "Difficulty",
+      "format": "integer"
+    },
+    {
+      "key": "competition",
+      "label": "Competition",
+      "format": "decimal"
+    },
+    {
+      "key": "intents",
+      "label": "Intent",
+      "format": "intents"
+    },
+    {
+      "key": "serp_features",
+      "label": "SERP features",
+      "format": "serp_features"
+    }
+  ],
+  "rows": [
+    {
+      "keyword": "how to start a mobile mechanic business",
+      "cells": {
+        "volume": 390,
+        "cpc": 4.54,
+        "difficulty": 7,
+        "competition": 0.21,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "sge"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much do mobile mechanics charge",
+      "cells": {
+        "volume": 210,
+        "cpc": 1.17,
+        "difficulty": 5,
+        "competition": 0.1,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much does a mobile mechanic make",
+      "cells": {
+        "volume": 210,
+        "cpc": 0,
+        "difficulty": 7,
+        "competition": 0.01,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much does a mobile mechanic charge",
+      "cells": {
+        "volume": 210,
+        "cpc": 1.17,
+        "difficulty": 6,
+        "competition": 0.1,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "what is a mobile mechanic",
+      "cells": {
+        "volume": 210,
+        "cpc": 0,
+        "difficulty": 14,
+        "competition": 0.06,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much do mobile mechanics make",
+      "cells": {
+        "volume": 210,
+        "cpc": 0,
+        "difficulty": 7,
+        "competition": 0.01,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches",
+          "places_sites_products"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much does a mobile mechanic cost",
+      "cells": {
+        "volume": 140,
+        "cpc": 1.2,
+        "difficulty": 6,
+        "competition": 0.21,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how to become a mobile mechanic",
+      "cells": {
+        "volume": 140,
+        "cpc": 2.72,
+        "difficulty": 14,
+        "competition": 0.08,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much is a mobile mechanic",
+      "cells": {
+        "volume": 110,
+        "cpc": 1.44,
+        "difficulty": 7,
+        "competition": 0.24,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "do you tip mobile mechanics",
+      "cells": {
+        "volume": 50,
+        "cpc": 0,
+        "difficulty": 7,
+        "competition": 0,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much do mobile mechanics cost",
+      "cells": {
+        "volume": 50,
+        "cpc": 2.14,
+        "difficulty": 6,
+        "competition": 0.16,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "how much do mobile mechanics charge per hour",
+      "cells": {
+        "volume": 50,
+        "cpc": 0,
+        "difficulty": 5,
+        "competition": 0.08,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    }
+  ],
+  "total": 38,
+  "notes": [
+    "Pass history_trend=true for per-row monthly search-volume sparklines."
+  ]
+}
