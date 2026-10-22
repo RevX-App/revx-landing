@@ -1,0 +1,256 @@
+/* RevX landing — instrument cluster tokens and base styles. */
+
+:root {
+  --glass: #07090b;
+  --bezel: #0d1216;
+  --panel: #10161b;
+  --rule: #1e272e;
+  --rule-strong: #2c3740;
+  --unlit: #2a333b;
+
+  --ink: #eceff1;
+  --silver: #c8c8c8;
+  --muted: #9aa3ad;
+  --dim: #7a8590;
+
+  --sky: #38bdf8;
+  --sky-deep: #0ea5e9;
+  --sky-soft: #7dd3fc;
+  --sky-ink: #04131c;
+  --amber: #f5a524;
+  --amber-ink: #1d1203;
+  --red: #f0524f;
+
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
+
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --max: 82rem;
+  --section: clamp(4rem, 8vw, 7rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--glass);
+  color: var(--silver);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--sky-soft);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--sky);
+  color: var(--sky-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html {
+  scrollbar-color: var(--rule-strong) var(--glass);
+}
+
+.wrap {
+  width: min(100% - 2 * var(--gutter), var(--max));
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Small instrument caps: printed dial legends, not decorative kickers. */
+.legend {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Primary action: backlit push button. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 3rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--sky);
+  color: var(--sky-ink);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 6px 16px -6px rgb(0 0 0 / 0.8);
+}
+
+.btn-primary:hover {
+  background: var(--sky-soft);
+  color: var(--sky-ink);
+}
+
+.btn-ghost {
+  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--sky);
+  color: var(--ink);
+}
+
+/* Round backlit start button: the page's ignition. */
+.start {
+  display: grid;
+  place-content: center;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 30%, #16212a, #0a0f13 70%) padding-box,
+    linear-gradient(160deg, var(--sky-soft), var(--sky-deep)) border-box;
+  border: 3px solid transparent;
+  box-shadow:
+    inset 0 0 0 6px #07090b,
+    0 18px 36px -12px rgb(0 0 0 / 0.95);
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.start:hover {
+  transform: scale(1.03);
+}
+
+.start:active {
+  transform: scale(0.98);
+}
+
+.start-main {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.start-sub {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+
+
+/* Placeholder content the user must replace before launch. */
+.placeholder-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border: 1px dashed var(--amber);
+  border-radius: 4px;
+  color: var(--amber);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,300 @@
+---
+/**
+ * Sticky header. The section lamps are the page's navigation and its scroll
+ * progress: passed sections stay sky-rimmed, the section in view is lit.
+ * At 1100px and below the lamps give way to a menu (labelled with the current
+ * section) and a thin progress strip; below 640px the header CTA also hides.
+ */
+import Icon from './Icon.astro';
+import { SECTIONS } from '../sections';
+import Wordmark from './Wordmark.astro';
+import { APP_URL } from '../config';
+
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#top" class="home" aria-label="RevX, back to top"><Wordmark size="1.75rem" /></a>
+
+    <nav class="lamp-nav" aria-label="Sections">
+      <ol>
+        {
+          SECTIONS.map((s) => (
+            <li>
+              <a href={`#${s.id}`} data-lamp={s.id} title={s.label}>
+                <span class="bulb">
+                  <Icon name={s.icon} size={18} />
+                </span>
+                <span class="lamp-label">{s.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <a class="btn btn-primary bar-cta" href={APP_URL}>Open RevX</a>
+
+    <details class="menu">
+      <summary aria-label="Open section menu">
+        <span class="menu-current" data-current>Menu</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </summary>
+      <div class="menu-sheet">
+        <ol>
+          {
+            SECTIONS.map((s) => (
+              <li>
+                <a href={`#${s.id}`} data-lamp={s.id}>
+                  <span class="bulb">
+                    <Icon name={s.icon} size={18} />
+                  </span>
+                  {s.label}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+        <a class="btn btn-primary" href={APP_URL}>Open RevX</a>
+      </div>
+    </details>
+  </div>
+  <div class="progress" aria-hidden="true">
+    {SECTIONS.map((s) => <span data-lamp={s.id} />)}
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgb(7 9 11 / 0.94);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 4.25rem;
+  }
+
+  .home {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    text-decoration: none;
+  }
+
+  .lamp-nav ol {
+    display: flex;
+    gap: clamp(0.25rem, 1.5vw, 1.25rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lamp-nav a,
+  .menu-sheet a:not(.btn) {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.75rem;
+    padding-inline: 0.4rem;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .bulb {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--unlit);
+    background: var(--bezel);
+    color: var(--dim);
+    transition:
+      background-color 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out),
+      color 0.3s var(--ease-out);
+  }
+
+  .lamp-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .lamp-nav a:hover {
+    color: var(--ink);
+  }
+
+  [data-state='done'] .bulb {
+    border-color: var(--sky-deep);
+    color: var(--sky);
+  }
+
+  .lamp-nav a[data-state='on'],
+  .menu-sheet a[data-state='on'] {
+    color: var(--ink);
+  }
+
+  [data-state='on'] .bulb {
+    border-color: var(--sky-soft);
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
+  }
+
+  .bar-cta {
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .menu,
+  .progress {
+    display: none;
+  }
+
+  @media (max-width: 1100px) {
+    .lamp-nav {
+      display: none;
+    }
+
+    .bar-cta {
+      margin-left: auto;
+    }
+
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+      height: 3px;
+    }
+
+    .progress span {
+      background: var(--unlit);
+      transition: background-color 0.3s var(--ease-out);
+    }
+
+    .progress [data-state='done'],
+    .progress [data-state='on'] {
+      background: var(--sky);
+    }
+
+    .menu {
+      display: block;
+      position: relative;
+    }
+
+    .menu summary {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 2.75rem;
+      padding-inline: 0.9rem;
+      border: 1px solid var(--rule-strong);
+      border-radius: 999px;
+      list-style: none;
+      cursor: pointer;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .menu-sheet {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 0.6rem);
+      width: min(18rem, calc(100vw - 2rem));
+      padding: 0.75rem;
+      border: 1px solid var(--rule-strong);
+      border-radius: 1.25rem;
+      background: var(--panel);
+      box-shadow: 0 24px 50px -20px rgb(0 0 0 / 0.95);
+    }
+
+    .menu-sheet ol {
+      list-style: none;
+      margin: 0 0 0.75rem;
+      padding: 0;
+    }
+
+    .menu-sheet a:not(.btn) {
+      font-size: 1.0625rem;
+      color: var(--silver);
+    }
+
+    .menu-sheet .btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bar-cta {
+      display: none;
+    }
+
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) {
+    const ids = [...new Set([...header.querySelectorAll<HTMLElement>('[data-lamp]')].map((el) => el.dataset.lamp!))];
+    const sections = ids.map((id) => document.getElementById(id)).filter((s): s is HTMLElement => !!s);
+    const current = header.querySelector<HTMLElement>('[data-current]');
+    const menu = header.querySelector<HTMLDetailsElement>('.menu');
+
+    const update = () => {
+      const line = header.offsetHeight + window.innerHeight * 0.3;
+      let active = -1;
+      sections.forEach((s, i) => {
+        if (s.getBoundingClientRect().top <= line) active = i;
+      });
+      header.querySelectorAll<HTMLElement>('[data-lamp]').forEach((el) => {
+        const i = ids.indexOf(el.dataset.lamp!);
+        el.dataset.state = i < active ? 'done' : i === active ? 'on' : 'off';
+        if (el.tagName === 'A') {
+          if (i === active) el.setAttribute('aria-current', 'location');
+          else el.removeAttribute('aria-current');
+        }
+      });
+      if (current) {
+        const link = header.querySelector<HTMLElement>(`.lamp-nav [data-lamp="${ids[active]}"] .lamp-label`);
+        current.textContent = active >= 0 && link ? link.textContent : 'Menu';
+      }
+    };
+
+    let queued = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+          update();
+          queued = false;
+        });
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', update);
+    menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => (menu.open = false)));
+    update();
+  }
+</script>

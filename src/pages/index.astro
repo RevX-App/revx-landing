@@ -1,0 +1,1247 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+import Wordmark from '../components/Wordmark.astro';
+import discBrake from '../assets/disc-brake.jpg';
+import { APP_URL } from '../config';
+
+// Stage 1 uses a different demo post from the hero, so the page moves forward
+// instead of replaying the brake example.
+const intake = ['Check-engine light on', 'Rough idle when cold', 'Started this week', '1 photo', '0:06 audio'];
+
+const checks: { cause: string; verdict: string; state: 'lead' | 'open' | 'out' }[] = [
+  { cause: 'Ignition coil misfire', verdict: 'Fits the uneven idle in the audio', state: 'lead' },
+  { cause: 'Vacuum leak', verdict: 'Possible', state: 'open' },
+  { cause: 'Dirty mass airflow sensor', verdict: 'Less likely', state: 'open' },
+  { cause: 'Weak battery', verdict: 'Ruled out: starts normally', state: 'out' },
+];
+
+const quotes = [
+  { who: 'Gina L. · Triton Auto', price: '$210', lead: true },
+  { who: 'Diego R. · mobile mechanic', price: '$245' },
+  { who: 'Ray M. · Clairemont shop', price: '$260' },
+];
+
+const mechSpec = [
+  { name: 'Real intake', body: 'Every post comes with structured symptoms and a photo, often with a recording of the noise.' },
+  { name: 'Briefing on match', body: "Once you match, you get a technical briefing on the AI's read. Owners never see it." },
+  { name: 'Your quote', body: 'Quote alongside other mechanics. No lead fees, no pay-to-rank listings.' },
+];
+
+const roadmap: { icon: IconName; name: string }[] = [
+  { icon: 'payments', name: 'Payments & escrow' },
+  { icon: 'verified', name: 'Verified mechanics' },
+  { icon: 'obd', name: 'OBD-II fault codes' },
+  { icon: 'vin', name: 'VIN scanner' },
+  { icon: 'schedule', name: 'Scheduling' },
+  { icon: 'photo', name: 'Photo messages' },
+  { icon: 'insurance', name: 'Insurance' },
+  { icon: 'ebike', name: 'E-bikes & scooters' },
+  { icon: 'pro', name: 'Pro plans' },
+];
+
+const traction = ['Pitch results', 'Founding mechanics signed', 'Beta users'];
+const team = ['Founder', 'Founder', 'Founder', 'Founder'];
+---
+
+<Base>
+  <SiteHeader />
+  <Hero />
+
+  <main>
+    <!-- 1. How it works: three stages, each adding something new -->
+    <section id="how">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2>How RevX works.</h2>
+          <p class="lede">Three stages, from the first photo to the last review.</p>
+        </header>
+
+        <ol class="stages">
+          <li class="stage">
+            <div class="stage-copy">
+              <p class="stage-lamps" aria-hidden="true">
+                <span class="lit"><Icon name="post" size={18} /></span>
+                <span class="lit warn"><Icon name="diagnose" size={18} /></span>
+              </p>
+              <h3>Post it, and get a read.</h3>
+              <p>
+                Five quick steps: vehicle, category, symptoms, a photo, and an optional recording of the
+                noise. Unless you opt out, AI turns your answers into a shortlist of likely causes, then
+                checks each one against your photo and audio. Posting never waits on it.
+              </p>
+              <p>You get plain English. A matched mechanic gets the technical briefing.</p>
+            </div>
+
+            <figure class="panel-glass readout" aria-label="Example: how an AI read is made">
+              <p class="panel-title">Mia's post · Computer/ECU · example</p>
+              <ol class="trace">
+                <li>
+                  <p class="trace-name">Your answers</p>
+                  <ul class="chips">{intake.map((c) => <li>{c}</li>)}</ul>
+                </li>
+                <li>
+                  <p class="trace-name">Shortlist from the rule engine</p>
+                  <ul class="shortlist">{checks.map((c) => <li>{c.cause}</li>)}</ul>
+                </li>
+                <li>
+                  <p class="trace-name">AI checks the evidence</p>
+                  <ol class="verdicts">
+                    {
+                      checks.map((c) => (
+                        <li class={c.state}>
+                          <span class="cause">{c.cause}</span>
+                          <span class="verdict">{c.verdict}</span>
+                        </li>
+                      ))
+                    }
+                  </ol>
+                </li>
+              </ol>
+              <dl class="stats">
+                <div><dt>Severity</dt><dd>Medium</dd></div>
+                <div><dt>Urgency</dt><dd class="warn">See someone soon</dd></div>
+                <div><dt>Cost range</dt><dd>$120–$300</dd></div>
+              </dl>
+              <figcaption>
+                AI-generated from your photos and answers. Not a substitute for a hands-on inspection.
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="stage">
+            <div class="stage-copy">
+              <p class="stage-lamps" aria-hidden="true">
+                <span class="lit"><Icon name="swipe" size={18} /></span>
+                <span class="lit"><Icon name="match" size={18} /></span>
+                <span class="lit"><Icon name="chat" size={18} /></span>
+              </p>
+              <h3>Both sides choose.</h3>
+              <p>
+                You swipe mechanics for your post. Mechanics swipe posts that fit their specialties and
+                service radius. A right swipe from both sides is a match, with an alert on both phones.
+              </p>
+              <p>
+                Chat in real time, collect quotes from several mechanics, and pick one. You can also find
+                mechanics on the map and message them straight from a pin.
+              </p>
+            </div>
+
+            <figure class="panel-glass" aria-label="Example: quotes on a post">
+              <p class="panel-title">Quotes on Mia's post · example</p>
+              <ol class="quotes">
+                {
+                  quotes.map((q) => (
+                    <li class:list={{ lead: q.lead }}>
+                      <span>{q.who}</span>
+                      <b>{q.price}</b>
+                    </li>
+                  ))
+                }
+              </ol>
+              <p class="panel-note">3 mechanics matched. Mia picks Gina's quote; the others stay open until she does.</p>
+            </figure>
+          </li>
+
+          <li class="stage">
+            <div class="stage-copy">
+              <p class="stage-lamps" aria-hidden="true">
+                <span class="lit"><Icon name="job" size={18} /></span>
+                <span class="lit"><Icon name="review" size={18} /></span>
+              </p>
+              <h3>Get it done, then review blind.</h3>
+              <p>
+                Start the job, and both sides confirm when it's finished. Then each side leaves a
+                five-star review. Neither sees the other's rating until both are in.
+              </p>
+            </div>
+
+            <figure class="panel-glass" aria-label="Example: job completion and blind reviews">
+              <p class="panel-title">Job · example</p>
+              <ol class="checks">
+                <li><Icon name="check" size={18} /> Job started</li>
+                <li><Icon name="check" size={18} /> Mia confirmed it's done</li>
+                <li><Icon name="check" size={18} /> Gina confirmed it's done</li>
+              </ol>
+              <div class="seals">
+                <div class="seal-group">
+                  <span class="seal"><Icon name="lock" size={20} /></span>
+                  <span class="seal"><Icon name="lock" size={20} /></span>
+                  <p>Sealed while one review is missing</p>
+                </div>
+                <Icon name="arrow" size={22} class="seal-arrow" />
+                <div class="seal-group">
+                  <span class="seal open"><Icon name="review" size={20} /></span>
+                  <span class="seal open"><Icon name="review" size={20} /></span>
+                  <p>Released together</p>
+                </div>
+              </div>
+            </figure>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- 2. Trust -->
+    <section id="trust">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2>Trust, built into the wiring.</h2>
+          <p class="lede">Not promises. Rules the app enforces.</p>
+        </header>
+
+        <div class="panel-glass trust-panel">
+          <div class="trust-privacy">
+            <div class="grid-viz">
+              <svg viewBox="0 0 160 120">
+                <g class="cells">
+                  {
+                    Array.from({ length: 6 }, (_, c) =>
+                      Array.from({ length: 4 }, (_, r) => (
+                        <rect x={8 + c * 24} y={8 + r * 26} width="22" height="24" rx="2" />
+                      )),
+                    )
+                  }
+                </g>
+                <rect class="snapped" x="80" y="34" width="22" height="24" rx="2" />
+                <circle class="exact" cx="88" cy="44" r="3" />
+              </svg>
+              <figure class="band-gauge" aria-label="Distance shown to others: 2.5 miles, in half-mile steps">
+                <svg viewBox="0 0 220 64" aria-hidden="true">
+                  <line class="band-base" x1="10" y1="40" x2="210" y2="40" />
+                  {
+                    Array.from({ length: 11 }, (_, i) => (
+                      <g>
+                        <line
+                          class:list={['band-tick', { major: i % 2 === 0 }]}
+                          x1={10 + i * 20}
+                          y1={i % 2 === 0 ? 28 : 33}
+                          x2={10 + i * 20}
+                          y2="40"
+                        />
+                        {i % 2 === 0 && <text x={10 + i * 20} y="58">{i / 2}</text>}
+                      </g>
+                    ))
+                  }
+                  <path class="band-needle" d="M110 6 L110 40 M104 14 L110 6 L116 14" />
+                </svg>
+                <figcaption>2.5 mi shown, in half-mile steps</figcaption>
+              </figure>
+            </div>
+            <h3>Your exact spot stays private</h3>
+            <p>
+              Precise coordinates never leave the server. Others see a snapped area of about 0.7 miles
+              and a distance rounded to the half mile. Only your matched mechanic gets the job-site point.
+            </p>
+          </div>
+
+          <div class="trust-ratings">
+            <figure class="release" aria-label="A public rating appears after three released reviews">
+              <span class="rlamp on"><Icon name="review" size={18} /></span>
+              <span class="rlamp on"><Icon name="review" size={18} /></span>
+              <span class="rlamp"><Icon name="lock" size={18} /></span>
+              <figcaption>Rating stays hidden until the third review is released</figcaption>
+            </figure>
+            <h3>Ratings you can believe</h3>
+            <p>Reviews are blind, and nobody shows a public rating off one or two jobs.</p>
+          </div>
+
+          <p class="lcd">
+            <Icon name="diagnose" size={18} />
+            <span>Every AI read comes with a confidence level and the app's own disclaimer: not a substitute for a hands-on inspection.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Mechanics -->
+    <section id="mechanics">
+      <div class="wrap split">
+        <div>
+          <header class="sec-head">
+            <h2>Mechanics: pick the jobs you want.</h2>
+            <p class="lede">
+              RevX works both ways. You swipe on open posts that fit your specialties and service
+              radius, and owners swipe on you.
+            </p>
+          </header>
+          <dl class="spec">
+            {
+              mechSpec.map((row) => (
+                <div>
+                  <dt>{row.name}</dt>
+                  <dd>{row.body}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <div class="founding">
+            <p class="founding-head">The first 100 mechanics are free forever.</p>
+            <p>
+              We're hand-recruiting independent mobile mechanics, students who wrench on the side, and
+              small shops across San Diego.
+            </p>
+            <a class="btn btn-primary" href={APP_URL}>
+              Join as a founding mechanic <Icon name="arrow" size={18} />
+            </a>
+          </div>
+        </div>
+
+        <figure class="panel-glass display">
+          <p class="panel-title">Sam's post, from the mechanic's side · illustrative</p>
+          <div class="job-card">
+            <Image
+              class="job-photo"
+              src={discBrake}
+              alt="Front wheel removed, exposing the brake rotor and hub"
+              widths={[480, 960]}
+              sizes="24rem"
+              format="webp"
+              quality={72}
+            />
+            <div class="job-body">
+              <p class="job-title">Grinding, front left, only when braking</p>
+              <p class="job-meta">Mechanical · 2016 Civic · 2.5 mi</p>
+              <p class="job-ai"><Icon name="diagnose" size={16} /> AI read: worn front pads</p>
+            </div>
+          </div>
+          <figcaption class="credit">
+            Photo:{' '}
+            <a href="https://commons.wikimedia.org/wiki/File:Disc_brake_car.jpg">Irvin calicut</a>,{' '}
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 4. Roadmap -->
+    <section id="vision" class="vision">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2>Lamps we haven't wired yet.</h2>
+          <p class="lede">Where RevX is headed. None of this works in the app today.</p>
+        </header>
+        <ul class="unwired" aria-label="Roadmap, not built">
+          {
+            roadmap.map((r) => (
+              <li>
+                <span class="dead"><Icon name={r.icon} size={20} /></span>
+                <span>{r.name}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. UCSD: launch, traction and team in one place -->
+    <section id="ucsd">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2>Built at UCSD. Launching in San Diego.</h2>
+          <p class="lede">
+            Mechanics first: we're signing up local mechanics, then opening RevX to UCSD students and
+            the neighborhoods around campus.
+          </p>
+        </header>
+
+        <div class="ucsd-grid">
+          <div class="panel-glass trip">
+            <p class="placeholder-tag">Placeholder · replace before launch</p>
+            <dl>
+              {
+                traction.map((t) => (
+                  <div>
+                    <dt>{t}</dt>
+                    <dd>— —</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
+          <div class="panel-glass trip">
+            <p class="placeholder-tag">Placeholder · team names coming</p>
+            <ul class="roster">
+              {
+                team.map((role) => (
+                  <li>
+                    <span class="avatar" aria-hidden="true" />
+                    <span class="who">Team member</span>
+                    <span class="role">{role}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Close -->
+    <section class="close">
+      <div class="wrap close-inner">
+        <div>
+          <h2>Your car's telling you something.</h2>
+          <p class="lede">Find out what, and who should fix it. Runs in your browser today; iOS and Android are coming.</p>
+        </div>
+        <div class="close-actions">
+          <a class="start" href={APP_URL}>
+            <span class="start-main">Open</span>
+            <span class="start-sub">RevX</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>
+        <Wordmark size="1.5rem" />
+        <p>The mechanic at your door. San Diego, CA.</p>
+      </div>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <p class="copy">© 2026 RevX</p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  section {
+    padding-block: var(--section);
+  }
+
+  main > section + section {
+    border-top: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: clamp(2.25rem, 4.4vw, 4rem);
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+  }
+
+  .sec-head {
+    max-width: 46rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .lede {
+    margin-top: 1rem;
+    font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+    color: var(--muted);
+    max-width: 52ch;
+  }
+
+  /* Instrument glass, shared by every panel below the hero. */
+  .panel-glass {
+    margin: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--rule-strong);
+    border-radius: 1.5rem;
+    background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(8 12 15 / 0.98));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.05),
+      0 24px 36px -24px rgb(0 0 0 / 0.9);
+  }
+
+  .panel-title {
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .panel-note {
+    margin-top: 1rem;
+    color: var(--muted);
+  }
+
+  /* How it works */
+  .stages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .stage-copy {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .stage-copy p:not(.stage-lamps) {
+    color: var(--silver);
+    max-width: 52ch;
+  }
+
+  .stage-lamps {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .stage-lamps span {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
+  }
+
+  .stage-lamps .warn {
+    background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber) 60%, #d98a0b);
+    color: var(--amber-ink);
+  }
+
+  .trace {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0 0 0 1.25rem;
+    border-left: 1px solid var(--rule-strong);
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  .trace > li {
+    position: relative;
+  }
+
+  .trace > li::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.25rem - 4px);
+    top: 0.5rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sky);
+  }
+
+  .trace-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: var(--ink);
+  }
+
+  .chips,
+  .shortlist {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .chips li,
+  .shortlist li {
+    padding: 0.2rem 0.7rem;
+    font-size: 0.9375rem;
+  }
+
+  .chips li {
+    border-radius: 999px;
+    background: #1a232b;
+    color: var(--ink);
+  }
+
+  .shortlist li {
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.4rem;
+    color: var(--muted);
+  }
+
+  .verdicts {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .verdicts li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.5rem;
+  }
+
+  .cause {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--muted);
+  }
+
+  .verdict {
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .verdicts .lead {
+    padding-block: 0.6rem;
+    border: 1px solid var(--sky);
+    background: rgb(56 189 248 / 0.08);
+  }
+
+  .verdicts .lead .cause {
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    color: var(--ink);
+  }
+
+  .verdicts .lead .verdict {
+    color: var(--sky);
+  }
+
+  .verdicts .out .cause {
+    text-decoration: line-through;
+    color: var(--dim);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stats dt {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .stats dd {
+    margin: 0.1rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    color: var(--ink);
+  }
+
+  .stats .warn {
+    color: var(--amber);
+  }
+
+  .readout figcaption {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .quotes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .quotes li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.5rem;
+    color: var(--muted);
+  }
+
+  .quotes b {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--silver);
+  }
+
+  .quotes .lead {
+    padding-block: 0.8rem;
+    border: 1px solid var(--sky);
+    background: rgb(56 189 248 / 0.08);
+    color: var(--ink);
+  }
+
+  .quotes .lead b {
+    font-size: 1.625rem;
+    color: var(--sky);
+  }
+
+  .checks {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--ink);
+  }
+
+  .checks li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .checks :global(svg) {
+    color: var(--sky);
+  }
+
+  .seals {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 3vw, 2rem);
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .seal-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 12rem;
+  }
+
+  .seal-group p {
+    flex-basis: 100%;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .seal {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--unlit);
+    background: var(--bezel);
+    color: var(--amber);
+  }
+
+  .seal.open {
+    border: 1.5px solid var(--sky-soft);
+    background: var(--sky);
+    color: var(--sky-ink);
+  }
+
+  .seals :global(.seal-arrow) {
+    flex: none;
+    color: var(--dim);
+  }
+
+  /* Trust */
+  .trust-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .trust-privacy,
+  .trust-ratings {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .trust-ratings {
+    border-left: 1px solid var(--rule-strong);
+  }
+
+  .trust-panel h3 {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .trust-panel h3 + p {
+    margin-top: 0.5rem;
+    color: var(--silver);
+    max-width: 52ch;
+  }
+
+  .grid-viz {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .grid-viz svg {
+    width: min(50%, 14rem);
+  }
+
+  .cells rect {
+    fill: none;
+    stroke: var(--rule-strong);
+  }
+
+  .snapped {
+    fill: rgb(56 189 248 / 0.18);
+    stroke: var(--sky);
+    stroke-width: 1.5;
+  }
+
+  .exact {
+    fill: var(--red);
+  }
+
+  .band-gauge {
+    flex: 1;
+    margin: 0;
+  }
+
+  .band-gauge svg {
+    width: 100%;
+    max-width: 16rem;
+    overflow: visible;
+  }
+
+  .band-base,
+  .band-tick {
+    stroke: var(--rule-strong);
+    stroke-width: 1.5;
+  }
+
+  .band-tick.major {
+    stroke: var(--muted);
+    stroke-width: 2;
+  }
+
+  .band-gauge text {
+    fill: var(--muted);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    text-anchor: middle;
+  }
+
+  .band-needle {
+    fill: none;
+    stroke: var(--sky);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .band-gauge figcaption,
+  .release figcaption {
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .release {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .release figcaption {
+    flex-basis: 100%;
+  }
+
+  .rlamp {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--unlit);
+    background: var(--bezel);
+    color: var(--amber);
+  }
+
+  .rlamp.on {
+    border: 1.5px solid var(--sky-soft);
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
+  }
+
+  .lcd {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 1px solid var(--rule-strong);
+    background: #060a0d;
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .lcd :global(svg) {
+    flex: none;
+  }
+
+  /* Mechanics */
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .split .sec-head {
+    margin-bottom: 2rem;
+  }
+
+  .spec {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .spec div {
+    display: grid;
+    grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .spec dt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  .spec dd {
+    margin: 0;
+    color: var(--silver);
+  }
+
+  .founding {
+    margin-top: 2.5rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 1.25rem;
+    border: 1px solid var(--sky-deep);
+    background: linear-gradient(135deg, rgb(56 189 248 / 0.1), rgb(56 189 248 / 0.02));
+    display: grid;
+    gap: 0.8rem;
+    justify-items: start;
+  }
+
+  .founding-head {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  .founding p:not(.founding-head) {
+    color: var(--silver);
+    max-width: 56ch;
+  }
+
+  .display {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .job-card {
+    overflow: hidden;
+    border-radius: 0.9rem;
+    border: 1px solid var(--sky-deep);
+    background: #0c1318;
+  }
+
+  .job-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 72% 60%;
+  }
+
+  .job-body {
+    padding: 1rem;
+  }
+
+  .job-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .job-meta {
+    margin-top: 0.35rem;
+    color: var(--muted);
+  }
+
+  .job-ai {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    color: var(--sky-soft);
+  }
+
+  .credit {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .credit a {
+    display: inline-block;
+    padding-block: 0.3rem;
+    color: var(--silver);
+  }
+
+  /* Roadmap */
+  .vision {
+    background: #050708;
+  }
+
+  .unwired {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+    gap: 1.25rem 2rem;
+  }
+
+  .unwired li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .dead {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--dim);
+    background: var(--bezel);
+    color: var(--dim);
+  }
+
+  /* UCSD */
+  .ucsd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+
+  .trip dl {
+    margin: 1rem 0 0;
+    display: grid;
+  }
+
+  .trip dl div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .trip dt {
+    color: var(--silver);
+  }
+
+  .trip dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--dim);
+  }
+
+  .roster {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+  }
+
+  .roster li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.9rem;
+    padding-block: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--dim);
+    background: var(--bezel);
+  }
+
+  .who {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--ink);
+  }
+
+  .role {
+    color: var(--muted);
+  }
+
+  /* Close */
+  .close {
+    background: radial-gradient(ellipse at 80% 130%, rgb(56 189 248 / 0.14), transparent 60%);
+  }
+
+  .close-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2rem 4rem;
+  }
+
+  .close h2 {
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+  }
+
+  .close-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  /* Footer */
+  .foot {
+    border-top: 1px solid var(--rule);
+    padding-block: 2rem;
+  }
+
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .foot-inner p {
+    margin-top: 0.4rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .foot nav {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .foot nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding-inline: 0.6rem;
+  }
+
+  .foot .copy {
+    margin: 0;
+  }
+
+  @media (max-width: 1000px) {
+    .stage,
+    .split,
+    .ucsd-grid,
+    .close-inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .display {
+      position: static;
+      max-width: 28rem;
+    }
+
+    .trust-panel {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .trust-ratings {
+      border-left: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+
+  }
+
+  @media (max-width: 640px) {
+    .spec div {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.25rem;
+    }
+
+    .stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-viz {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .grid-viz svg,
+    .band-gauge svg {
+      width: 100%;
+      max-width: none;
+    }
+
+    .seals {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .seals :global(.seal-arrow) {
+      transform: rotate(90deg);
+    }
+
+    .unwired {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .unwired li {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .close-actions {
+      flex-wrap: wrap;
+    }
+  }
+</style>

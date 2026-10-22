@@ -1,0 +1,44 @@
+---
+/** Shared shell for the placeholder legal pages (decision D12). */
+import Base from '../layouts/Base.astro';
+import Wordmark from './Wordmark.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Base title={title}>
+  <main class="wrap legal">
+    <a href="/" class="home" aria-label="RevX home"><Wordmark size="1.75rem" /></a>
+    <h1>{title}</h1>
+    <p class="placeholder-tag">Placeholder · final text pending</p>
+    <slot />
+    <p><a href="/">Back to RevX</a></p>
+  </main>
+</Base>
+
+<style>
+  .legal {
+    max-width: 44rem;
+    padding-block: 3rem 6rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .home {
+    text-decoration: none;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+
+  .legal :global(p) {
+    color: var(--muted);
+  }
+</style>
