@@ -1,12 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Canonical, OG and sitemap URLs. Set SITE_URL once a custom domain exists;
-// until then Vercel's production host is used, so no placeholder domain ships.
-const site =
-  process.env.SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : 'http://localhost:4321');
+// Canonical, OG and sitemap URLs. revx.website is the production domain; previews
+// and local builds also point canonicals there, which is what search engines should see.
+const site = process.env.SITE_URL ?? 'https://revx.website';
 
-export default defineConfig({ site });
+// Slash-free URLs (/privacy, not /privacy/) so the /app proxy to the web app passes paths through untouched.
+export default defineConfig({ site, trailingSlash: 'never', build: { format: 'file' } });

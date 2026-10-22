@@ -2,6 +2,8 @@
 
 Written 2026-10-22 for agents working in **RevX-App/RevX** (`prod-branch`). It covers the Expo web build on Vercel and the iOS/Android apps. It summarizes what was analyzed on the landing-site side and what to do in the app repo.
 
+**Domain:** the web app will live at `https://revx.website/app`, proxied by the landing project. The app-repo changes (`experiments.baseUrl`, `vercel.json` and Supabase URLs) are in the landing repo's `doc/domain_setup.md` §2.
+
 **Copy this file into the app repo** (for example `docs/technical/seo_geo_aeo_handoff.md`) before working from it.
 
 **What the scores mean.** No tool gives one universal "SEO/GEO/AEO score". Improve the parts each tool actually measures:

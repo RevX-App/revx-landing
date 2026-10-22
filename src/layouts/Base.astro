@@ -20,7 +20,8 @@ const fullTitle = title ? `${title} · RevX` : SITE.title;
 const ogImage = new URL('/og.png', Astro.site);
 const OG_ALT =
   'RevX wordmark under a row of dashboard lamps, with "The mechanic at your door." and "Post it, get an AI read, match with a San Diego mechanic."';
-const canonical = new URL(Astro.url.pathname, Astro.site);
+// build.format 'file' reports /privacy.html; Vercel's cleanUrls serves /privacy.
+const canonical = new URL(Astro.url.pathname.replace(/(index)?\.html$/, ''), Astro.site);
 ---
 
 <!doctype html>
