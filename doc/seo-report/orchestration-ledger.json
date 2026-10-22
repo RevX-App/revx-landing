@@ -1,0 +1,327 @@
+{
+ "ledger_version": "1.0.0",
+ "suite_version": "3.3.0",
+ "created_at": "2026-10-22T17:40:26Z",
+ "request": {
+  "summary": "Audit the RevX landing page for SEO, AEO and GEO and recommend actions; report only",
+  "mode": "broad",
+  "authorized_boundary": "read-only audit and report; no implementation, no release, no provider mutation"
+ },
+ "overall_state": "blocked",
+ "skills": [
+  {
+   "skill": "ai-search-research",
+   "state": "blocked",
+   "reason": "No pinned engine observations; site not live and SE Ranking not authorized",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": "Needs production deploy and SE Ranking authorization (owner: RevX team)",
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-aeo",
+   "state": "completed",
+   "reason": "Provisional local answer-readiness checks; no Research Pack",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-geo",
+   "state": "completed",
+   "reason": "Provisional entity checks; brand collision found (H1)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "ai-visibility-monitor",
+   "state": "blocked",
+   "reason": "Site not deployed; no AI answers to baseline yet",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": "Needs production deploy and SE Ranking authorization (owner: RevX team)",
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo",
+   "state": "completed",
+   "reason": "Router: intake, coverage, synthesis",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-action-plan",
+   "state": "completed",
+   "reason": "Ordered action list in report section 6",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-agentic",
+   "state": "completed",
+   "reason": "Lighthouse accessibility 97; one ARIA defect (L1); no forms",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-architecture",
+   "state": "completed",
+   "reason": "Single page plus 2 legal pages; anchors only; legal pages thin (C4, M3)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-authority",
+   "state": "blocked",
+   "reason": "No backlink data; site not live and SE Ranking not authorized",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": "Needs production deploy and SE Ranking authorization (owner: RevX team)",
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-audit",
+   "state": "completed",
+   "reason": "Multi-lane local assessment of 3 URLs",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-commerce",
+   "state": "not-applicable",
+   "reason": "No products, prices or merchant feeds",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-competitor-pages",
+   "state": "not-applicable",
+   "reason": "No comparison pages exist or were requested",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-content",
+   "state": "completed",
+   "reason": "Content depth, headings, E-E-A-T signals (H4, H5, M3)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-hreflang",
+   "state": "not-applicable",
+   "reason": "Single locale (en-US), one market",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-images",
+   "state": "completed",
+   "reason": "Alt text, sizing, responsive delivery (M4)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-local",
+   "state": "completed",
+   "reason": "San Diego service area; service-area page and Organization areaServed recommendations",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-news-discover",
+   "state": "not-applicable",
+   "reason": "Not a news or publisher site",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-page",
+   "state": "completed",
+   "reason": "Title/meta/H1/query fit reviewed (H2)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-plan",
+   "state": "completed",
+   "reason": "Two-track roadmap in report sections 4 and 6",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-programmatic",
+   "state": "not-applicable",
+   "reason": "No template or data-driven page system",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-research",
+   "state": "completed",
+   "reason": "Qualitative SERP review via live web search; no volume data",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-performance",
+   "state": "blocked",
+   "reason": "No Search Console, Bing or RUM data before launch",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": "Needs production deploy and SE Ranking authorization (owner: RevX team)",
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-schema",
+   "state": "completed",
+   "reason": "0 JSON-LD detected; Organization/WebSite recommended (H3)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-sitemap",
+   "state": "completed",
+   "reason": "No robots.txt or XML sitemap (C3)",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-technical",
+   "state": "completed",
+   "reason": "Canonical, robots, sitemap, headers, favicon, Lighthouse, vercel.json",
+   "evidence_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "output_refs": [
+    "doc/seo-report/report.md"
+   ],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "seo-video",
+   "state": "not-applicable",
+   "reason": "No video content",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": null
+  },
+  {
+   "skill": "optimise-seo",
+   "state": "deferred-by-owner",
+   "reason": "User asked for a report only; no implementation",
+   "evidence_refs": [],
+   "output_refs": [],
+   "blocker": null,
+   "owner_decision_ref": "user request 2026-10-22: report only"
+  }
+ ],
+ "coverage_summary": "27 screened: 16 completed (local pre-launch audit), 4 blocked (AI-search research, AI visibility, performance, authority: need a live site and SE Ranking auth), 6 not-applicable, 1 deferred-by-owner (implementation; report only).",
+ "limitations": [
+  "Site not deployed",
+  "SE Ranking not authorized",
+  "Lighthouse ran on localhost",
+  "AEO/GEO are provisional readiness checks, not engine observations"
+ ]
+}

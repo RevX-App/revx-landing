@@ -1,0 +1,24 @@
+{
+  "ledger_version": "1.0.0",
+  "title": "RevX landing SEO/AEO/GEO audit",
+  "steps": [
+    {
+      "id": "audit",
+      "path": "report.md",
+      "title": "SEO/AEO/GEO audit report",
+      "status": "completed",
+      "owner": "Claude (seo router)",
+      "outcome": "16 lanes completed locally; 4 critical, 5 high findings",
+      "sha256": "2ce8fcee674ad7cf6eed7a37eb8cc6a5a5662e0d41e9b70ae2e259cba0d7c014"
+    },
+    {
+      "id": "summary",
+      "path": "delivery-summary.md",
+      "title": "Delivery summary",
+      "status": "blocked",
+      "owner": "RevX team",
+      "outcome": "Post-launch lanes need deploy + SE Ranking auth",
+      "sha256": "8a92df40514e2ea478c418ec578141f50b83bd533ea430659f94445f99229255"
+    }
+  ]
+}

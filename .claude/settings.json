@@ -4,6 +4,8 @@
     "superpowers@anthropic-plugin-directory": true,
     "mattpocock-skills@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "impeccable@impeccable": true
+    "impeccable@impeccable": true,
+    "seo-aeo-geo-ultimate@anthropic-plugin-directory": true,
+    "seo-skills@seranking": true
   }
 }
