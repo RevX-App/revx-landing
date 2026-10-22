@@ -1,0 +1,1372 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Cluster from '../components/Cluster.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
+import Wordmark from '../components/Wordmark.astro';
+import discBrake from '../assets/disc-brake.jpg';
+import { APP_URL } from '../config';
+
+const legend: { icon: IconName; name: string; body: string; warn?: boolean }[] = [
+  {
+    icon: 'post',
+    name: 'Post',
+    body: "A five-step intake: vehicle, category, symptoms, a photo, and an optional recording of the noise. Every question is one a mechanic would ask, so they get real data instead of “it makes a weird noise.”",
+  },
+  {
+    icon: 'diagnose',
+    name: 'Diagnose',
+    body: 'Unless you opt out, AI reads your answers, photo and audio and returns likely causes, severity, urgency and a cost range. Posting never waits on it.',
+    warn: true,
+  },
+  {
+    icon: 'swipe',
+    name: 'Swipe',
+    body: 'You swipe mechanics for that post. Mechanics swipe open posts that match their specialties and service radius.',
+  },
+  {
+    icon: 'match',
+    name: 'Match',
+    body: 'A right swipe from both sides makes a match, with an alert on both phones.',
+  },
+  {
+    icon: 'chat',
+    name: 'Chat & quote',
+    body: 'Talk it through in realtime chat. Collect quotes from several mechanics and pick one.',
+  },
+  {
+    icon: 'job',
+    name: 'Job',
+    body: 'Start the job. Both sides confirm when it’s done.',
+  },
+  {
+    icon: 'review',
+    name: 'Review',
+    body: 'Blind, five stars. Neither side sees the other’s rating until both are in.',
+  },
+];
+
+const intake = ['Grinding noise', 'Front left', 'Only when braking', 'Getting worse', '1 photo', '0:04 audio'];
+
+const checks: { cause: string; verdict: string; state: 'lead' | 'open' | 'out' }[] = [
+  { cause: 'Worn front brake pads', verdict: 'Confirmed by photo and audio', state: 'lead' },
+  { cause: 'Scored brake rotor', verdict: 'Possible', state: 'open' },
+  { cause: 'Sticking caliper slide pin', verdict: 'Less likely', state: 'open' },
+  { cause: 'Worn wheel bearing', verdict: 'Ruled out: noise only when braking', state: 'out' },
+];
+
+const mechSpec = [
+  {
+    name: 'Real intake',
+    body: 'Every post comes with structured symptoms and a photo, often with a recording of the noise.',
+  },
+  {
+    name: 'Briefing on match',
+    body: "Once you match, you get a clinical technical briefing on the AI's read. Owners never see it.",
+  },
+  {
+    name: 'Your quote',
+    body: 'Quote alongside other mechanics. No lead fees, no pay-to-rank listings.',
+  },
+  {
+    name: 'Your reputation',
+    body: 'Blind reviews, and public ratings only after three released reviews.',
+  },
+];
+
+const dash: { icon: IconName; name: string }[] = [
+  { icon: 'map', name: 'Map' },
+  { icon: 'community', name: 'Community' },
+  { icon: 'bell', name: 'Alerts' },
+];
+
+const roadmap: { icon: IconName; name: string }[] = [
+  { icon: 'payments', name: 'Payments & escrow' },
+  { icon: 'verified', name: 'Verified mechanics' },
+  { icon: 'obd', name: 'OBD-II fault codes' },
+  { icon: 'vin', name: 'VIN scanner' },
+  { icon: 'schedule', name: 'Scheduling' },
+  { icon: 'photo', name: 'Photo messages' },
+  { icon: 'insurance', name: 'Insurance' },
+  { icon: 'ebike', name: 'E-bikes & scooters' },
+  { icon: 'pro', name: 'Pro plans' },
+];
+
+const traction = ['Pitch results', 'Founding mechanics signed', 'Beta users'];
+const team = ['Founder', 'Founder', 'Founder', 'Founder'];
+---
+
+<Base>
+  <Cluster />
+
+  <main>
+    <!-- How it works: the owner's-manual lamp legend -->
+    <section id="how" class="manual">
+      <div class="wrap manual-grid">
+        <div class="manual-head">
+          <h2>Seven lamps. One loop.</h2>
+          <p class="lede">
+            Every RevX job runs the same route, from the first photo to the last review. Here's what
+            each lamp on the dash means.
+          </p>
+          <p class="scope">
+            Cars and motorcycles · Mechanical, Computer/ECU, Modification and Cosmetic problems
+          </p>
+        </div>
+        <ol class="legend-list">
+          {
+            legend.map((row) => (
+              <li>
+                <span class:list={['lamp-icon', { warn: row.warn }]}>
+                  <Icon name={row.icon} size={24} />
+                </span>
+                <h3>{row.name}</h3>
+                <p>{row.body}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <!-- Diagnosis: how the read is made -->
+    <section id="diagnosis" class="diagnosis">
+      <div class="wrap diag-grid">
+        <div class="diag-copy">
+          <h2>Describe it. Snap it. Record the noise.</h2>
+          <p class="lede">
+            Get a likely diagnosis, a severity read and a cost range before you talk to anyone.
+          </p>
+          <p class="diag-body">
+            The AI doesn't guess from scratch. A rule engine turns your answers into a shortlist of
+            causes, then the model checks each one against your photo, audio and answers and confirms
+            it or rules it out.
+          </p>
+          <p class="diag-body">
+            You get plain English. A matched mechanic gets a technical briefing, and only after the
+            match.
+          </p>
+        </div>
+
+        <figure class="readout" aria-label="How an example AI read is made">
+          <div class="readout-screen">
+            <p class="legend">Example read · demo post</p>
+
+            <ol class="stages">
+              <li class="stage">
+                <p class="stage-name">Your intake</p>
+                <ul class="chips">
+                  {intake.map((c) => <li>{c}</li>)}
+                </ul>
+              </li>
+              <li class="stage">
+                <p class="stage-name">Rule engine shortlist</p>
+                <ul class="shortlist">
+                  {checks.map((c) => <li>{c.cause}</li>)}
+                </ul>
+              </li>
+              <li class="stage">
+                <p class="stage-name">Model checks the evidence</p>
+                <ol class="verdicts">
+                  {
+                    checks.map((c) => (
+                      <li class={c.state}>
+                        <span class="cause">{c.cause}</span>
+                        <span class="verdict">{c.verdict}</span>
+                      </li>
+                    ))
+                  }
+                </ol>
+              </li>
+            </ol>
+
+            <div class="urgency">
+              <p class="legend">Urgency</p>
+              <div class="urgency-scale" role="img" aria-label="Urgency: get it seen soon">
+                <span>Fine to drive</span>
+                <span class="active">Get it seen soon</span>
+                <span class="stop">Stop driving</span>
+              </div>
+            </div>
+
+            <dl class="ro-stats">
+              <div><dt>Severity</dt><dd class="warn">High</dd></div>
+              <div><dt>Confidence</dt><dd>High</dd></div>
+              <div><dt>Cost range</dt><dd>$180–$350</dd></div>
+            </dl>
+          </div>
+          <figcaption>
+            AI-generated from your photos and answers. Not a substitute for a hands-on inspection.
+            Numbers shown are an example.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Mechanics path -->
+    <section id="mechanics" class="mechanics">
+      <div class="wrap mech-grid">
+        <figure class="display">
+          <p class="legend display-legend">Illustrative · mechanic job deck</p>
+          <div class="display-screen">
+            <div class="job-card">
+              <Image
+                class="job-photo"
+                src={discBrake}
+                alt="Front wheel removed, exposing the brake rotor and hub"
+                widths={[480, 960]}
+                sizes="22rem"
+                format="webp"
+                quality={72}
+              />
+              <div class="job-body">
+                <p class="job-title">Grinding, front left, only when braking</p>
+                <p class="job-meta">Mechanical · 2016 Civic · 2.5 mi</p>
+                <p class="job-ai"><Icon name="diagnose" size={16} /> AI read: worn front pads</p>
+              </div>
+            </div>
+            <p class="credit">
+              Photo:
+              <a href="https://commons.wikimedia.org/wiki/File:Disc_brake_car.jpg">Irvin calicut</a>,
+              <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
+            </p>
+            <div class="display-actions" aria-hidden="true">
+              <span class="round"><Icon name="x" size={20} /></span>
+              <span class="round yes"><Icon name="heart" size={20} /></span>
+            </div>
+          </div>
+        </figure>
+
+        <div class="mech-copy">
+          <h2>Pick the jobs you want.</h2>
+          <p class="lede">
+            RevX works both ways. You swipe on open posts that match your specialties and your service
+            radius, and owners swipe on you.
+          </p>
+          <dl class="spec">
+            {
+              mechSpec.map((row) => (
+                <div>
+                  <dt>{row.name}</dt>
+                  <dd>{row.body}</dd>
+                </div>
+              ))
+            }
+          </dl>
+
+          <div class="founding">
+            <p class="founding-head">The first 100 mechanics are free forever.</p>
+            <p>
+              We're hand-recruiting independent mobile mechanics, students who wrench on the side, and
+              small shops across San Diego.
+            </p>
+            <a class="btn btn-primary" href={APP_URL}>
+              Join as a founding mechanic <Icon name="arrow" size={18} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust mechanisms, as instruments -->
+    <section id="trust" class="trust">
+      <div class="wrap">
+        <h2>Trust, built into the wiring.</h2>
+
+        <div class="trust-panel">
+          <div class="gauge-privacy">
+            <div class="grid-viz" aria-hidden="true">
+              <svg viewBox="0 0 160 120">
+                <g class="cells">
+                  {
+                    Array.from({ length: 6 }, (_, c) =>
+                      Array.from({ length: 4 }, (_, r) => (
+                        <rect x={8 + c * 24} y={8 + r * 26} width="22" height="24" rx="2" />
+                      )),
+                    )
+                  }
+                </g>
+                <rect class="snapped" x="80" y="34" width="22" height="24" rx="2" />
+                <circle class="exact" cx="88" cy="44" r="3" />
+              </svg>
+              <div class="band">
+                <p class="legend">Distance shown</p>
+                <p class="band-value">2.5 mi</p>
+                <p class="legend">Half-mile bands</p>
+              </div>
+            </div>
+            <h3>Your exact spot stays private</h3>
+            <p>
+              Precise coordinates never leave the server. Others see a snapped area of about 0.7 miles
+              and a distance rounded to the half mile. Only your matched mechanic gets the job-site
+              point.
+            </p>
+          </div>
+
+          <div class="gauge-blind" data-blind>
+            <div class="seal-lamps">
+              <span class="seal" data-seal>
+                <Icon name="lock" size={22} />
+                <span class="seal-label">Owner</span>
+              </span>
+              <span class="seal" data-seal>
+                <Icon name="lock" size={22} />
+                <span class="seal-label">Mechanic</span>
+              </span>
+            </div>
+            <h3>Blind reviews</h3>
+            <p>
+              Neither side sees the other's rating until both are in. Then both lamps light together.
+              Public ratings appear only after three released reviews.
+            </p>
+            <button type="button" class="btn btn-ghost seal-btn" data-release aria-pressed="false">
+              Submit both reviews
+            </button>
+          </div>
+
+          <p class="lcd">
+            <Icon name="diagnose" size={18} />
+            <span>Every AI read shows its confidence · Not a substitute for a hands-on inspection</span>
+          </p>
+        </div>
+
+        <div class="dash">
+          <ul class="dash-lamps" aria-label="Also in the app">
+            {
+              dash.map((d) => (
+                <li>
+                  <span class="bulb-sm">
+                    <Icon name={d.icon} size={20} />
+                  </span>
+                  <span>{d.name}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p>
+            Also on the dash: a map of nearby mechanics and problems where you can message from a pin;
+            a community with a ranked feed, brand and topic groups, votes, threaded comments and
+            moderation; and push alerts when you match, get a message, or a job is completed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap: lamps not wired yet -->
+    <section id="vision" class="vision">
+      <div class="wrap">
+        <div class="vision-head">
+          <h2>Lamps we haven't wired yet.</h2>
+          <p class="lede">
+            This is where RevX is headed. None of it works in the app today, and we'll say so until it
+            does.
+          </p>
+        </div>
+        <ul class="unwired" aria-label="Roadmap, not built">
+          {
+            roadmap.map((r) => (
+              <li>
+                <span class="dead">
+                  <Icon name={r.icon} size={22} />
+                </span>
+                <span class="dead-label">{r.name}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="vision-note legend">Roadmap · not built</p>
+      </div>
+    </section>
+
+    <!-- San Diego launch + traction placeholders -->
+    <section id="san-diego" class="sd">
+      <div class="wrap sd-grid">
+        <div>
+          <h2>Starting at UCSD, then all of San Diego.</h2>
+          <p class="lede">
+            Mechanics first: we're signing up local mechanics before anyone else, then opening RevX to
+            UCSD students and the neighborhoods around campus.
+          </p>
+        </div>
+        <div class="trip">
+          <p class="placeholder-tag">Placeholder data · replace before launch</p>
+          <dl>
+            {
+              traction.map((t) => (
+                <div>
+                  <dt>{t}</dt>
+                  <dd>— —</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team placeholders -->
+    <section id="team" class="team">
+      <div class="wrap">
+        <h2>Built by UCSD students.</h2>
+        <p class="placeholder-tag">Placeholder · names and roles coming</p>
+        <ul class="roster">
+          {
+            team.map((role) => (
+              <li>
+                <span class="avatar" aria-hidden="true" />
+                <span class="who">Team member</span>
+                <span class="role">{role}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Close: the ignition again -->
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Your car's telling you something.</h2>
+        <p class="lede">Find out what, and who should fix it.</p>
+        <div class="close-actions">
+          <a class="start" href={APP_URL}>
+            <span class="start-main">Open</span>
+            <span class="start-sub">RevX</span>
+          </a>
+          <a class="btn btn-ghost" href={APP_URL}>I'm a mechanic</a>
+        </div>
+        <p class="legend">Web app now · iOS &amp; Android coming</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>
+        <Wordmark size="1.5rem" />
+        <p>The mechanic at your door. San Diego, CA.</p>
+      </div>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+      <p class="copy">© 2026 RevX</p>
+    </div>
+  </footer>
+</Base>
+
+<script>
+  // Blind reviews: both seals light together, never one at a time.
+  const blind = document.querySelector<HTMLElement>('[data-blind]');
+  const release = blind?.querySelector<HTMLButtonElement>('[data-release]');
+  if (blind && release) {
+    release.addEventListener('click', () => {
+      const lit = blind.classList.toggle('released');
+      release.setAttribute('aria-pressed', String(lit));
+      release.textContent = lit ? 'Both in · released' : 'Submit both reviews';
+    });
+  }
+</script>
+
+<style>
+  section {
+    padding-block: var(--section);
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: clamp(2.25rem, 4.4vw, 4rem);
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 1.375rem;
+    letter-spacing: 0;
+  }
+
+  .lede {
+    margin-top: 1.1rem;
+    font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+    color: var(--muted);
+    max-width: 52ch;
+  }
+
+  /* Instrument panel: the cluster's bezel language reused below the fold. */
+  .readout-screen,
+  .display,
+  .trust-panel,
+  .trip {
+    border: 1px solid var(--rule-strong);
+    background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(8 12 15 / 0.98));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.05),
+      0 40px 80px -30px rgb(0 0 0 / 0.95);
+  }
+
+  /* Manual / legend */
+  .manual-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .manual-head {
+    position: sticky;
+    top: 2.5rem;
+  }
+
+  .scope {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    color: var(--dim);
+    font-size: 0.9375rem;
+  }
+
+  .legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .legend-list li {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+    padding-block: 1.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .legend-list li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .lamp-icon {
+    grid-row: span 2;
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
+  }
+
+  .lamp-icon.warn {
+    background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber) 60%, #d98a0b);
+    color: var(--amber-ink);
+  }
+
+  .legend-list h3 {
+    align-self: end;
+  }
+
+  .legend-list p {
+    margin-top: 0.3rem;
+    color: var(--muted);
+    max-width: 60ch;
+  }
+
+  /* Diagnosis */
+  .diag-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .diag-body {
+    margin-top: 1.25rem;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+
+  .diag-body:first-of-type {
+    margin-top: 2.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .readout {
+    margin: 0;
+  }
+
+  .readout-screen {
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    border-radius: 1.5rem;
+  }
+
+  /* Stages wired together by one trace down the left edge. */
+  .stages {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    padding: 0 0 0 1.25rem;
+    border-left: 1px solid var(--rule-strong);
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .stage {
+    position: relative;
+  }
+
+  .stage::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.25rem - 4px);
+    top: 0.45rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sky);
+  }
+
+  .stage-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .chips,
+  .shortlist {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .chips li {
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: #1a232b;
+    color: var(--ink);
+    font-size: 0.9375rem;
+  }
+
+  .shortlist li {
+    padding: 0.2rem 0.65rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.4rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .verdicts {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .verdicts li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.5rem;
+  }
+
+  .cause {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--muted);
+  }
+
+  .verdict {
+    font-size: 0.875rem;
+    color: var(--dim);
+  }
+
+  .verdicts .lead {
+    padding-block: 0.65rem;
+    border: 1px solid var(--sky);
+    background: rgb(56 189 248 / 0.08);
+  }
+
+  .verdicts .lead .cause {
+    font-size: clamp(1.375rem, 2vw, 1.75rem);
+    color: var(--ink);
+  }
+
+  .verdicts .lead .verdict {
+    color: var(--sky);
+  }
+
+  .verdicts .out .cause {
+    text-decoration: line-through;
+    text-decoration-color: var(--dim);
+    color: var(--dim);
+  }
+
+  .urgency-scale {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 0.5rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .urgency-scale span {
+    padding: 0.55rem 0.6rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dim);
+    border-right: 1px solid var(--rule-strong);
+  }
+
+  .urgency-scale span:last-child {
+    border-right: 0;
+  }
+
+  .urgency-scale .active {
+    background: var(--amber);
+    color: var(--amber-ink);
+  }
+
+  .urgency-scale .stop {
+    color: var(--red);
+  }
+
+  .ro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.4rem 0 0;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .ro-stats dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .ro-stats dd {
+    margin: 0.15rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.375rem, 2vw, 1.75rem);
+    color: var(--ink);
+  }
+
+  .ro-stats .warn {
+    color: var(--amber);
+  }
+
+  .readout figcaption {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  /* Mechanics */
+  .mech-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+
+  .display {
+    justify-self: center;
+    width: min(100%, 22rem);
+    margin: 0;
+    padding: 1.1rem;
+    border-radius: 1.75rem;
+  }
+
+  .display-legend {
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+
+  .display-screen {
+    padding: 0.9rem;
+    border-radius: 1.1rem;
+    background: #060a0d;
+    border: 1px solid var(--rule);
+  }
+
+  .job-card {
+    overflow: hidden;
+    border-radius: 0.9rem;
+    border: 1px solid var(--sky-deep);
+    background: #0c1318;
+  }
+
+  .job-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 440 / 300;
+    object-fit: cover;
+    object-position: 72% 60%;
+  }
+
+  .credit {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--dim);
+  }
+
+  .credit a {
+    color: var(--muted);
+  }
+
+  .job-body {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .job-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.375rem;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .job-meta {
+    margin-top: 0.35rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .job-ai {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--amber);
+  }
+
+  .display-actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.9rem;
+  }
+
+  .display-actions .round {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--rule-strong);
+    color: var(--muted);
+  }
+
+  .display-actions .yes {
+    border-color: var(--sky-deep);
+    color: var(--sky);
+  }
+
+  /* Spec sheet: label left, reading right, ruled like a trip computer. */
+  .spec {
+    margin: 2.25rem 0 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .spec div {
+    display: grid;
+    grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .spec dt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  .spec dd {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .founding {
+    margin-top: 2.75rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 1.25rem;
+    border: 1px solid var(--sky-deep);
+    background: linear-gradient(135deg, rgb(56 189 248 / 0.1), rgb(56 189 248 / 0.02));
+    display: grid;
+    gap: 0.8rem;
+    justify-items: start;
+  }
+
+  .founding-head {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.625rem, 2.6vw, 2.25rem);
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  .founding p:not(.founding-head) {
+    color: var(--silver);
+    max-width: 56ch;
+  }
+
+  .founding .btn {
+    margin-top: 0.4rem;
+  }
+
+  /* Trust */
+  .trust {
+    border-top: 1px solid var(--rule);
+  }
+
+  .trust-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+    border-radius: 1.75rem;
+    overflow: hidden;
+  }
+
+  .gauge-privacy,
+  .gauge-blind {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .gauge-blind {
+    border-left: 1px solid var(--rule-strong);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trust-panel h3 {
+    margin-top: 1.75rem;
+  }
+
+  .trust-panel h3 + p {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+
+  .grid-viz {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    min-height: 9rem;
+  }
+
+  .grid-viz svg {
+    width: min(55%, 16rem);
+  }
+
+  .cells rect {
+    fill: none;
+    stroke: var(--rule-strong);
+  }
+
+  .snapped {
+    fill: rgb(56 189 248 / 0.18);
+    stroke: var(--sky);
+    stroke-width: 1.5;
+  }
+
+  .exact {
+    fill: var(--red);
+  }
+
+  .band p {
+    margin: 0;
+  }
+
+  .band-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .seal-lamps {
+    display: flex;
+    gap: 1.25rem;
+    min-height: 9rem;
+    align-items: center;
+  }
+
+  .seal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dim);
+  }
+
+  .seal :global(svg) {
+    box-sizing: content-box;
+    padding: 0.9rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--unlit);
+    background: var(--bezel);
+    transition:
+      background-color 0.4s var(--ease-out),
+      color 0.4s var(--ease-out),
+      border-color 0.4s var(--ease-out);
+  }
+
+  .seal-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .released .seal {
+    color: var(--sky);
+  }
+
+  .released .seal :global(svg) {
+    border: 1.5px solid var(--sky-soft);
+    background: var(--sky);
+    color: var(--sky-ink);
+  }
+
+  .seal-btn {
+    margin-top: 1.25rem;
+    min-height: 2.6rem;
+    font-size: 0.9375rem;
+  }
+
+  .lcd {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1rem clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 1px solid var(--rule-strong);
+    background: #060a0d;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+
+  .lcd :global(svg) {
+    flex: none;
+  }
+
+  .dash {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: center;
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .dash > p {
+    color: var(--muted);
+    max-width: 70ch;
+  }
+
+  .dash-lamps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .dash-lamps li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+  }
+
+  .bulb-sm {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--sky-deep);
+    background: var(--bezel);
+    color: var(--sky);
+  }
+
+  /* Vision: unwired lamps, in the hero lamp form */
+  .vision {
+    background: #050708;
+    border-block: 1px solid var(--rule);
+  }
+
+  .vision-head {
+    max-width: 44rem;
+  }
+
+  .unwired {
+    list-style: none;
+    margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 2rem 1rem;
+  }
+
+  .unwired li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    text-align: center;
+  }
+
+  .dead {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--unlit);
+    color: var(--dim);
+    background: var(--bezel);
+  }
+
+  .dead-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .vision-note {
+    margin-top: 2.5rem;
+  }
+
+  /* San Diego */
+  .sd-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: end;
+  }
+
+  .trip {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .trip dl {
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .trip dl div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .trip dt {
+    color: var(--muted);
+  }
+
+  .trip dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--dim);
+  }
+
+  /* Team */
+  .team {
+    border-top: 1px solid var(--rule);
+  }
+
+  .team .placeholder-tag {
+    margin-top: 1rem;
+  }
+
+  .roster {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+    gap: 2rem;
+  }
+
+  .roster li {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 50%;
+    border: 1.5px dashed var(--rule-strong);
+    background: var(--bezel);
+  }
+
+  .who {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  .role {
+    color: var(--muted);
+  }
+
+  /* Close */
+  .close {
+    border-top: 1px solid var(--rule);
+    background: radial-gradient(ellipse at 50% 120%, rgb(56 189 248 / 0.14), transparent 60%);
+  }
+
+  .close-inner {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.2rem;
+  }
+
+  .close h2 {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+  }
+
+  .close .lede {
+    margin-inline: auto;
+  }
+
+  .close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2.25rem 0 1.5rem;
+  }
+
+  /* Footer */
+  .foot {
+    border-top: 1px solid var(--rule);
+    padding-block: 2.5rem;
+  }
+
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .foot-inner p {
+    margin-top: 0.4rem;
+    color: var(--dim);
+    font-size: 0.9375rem;
+  }
+
+  .foot nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .foot .copy {
+    margin: 0;
+  }
+
+  @media (max-width: 1000px) {
+    .manual-grid,
+    .diag-grid,
+    .mech-grid,
+    .sd-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .manual-head {
+      position: static;
+    }
+
+    .trust-panel {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gauge-blind {
+      border-left: 0;
+      border-top: 1px solid var(--rule-strong);
+    }
+
+    .dash {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .spec div {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.25rem;
+    }
+
+    .ro-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .urgency-scale span {
+      font-size: 0.75rem;
+      padding-inline: 0.3rem;
+    }
+
+    .grid-viz,
+    .seal-lamps {
+      min-height: 0;
+    }
+
+    .lcd {
+      font-size: 0.8125rem;
+      letter-spacing: 0.06em;
+    }
+  }
+</style>

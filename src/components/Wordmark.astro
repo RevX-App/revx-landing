@@ -1,0 +1,33 @@
+---
+/** Split silver-and-sky brand mark, recreated from the app's RevXLogo. */
+interface Props {
+  size?: string;
+}
+
+const { size = '2rem' } = Astro.props;
+---
+
+<span class="wordmark" style={`--size:${size}`} aria-label="RevX">
+  <span class="rev" aria-hidden="true">Rev</span><span class="x" aria-hidden="true">X</span>
+</span>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-body);
+    font-size: var(--size);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .rev {
+    font-weight: 700;
+    color: var(--silver);
+  }
+
+  .x {
+    font-weight: 800;
+    color: var(--sky);
+  }
+</style>

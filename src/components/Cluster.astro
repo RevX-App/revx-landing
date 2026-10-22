@@ -1,0 +1,1173 @@
+---
+/**
+ * First viewport: the instrument cluster. The seven tell-tale lamps are a
+ * tablist that drives the message-centre demo of the RevX loop; both dials
+ * follow the active step. All demo content uses fictional seed personas.
+ */
+import { Image } from 'astro:assets';
+import garage from '../assets/garage-hero.png';
+import Icon, { type IconName } from './Icon.astro';
+import Wordmark from './Wordmark.astro';
+import { APP_URL } from '../config';
+
+const steps: { id: string; label: string; icon: IconName }[] = [
+  { id: 'post', label: 'Post', icon: 'post' },
+  { id: 'diagnose', label: 'Diagnose', icon: 'diagnose' },
+  { id: 'swipe', label: 'Swipe', icon: 'swipe' },
+  { id: 'match', label: 'Match', icon: 'match' },
+  { id: 'chat', label: 'Chat', icon: 'chat' },
+  { id: 'job', label: 'Job', icon: 'job' },
+  { id: 'review', label: 'Review', icon: 'review' },
+];
+
+// Default step for no-JS visitors: the diagnosis readout.
+const initial = 1;
+
+// Dial geometry: a 270° sweep from 135° to 405°, one numbered stop per step.
+const R = 84;
+const C = 100;
+const polar = (deg: number, r: number) => {
+  const a = (deg * Math.PI) / 180;
+  return [C + r * Math.cos(a), C + r * Math.sin(a)] as const;
+};
+const majors = steps.map((_, i) => 135 + i * 45);
+const minors = Array.from({ length: 25 }, (_, i) => 135 + i * 11.25).filter(
+  (d) => !majors.includes(d),
+);
+const [ax, ay] = polar(135, R);
+const [bx, by] = polar(405, R);
+const arc = `M${ax.toFixed(1)} ${ay.toFixed(1)} A${R} ${R} 0 1 1 ${bx.toFixed(1)} ${by.toFixed(1)}`;
+
+const dials = [
+  {
+    side: 'owner',
+    href: '#how',
+    title: 'Owners',
+    cta: 'How it works',
+  },
+  {
+    side: 'mech',
+    href: '#mechanics',
+    title: 'Mechanics',
+    cta: 'For mechanics',
+  },
+];
+---
+
+<header class="hero" data-step={initial} style={`--step:${initial}`}>
+  <div class="backdrop" aria-hidden="true">
+    <Image
+      src={garage}
+      alt=""
+      widths={[640, 1024]}
+      sizes="100vw"
+      format="webp"
+      quality={70}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+
+  <nav class="top wrap" aria-label="Main">
+    <a href="/" class="home" aria-label="RevX home"><Wordmark size="1.9rem" /></a>
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#diagnosis">Diagnosis</a></li>
+      <li><a href="#mechanics">Mechanics</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#team">Team</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href={APP_URL}>Open RevX</a>
+  </nav>
+
+  <div class="lamps wrap" role="tablist" aria-label="The RevX loop, step by step">
+    {
+      steps.map((s, i) => (
+        <button
+          class="lamp"
+          role="tab"
+          id={`lamp-${s.id}`}
+          aria-controls={`panel-${s.id}`}
+          aria-selected={i === initial ? 'true' : 'false'}
+          tabindex={i === initial ? 0 : -1}
+          data-index={i}
+          data-kind={s.id === 'diagnose' ? 'warn' : 'sky'}
+        >
+          <span class="bulb">
+            <Icon name={s.icon} size={22} />
+          </span>
+          <span class="lamp-label">{s.label}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="cluster wrap">
+    {
+      dials.map((d) => (
+        <a class={`dial dial-${d.side}`} href={d.href}>
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path class="arc" d={arc} />
+            {minors.map((deg) => {
+              const [x1, y1] = polar(deg, R - 3);
+              const [x2, y2] = polar(deg, R - 9);
+              return <line class="tick" x1={x1} y1={y1} x2={x2} y2={y2} />;
+            })}
+            {majors.map((deg, i) => {
+              const [x1, y1] = polar(deg, R + 2);
+              const [x2, y2] = polar(deg, R - 14);
+              const [tx, ty] = polar(deg, R + 15);
+              return (
+                <g class="major" data-i={i}>
+                  <line x1={x1} y1={y1} x2={x2} y2={y2} />
+                  <text x={tx} y={ty + 4}>
+                    {i + 1}
+                  </text>
+                </g>
+              );
+            })}
+            <g class="needle">
+              <line x1="100" y1="100" x2="176" y2="100" />
+              <circle cx="100" cy="100" r="7" />
+            </g>
+          </svg>
+          <span class="dial-face">
+            <span class="dial-title">{d.title}</span>
+            <span class="dial-cta">
+              {d.cta}
+              <Icon name="down" size={16} />
+            </span>
+          </span>
+        </a>
+      ))
+    }
+
+    <div class="mc">
+      <h1>The mechanic at your door.</h1>
+      <p class="mc-sub">
+        Post what's wrong, get an AI read on it, and match with a San Diego mechanic who actually
+        wants the job.
+      </p>
+      <div class="mc-actions">
+        <a class="btn btn-primary" href={APP_URL}>Open RevX</a>
+        <a class="btn btn-ghost" href={APP_URL}>I'm a mechanic</a>
+      </div>
+
+      <div class="screen" aria-live="polite">
+        <section class="panel" id="panel-post" role="tabpanel" aria-labelledby="lamp-post" hidden>
+          <p class="legend">New post · Sam's 2016 Civic</p>
+          <dl class="fields">
+            <div><dt>Category</dt><dd>Mechanical</dd></div>
+            <div><dt>Symptom</dt><dd>Grinding noise</dd></div>
+            <div><dt>Where</dt><dd>Front left</dd></div>
+            <div><dt>When</dt><dd>Only when braking</dd></div>
+            <div><dt>How long</dt><dd>A few days, getting worse</dd></div>
+            <div><dt>Media</dt><dd>1 photo · 0:04 noise clip</dd></div>
+          </dl>
+        </section>
+
+        <section class="panel" id="panel-diagnose" role="tabpanel" aria-labelledby="lamp-diagnose">
+          <p class="read">Sounds like the front-left pads are worn down to the metal.</p>
+          <ol class="causes">
+            <li class="lead">Worn front brake pads</li>
+            <li>Scored brake rotor</li>
+            <li>Sticking caliper slide pin</li>
+          </ol>
+          <dl class="readouts">
+            <div><dt>Severity</dt><dd class="warn">High</dd></div>
+            <div><dt>Urgency</dt><dd>Get it seen soon</dd></div>
+            <div><dt>Confidence</dt><dd>High</dd></div>
+            <div><dt>Est. range</dt><dd>$180–$350</dd></div>
+          </dl>
+        </section>
+
+        <section class="panel" id="panel-swipe" role="tabpanel" aria-labelledby="lamp-swipe" hidden>
+          <div class="deck">
+            <article class="mcard" data-card="0">
+              <p class="mcard-name">Gina L.</p>
+              <p class="mcard-shop">Triton Auto · 2.5 mi</p>
+              <p class="mcard-tags">Mechanical · Computer/ECU</p>
+            </article>
+            <article class="mcard" data-card="1" hidden>
+              <p class="mcard-name">Diego R.</p>
+              <p class="mcard-shop">Mobile mechanic · 4.0 mi</p>
+              <p class="mcard-tags">Mechanical · Motorcycles</p>
+            </article>
+          </div>
+          <div class="deck-actions">
+            <button type="button" class="round" data-swipe="left" aria-label="Pass on this mechanic">
+              <Icon name="x" size={20} />
+            </button>
+            <span class="legend drag-hint">Drag the card or tap</span>
+            <button type="button" class="round yes" data-swipe="right" aria-label="Swipe right on this mechanic">
+              <Icon name="heart" size={20} />
+            </button>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-match" role="tabpanel" aria-labelledby="lamp-match" hidden>
+          <p class="big">It's a match!</p>
+          <p class="pair">Sam P. <Icon name="match" size={22} /> Gina L.</p>
+          <p class="note">Both swiped right on the same post. Alert sent to both phones.</p>
+        </section>
+
+        <section class="panel" id="panel-chat" role="tabpanel" aria-labelledby="lamp-chat" hidden>
+          <div class="bubbles">
+            <p class="bubble them">Saw your photo. That's metal on metal. I can take a look.</p>
+            <p class="bubble me">What would it run?</p>
+          </div>
+          <div class="quotes">
+            <p class="quote lead"><span>Gina L. · pads + rotor resurface</span><b>$240</b></p>
+            <p class="quote"><span>2 more quotes on this post</span></p>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-job" role="tabpanel" aria-labelledby="lamp-job" hidden>
+          <ol class="checks">
+            <li><Icon name="check" size={18} /> Job started</li>
+            <li><Icon name="check" size={18} /> Sam marked it done</li>
+            <li><Icon name="check" size={18} /> Gina marked it done</li>
+          </ol>
+          <p class="big">Completed</p>
+        </section>
+
+        <section class="panel" id="panel-review" role="tabpanel" aria-labelledby="lamp-review" hidden>
+          <div class="sealed">
+            <p><Icon name="lock" size={18} /> Sam's review · sealed</p>
+            <p><Icon name="lock" size={18} /> Gina's review · sealed</p>
+          </div>
+          <p class="note">Neither side sees the other's stars until both are in. Then both release together.</p>
+        </section>
+      </div>
+
+      <p class="demo-note">
+        Demo with fictional accounts. AI reads are not a substitute for a hands-on inspection.
+      </p>
+    </div>
+  </div>
+
+  <div class="ignition wrap">
+    <p class="ign-left">Runs in your browser today.<br />iOS &amp; Android coming.</p>
+    <a class="start" href={APP_URL}>
+      <span class="start-main">Open</span>
+      <span class="start-sub">RevX</span>
+    </a>
+    <div class="ign-right">
+      <a class="btn btn-ghost" href={APP_URL}>I'm a mechanic</a>
+      <a class="ign-offer" href="#mechanics">Founding mechanics: the first 100 are free forever</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  }
+
+  .backdrop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+    opacity: 0.42;
+  }
+
+  /* Nav */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1rem;
+  }
+
+  .home {
+    text-decoration: none;
+  }
+
+  .top ul {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2.25rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .top ul a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  .top ul a:hover {
+    color: var(--ink);
+  }
+
+  .nav-cta {
+    min-height: 2.6rem;
+    font-size: 1rem;
+  }
+
+  /* Tell-tale lamps */
+  .lamps {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.25rem, 2.6vw, 2.75rem);
+    margin-top: clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .lamp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem;
+    background: none;
+    border: 0;
+    color: var(--dim);
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .bulb {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--unlit);
+    color: var(--unlit);
+    background: var(--bezel);
+    transition:
+      background-color 0.35s var(--ease-out),
+      color 0.35s var(--ease-out),
+      border-color 0.35s var(--ease-out);
+  }
+
+  .lamp-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.35s var(--ease-out);
+  }
+
+  .lamp:hover .bulb {
+    border-color: var(--dim);
+    color: var(--dim);
+  }
+
+  .lamp:hover .lamp-label {
+    color: var(--muted);
+  }
+
+  .lamp[data-state='done'] .bulb {
+    border-color: var(--sky-deep);
+    color: var(--sky);
+  }
+
+  .lamp[data-state='done'] .lamp-label {
+    color: var(--muted);
+  }
+
+  .lamp[data-state='on'] .bulb {
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    border-color: var(--sky-soft);
+    color: var(--sky-ink);
+  }
+
+  .lamp[data-state='on'] .lamp-label {
+    color: var(--sky);
+  }
+
+  .lamp[data-state='on'][data-kind='warn'] .bulb {
+    background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber) 60%, #d98a0b);
+    border-color: #ffd27a;
+    color: var(--amber-ink);
+  }
+
+  .lamp[data-state='on'][data-kind='warn'] .lamp-label {
+    color: var(--amber);
+  }
+
+  /* Ignition bulb check: every lamp lights at once before the loop starts. */
+  .hero.bulb-check .bulb {
+    background: var(--amber);
+    border-color: #ffd27a;
+    color: var(--amber-ink);
+  }
+
+  /* Cluster */
+  .cluster {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: clamp(1rem, 1.6vw, 1.5rem);
+  }
+
+  .dial {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(16 22 27 / 0.92) 58%, rgb(7 9 11 / 0.85) 72%);
+    border: 1px solid var(--rule-strong);
+    box-shadow:
+      inset 0 0 0 10px rgb(7 9 11 / 0.7),
+      0 24px 50px -20px rgb(0 0 0 / 0.9);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .dial svg {
+    position: absolute;
+    inset: 6%;
+    width: 88%;
+    height: 88%;
+    overflow: visible;
+  }
+
+  .arc {
+    fill: none;
+    stroke: var(--rule-strong);
+    stroke-width: 2;
+  }
+
+  .tick {
+    stroke: var(--unlit);
+    stroke-width: 1.5;
+  }
+
+  .major line {
+    stroke: var(--muted);
+    stroke-width: 2.5;
+  }
+
+  .major text {
+    fill: var(--dim);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    text-anchor: middle;
+  }
+
+  .needle {
+    transform-box: view-box;
+    transform-origin: 100px 100px;
+    transform: rotate(calc(135deg + var(--step) * 45deg));
+    transition: transform 0.9s var(--ease-out);
+  }
+
+  .needle line {
+    stroke: var(--sky);
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .needle circle {
+    fill: var(--bezel);
+    stroke: var(--sky);
+    stroke-width: 2;
+  }
+
+  .hero.bulb-check .needle {
+    transform: rotate(405deg);
+  }
+
+  .dial-face {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 52%;
+    text-align: center;
+  }
+
+  .dial-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.125rem, 1.9vw, 1.75rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .dial-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+  }
+
+  .dial:hover {
+    border-color: var(--sky-deep);
+  }
+
+  .dial:hover .dial-cta {
+    color: var(--sky-soft);
+  }
+
+  .dial-owner {
+    order: 0;
+  }
+
+  .mc {
+    order: 1;
+  }
+
+  .dial-mech {
+    order: 2;
+  }
+
+  /* Message centre */
+  .mc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(1.25rem, 2.4vw, 2rem);
+    border: 1px solid var(--rule-strong);
+    border-radius: 1.75rem;
+    background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(10 14 17 / 0.96));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.05),
+      0 30px 60px -24px rgb(0 0 0 / 0.95);
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: clamp(2.6rem, 4.4vw, 4.25rem);
+    letter-spacing: -0.015em;
+    line-height: 0.95;
+  }
+
+  .mc-sub {
+    color: var(--muted);
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    max-width: 44ch;
+  }
+
+  .screen {
+    min-height: 13.5rem;
+    padding: 1rem 1.1rem;
+    border-radius: 0.9rem;
+    background: #060a0d;
+    border: 1px solid var(--rule);
+  }
+
+  .panel[hidden] {
+    display: none;
+  }
+
+  .panel {
+    animation: panel-in 0.45s var(--ease-out);
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0.25;
+      filter: blur(3px);
+    }
+  }
+
+  .panel .legend {
+    margin-bottom: 0.6rem;
+  }
+
+  .fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 1.25rem;
+    margin: 0;
+  }
+
+  .fields dt,
+  .readouts dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .fields dd,
+  .readouts dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .read {
+    color: var(--ink);
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  /* Ranked causes: billed by rank, the lead solid and lit, alternates dashed. */
+  .causes {
+    list-style: none;
+    counter-reset: cause;
+    margin: 0.7rem 0 0.8rem;
+    padding: 0;
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .causes li {
+    counter-increment: cause;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.15rem 0.6rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.4rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+
+  .causes li::before {
+    content: counter(cause);
+    color: var(--dim);
+  }
+
+  .causes li:nth-child(3) {
+    font-size: 0.9375rem;
+  }
+
+  .causes .lead {
+    border: 1px solid var(--sky);
+    font-size: 1.375rem;
+    color: var(--ink);
+    background: rgb(56 189 248 / 0.08);
+  }
+
+  .causes .lead::before {
+    color: var(--sky);
+  }
+
+  .readouts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+  }
+
+  .readouts .warn {
+    color: var(--amber);
+  }
+
+  /* Swipe deck */
+  .deck {
+    position: relative;
+    height: 7.25rem;
+  }
+
+  .mcard {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--rule-strong);
+    background: linear-gradient(135deg, #18212a, #0f151a);
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    transition: transform 0.35s var(--ease-out);
+  }
+
+  .mcard[hidden] {
+    display: none;
+  }
+
+  .mcard.dragging {
+    transition: none;
+    cursor: grabbing;
+  }
+
+  .mcard-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+
+  .mcard-shop {
+    color: var(--silver);
+  }
+
+  .mcard-tags {
+    color: var(--sky-soft);
+    font-size: 0.9375rem;
+  }
+
+  .deck-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+  }
+
+  .round {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--rule-strong);
+    background: var(--bezel);
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .round:hover {
+    color: var(--ink);
+    border-color: var(--muted);
+  }
+
+  .round.yes {
+    color: var(--sky);
+    border-color: var(--sky-deep);
+  }
+
+  .big {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    color: var(--sky);
+    line-height: 1;
+  }
+
+  .pair {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.9rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: var(--ink);
+  }
+
+  .pair :global(svg) {
+    color: var(--sky);
+  }
+
+  .note {
+    margin-top: 0.75rem;
+    color: var(--muted);
+  }
+
+  .bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .bubble {
+    max-width: 80%;
+    padding: 0.45rem 0.8rem;
+    border-radius: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .them {
+    background: #1a232b;
+    color: var(--ink);
+    border-bottom-left-radius: 0.2rem;
+  }
+
+  .me {
+    align-self: flex-end;
+    background: var(--sky);
+    color: var(--sky-ink);
+    border-bottom-right-radius: 0.2rem;
+  }
+
+  .quotes {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+  }
+
+  .quote {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0.7rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.4rem;
+    color: var(--muted);
+  }
+
+  .quote.lead {
+    border: 1px solid var(--sky);
+    color: var(--ink);
+  }
+
+  .quote b {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--sky);
+  }
+
+  .checks {
+    list-style: none;
+    margin: 0 0 0.9rem;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+    color: var(--ink);
+  }
+
+  .checks li {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .checks :global(svg) {
+    color: var(--sky);
+  }
+
+  .sealed {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .sealed p {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 0.5rem;
+    color: var(--ink);
+  }
+
+  .sealed :global(svg) {
+    color: var(--amber);
+  }
+
+  .demo-note {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--dim);
+  }
+
+  /* Ignition */
+  .ignition {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: -4.25rem;
+    position: relative;
+    pointer-events: none;
+  }
+
+  .ignition > * {
+    pointer-events: auto;
+  }
+
+  .ign-left {
+    justify-self: start;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .ign-right {
+    justify-self: end;
+    display: grid;
+    justify-items: end;
+    gap: 0.5rem;
+  }
+
+  .ign-offer {
+    font-size: 0.9375rem;
+  }
+
+  .mc-actions {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  @media (min-width: 1101px) {
+    .mc {
+      padding-bottom: 4.75rem;
+    }
+  }
+
+  /* Tablet: message centre on top, dials paired under it. */
+  @media (max-width: 1100px) {
+    .top ul {
+      display: none;
+    }
+
+    .cluster {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mc {
+      order: 0;
+      grid-column: 1 / -1;
+    }
+
+    .dial-owner {
+      order: 1;
+    }
+
+    .dial-mech {
+      order: 2;
+    }
+
+    .dial {
+      width: min(100%, 20rem);
+      justify-self: center;
+    }
+
+    .ignition {
+      margin-top: 1.5rem;
+    }
+
+    .ign-left {
+      grid-column: 1 / -1;
+      justify-self: center;
+      text-align: center;
+      order: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .lamps {
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    .lamp {
+      padding: 0.25rem 0;
+    }
+
+    .bulb {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    .bulb :global(svg) {
+      width: 18px;
+      height: 18px;
+    }
+
+    .lamp-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+    }
+
+    .cluster {
+      gap: 0.75rem;
+    }
+
+    .dial-title {
+      font-size: 0.875rem;
+      letter-spacing: 0.04em;
+    }
+
+    .dial-cta {
+      display: none;
+    }
+
+    .mc-actions {
+      display: flex;
+    }
+
+    .ign-right .btn {
+      display: none;
+    }
+
+    .ignition {
+      grid-template-columns: minmax(0, 1fr);
+      justify-items: center;
+    }
+
+    .ign-left,
+    .ign-right {
+      justify-self: center;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .readouts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fields {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .screen {
+      min-height: 15.5rem;
+    }
+  }
+</style>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('.hero');
+  if (hero) {
+    const lamps = [...hero.querySelectorAll<HTMLButtonElement>('.lamp')];
+    const panels = lamps.map((l) => document.getElementById(l.getAttribute('aria-controls')!)!);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let step = Number(hero.dataset.step ?? 1);
+    let timer: number | undefined;
+    let userTookControl = false;
+    let paused = false;
+
+    const render = () => {
+      hero.style.setProperty('--step', String(step));
+      lamps.forEach((lamp, i) => {
+        const selected = i === step;
+        lamp.dataset.state = i < step ? 'done' : selected ? 'on' : 'off';
+        lamp.setAttribute('aria-selected', String(selected));
+        lamp.tabIndex = selected ? 0 : -1;
+        panels[i].hidden = !selected;
+      });
+    };
+
+    const go = (i: number) => {
+      step = (i + lamps.length) % lamps.length;
+      render();
+    };
+
+    const tick = () => {
+      if (paused || userTookControl) return;
+      go(step + 1);
+    };
+
+    const start = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(tick, 4200);
+    };
+
+    lamps.forEach((lamp, i) => {
+      lamp.addEventListener('click', () => {
+        userTookControl = true;
+        go(i);
+      });
+      lamp.addEventListener('keydown', (e) => {
+        const delta = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        const jump = e.key === 'Home' ? 0 : e.key === 'End' ? lamps.length - 1 : null;
+        if (!delta && jump === null) return;
+        e.preventDefault();
+        userTookControl = true;
+        go(jump ?? step + delta);
+        lamps[step].focus();
+      });
+    });
+
+    // Pause the loop while someone is reading or interacting with the cluster.
+    const cluster = hero.querySelector<HTMLElement>('.cluster')!;
+    cluster.addEventListener('pointerenter', () => (paused = true));
+    cluster.addEventListener('pointerleave', () => (paused = false));
+    cluster.addEventListener('focusin', () => (paused = true));
+    cluster.addEventListener('focusout', () => (paused = false));
+    new IntersectionObserver(([entry]) => {
+      paused = !entry.isIntersecting;
+    }).observe(cluster);
+
+    // Swipe deck: drag or buttons. Right swipe makes the match.
+    const cards = [...hero.querySelectorAll<HTMLElement>('.mcard')];
+    let current = 0;
+    const showCard = (i: number) => {
+      current = i % cards.length;
+      cards.forEach((c, j) => {
+        c.hidden = j !== current;
+        c.style.transform = '';
+      });
+    };
+    const decide = (dir: 'left' | 'right') => {
+      userTookControl = true;
+      const card = cards[current];
+      card.style.transform = `translateX(${dir === 'right' ? 120 : -120}%) rotate(${dir === 'right' ? 12 : -12}deg)`;
+      window.setTimeout(() => {
+        if (dir === 'right') {
+          showCard(0);
+          go(3);
+        } else {
+          showCard(current + 1);
+        }
+      }, 320);
+    };
+    hero.querySelectorAll<HTMLButtonElement>('[data-swipe]').forEach((b) =>
+      b.addEventListener('click', () => decide(b.dataset.swipe as 'left' | 'right')),
+    );
+    cards.forEach((card) => {
+      let x0 = 0;
+      let dx = 0;
+      card.addEventListener('pointerdown', (e) => {
+        x0 = e.clientX;
+        dx = 0;
+        card.setPointerCapture(e.pointerId);
+        card.classList.add('dragging');
+      });
+      card.addEventListener('pointermove', (e) => {
+        if (!card.classList.contains('dragging')) return;
+        dx = e.clientX - x0;
+        card.style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
+      });
+      const end = () => {
+        if (!card.classList.contains('dragging')) return;
+        card.classList.remove('dragging');
+        if (Math.abs(dx) > 80) decide(dx > 0 ? 'right' : 'left');
+        else card.style.transform = '';
+      };
+      card.addEventListener('pointerup', end);
+      card.addEventListener('pointercancel', end);
+    });
+
+    render();
+
+    if (!reduced) {
+      // Ignition: bulb check with needles swept to the stop, then the loop runs from Post.
+      hero.classList.add('bulb-check');
+      window.setTimeout(() => {
+        hero.classList.remove('bulb-check');
+        go(0);
+        start();
+      }, 1100);
+    }
+  }
+</script>
