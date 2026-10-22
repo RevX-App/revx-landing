@@ -122,10 +122,10 @@ html {
 .legend {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: 0.14em;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--muted);
 }
 
 /* Primary action: backlit push button. */
@@ -236,8 +236,8 @@ html {
   color: var(--amber);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 

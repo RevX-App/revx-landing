@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T00:00:00Z",
+  "generatedAt": "2026-10-22T12:00:00Z",
   "title": "Design System: RevX",
   "extensions": {
     "colorMeta": {
@@ -11,52 +11,57 @@
       "chip-fill": { "role": "neutral", "displayName": "Chip Fill", "canonical": "#1a232b", "tonalRamp": ["#07090b", "#0d1216", "#1a232b", "#2c3740", "#4a5661", "#7a8590", "#9aa3ad", "#eceff1"] },
       "rule": { "role": "neutral", "displayName": "Rule", "canonical": "#1e272e", "tonalRamp": ["#07090b", "#0d1216", "#10161b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
       "rule-strong": { "role": "neutral", "displayName": "Strong Rule", "canonical": "#2c3740", "tonalRamp": ["#07090b", "#0d1216", "#10161b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
-      "unlit": { "role": "neutral", "displayName": "Unlit", "canonical": "#2a333b", "tonalRamp": ["#07090b", "#0d1216", "#1e272e", "#2a333b", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#eceff1", "tonalRamp": ["#07090b", "#0d1216", "#10161b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
-      "silver": { "role": "neutral", "displayName": "Silver", "canonical": "#c8c8c8", "tonalRamp": ["#1f1f1f", "#383838", "#525252", "#6e6e6e", "#8c8c8c", "#aaaaaa", "#c8c8c8", "#ececec"] },
-      "muted": { "role": "neutral", "displayName": "Muted", "canonical": "#9aa3ad", "tonalRamp": ["#07090b", "#0d1216", "#10161b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
-      "dim": { "role": "neutral", "displayName": "Dim", "canonical": "#7a8590", "tonalRamp": ["#07090b", "#0d1216", "#10161b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#eceff1"] },
-      "sky": { "role": "primary", "displayName": "Sky Backlight", "canonical": "#38bdf8", "tonalRamp": ["#04131c", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc"] },
-      "sky-deep": { "role": "primary", "displayName": "Deep Sky", "canonical": "#0ea5e9", "tonalRamp": ["#04131c", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc"] },
-      "sky-soft": { "role": "primary", "displayName": "Soft Sky", "canonical": "#7dd3fc", "tonalRamp": ["#04131c", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc"] },
-      "sky-ink": { "role": "primary", "displayName": "Sky Ink", "canonical": "#04131c", "tonalRamp": ["#04131c", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc"] },
-      "amber": { "role": "secondary", "displayName": "Amber Tell-tale", "canonical": "#f5a524", "tonalRamp": ["#1d1203", "#78350f", "#92400e", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
-      "amber-glow": { "role": "secondary", "displayName": "Amber Glow", "canonical": "#ffd27a", "tonalRamp": ["#1d1203", "#78350f", "#92400e", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
-      "amber-deep": { "role": "secondary", "displayName": "Amber Deep", "canonical": "#d98a0b", "tonalRamp": ["#1d1203", "#78350f", "#92400e", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
-      "amber-ink": { "role": "secondary", "displayName": "Amber Ink", "canonical": "#1d1203", "tonalRamp": ["#1d1203", "#78350f", "#92400e", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
-      "red": { "role": "tertiary", "displayName": "Stop Red", "canonical": "#f0524f", "tonalRamp": ["#2a0606", "#7f1d1d", "#991b1b", "#b91c1c", "#dc2626", "#f0524f", "#f87171", "#fecaca"] }
+      "unlit": { "role": "neutral", "displayName": "Unlit", "canonical": "#2a333b", "tonalRamp": ["#07090b", "#0d1216", "#1a232b", "#2a333b", "#4a5661", "#7a8590", "#9aa3ad", "#eceff1"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#eceff1", "tonalRamp": ["#07090b", "#1e272e", "#2c3740", "#7a8590", "#9aa3ad", "#c8c8c8", "#dfe3e6", "#eceff1"] },
+      "silver": { "role": "neutral", "displayName": "Silver", "canonical": "#c8c8c8", "tonalRamp": ["#1c1c1c", "#333333", "#4d4d4d", "#6b6b6b", "#8f8f8f", "#adadad", "#c8c8c8", "#ececec"] },
+      "muted": { "role": "neutral", "displayName": "Muted", "canonical": "#9aa3ad", "tonalRamp": ["#07090b", "#1e272e", "#2c3740", "#4a5661", "#7a8590", "#9aa3ad", "#c4cad0", "#eceff1"] },
+      "dim": { "role": "neutral", "displayName": "Dim", "canonical": "#7a8590", "tonalRamp": ["#07090b", "#1e272e", "#2c3740", "#4a5661", "#7a8590", "#9aa3ad", "#c4cad0", "#eceff1"] },
+      "sky": { "role": "primary", "displayName": "Sky Backlight", "canonical": "#38bdf8", "tonalRamp": ["#04131c", "#082f49", "#0c4a6e", "#0369a1", "#0ea5e9", "#38bdf8", "#7dd3fc", "#e0f2fe"] },
+      "sky-deep": { "role": "primary", "displayName": "Deep Sky", "canonical": "#0ea5e9", "tonalRamp": ["#04131c", "#082f49", "#0c4a6e", "#0369a1", "#0ea5e9", "#38bdf8", "#7dd3fc", "#e0f2fe"] },
+      "sky-soft": { "role": "primary", "displayName": "Soft Sky", "canonical": "#7dd3fc", "tonalRamp": ["#04131c", "#082f49", "#0c4a6e", "#0369a1", "#0ea5e9", "#38bdf8", "#7dd3fc", "#e0f2fe"] },
+      "sky-ink": { "role": "primary", "displayName": "Sky Ink", "canonical": "#04131c", "tonalRamp": ["#04131c", "#082f49", "#0c4a6e", "#0369a1", "#0ea5e9", "#38bdf8", "#7dd3fc", "#e0f2fe"] },
+      "amber": { "role": "secondary", "displayName": "Amber Tell-tale", "canonical": "#f5a524", "tonalRamp": ["#1d1203", "#451a03", "#78350f", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
+      "amber-glow": { "role": "secondary", "displayName": "Amber Glow", "canonical": "#ffd27a", "tonalRamp": ["#1d1203", "#451a03", "#78350f", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
+      "amber-deep": { "role": "secondary", "displayName": "Amber Deep", "canonical": "#d98a0b", "tonalRamp": ["#1d1203", "#451a03", "#78350f", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
+      "amber-ink": { "role": "secondary", "displayName": "Amber Ink", "canonical": "#1d1203", "tonalRamp": ["#1d1203", "#451a03", "#78350f", "#b45309", "#d98a0b", "#f5a524", "#ffd27a", "#fef3c7"] },
+      "red": { "role": "tertiary", "displayName": "Stop Red", "canonical": "#f0524f", "tonalRamp": ["#2a0a0a", "#5c1514", "#8f1f1d", "#c2302d", "#f0524f", "#f47d7b", "#f9aaa8", "#fde4e3"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The single H1, inside the message centre." },
-      "headline": { "displayName": "Headline", "purpose": "Section H2s; the closing H2 scales up to clamp(2.5rem, 6vw, 5.5rem)." },
-      "title": { "displayName": "Title", "purpose": "H3s, spec-sheet terms, job and lead-cause titles." },
-      "readout": { "displayName": "Readout", "purpose": "Numerals and values on a readout: severity, cost range, distance band, trip values." },
-      "lede": { "displayName": "Lede", "purpose": "Paragraph under a headline, muted, 52ch max." },
-      "body": { "displayName": "Body", "purpose": "Prose in silver or muted, 52 to 70ch, tabular numerals on." },
-      "button": { "displayName": "Button", "purpose": "Every button label, uppercase." },
-      "label": { "displayName": "Label", "purpose": "Uppercase legends printed on instruments: lamp names, dial CTAs, readout terms, stage names. Never section kickers." }
+      "display": { "displayName": "Display", "purpose": "The single H1 in the hero copy column." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2s on one left edge." },
+      "title": { "displayName": "Title", "purpose": "Stage H3s in How it works." },
+      "panel-heading": { "displayName": "Panel Heading", "purpose": "Headings inside an instrument: demo step title, trust H3s." },
+      "readout": { "displayName": "Readout", "purpose": "Stat values and the lead verdict." },
+      "reading-lead": { "displayName": "Reading Lead", "purpose": "Lead cause, match pair, mechanic job title." },
+      "value": { "displayName": "Value", "purpose": "Quote prices and spec-sheet terms." },
+      "item": { "displayName": "Item", "purpose": "Roadmap lamp names and roster names." },
+      "reading": { "displayName": "Reading", "purpose": "Alternate causes and trace step names." },
+      "lede": { "displayName": "Lede", "purpose": "Paragraph under a section headline; muted, 52ch." },
+      "body": { "displayName": "Body", "purpose": "Prose in silver or muted." },
+      "small": { "displayName": "Small", "purpose": "Captions, panel titles, chips, notes, footer." },
+      "button": { "displayName": "Button", "purpose": "Primary button labels and the quiet hero link." },
+      "button-compact": { "displayName": "Button Compact", "purpose": "Header CTA and the demo's Next." },
+      "nav-label": { "displayName": "Nav Label", "purpose": "Header lamp labels and the menu toggle." },
+      "label": { "displayName": "Label", "purpose": "Printed legends on readouts and placeholder tags; the smallest text role." }
     },
     "shadows": [
-      { "name": "panel-glass", "value": "inset 0 1px 0 rgb(255 255 255 / 0.05), 0 40px 80px -30px rgb(0 0 0 / 0.95)", "purpose": "Every below-the-fold instrument panel." },
-      { "name": "message-centre", "value": "inset 0 1px 0 rgb(255 255 255 / 0.05), 0 30px 60px -24px rgb(0 0 0 / 0.95)", "purpose": "The hero message centre." },
-      { "name": "dial-bezel", "value": "inset 0 0 0 10px rgb(7 9 11 / 0.7), 0 24px 50px -20px rgb(0 0 0 / 0.9)", "purpose": "Round gauges." },
-      { "name": "start-button", "value": "inset 0 0 0 6px #07090b, 0 18px 36px -12px rgb(0 0 0 / 0.95)", "purpose": "Recessed ring inside the start button's sky gradient border." },
-      { "name": "backlit-key", "value": "inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 16px -6px rgb(0 0 0 / 0.8)", "purpose": "Primary button only." }
+      { "name": "panel-glass", "value": "inset 0 1px 0 rgb(255 255 255 / 0.05), 0 24px 36px -24px rgb(0 0 0 / 0.9)", "purpose": "Every instrument panel below the hero." },
+      { "name": "message-centre", "value": "inset 0 1px 0 rgb(255 255 255 / 0.05), 0 30px 60px -24px rgb(0 0 0 / 0.95)", "purpose": "The hero instrument, lifted further forward." },
+      { "name": "menu-sheet", "value": "0 24px 50px -20px rgb(0 0 0 / 0.95)", "purpose": "The dropdown section menu." },
+      { "name": "backlit-key", "value": "inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 16px -6px rgb(0 0 0 / 0.8)", "purpose": "Primary button only." },
+      { "name": "start-button", "value": "inset 0 0 0 6px #07090b, 0 18px 36px -12px rgb(0 0 0 / 0.95)", "purpose": "Recessed ring of the round start button." }
     ],
     "motion": [
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The one easing for every transition." },
-      { "name": "button", "value": "0.2s", "purpose": "Button colour, border and press transitions; start button scale." },
-      { "name": "lamp", "value": "0.35s", "purpose": "Lamp bulb lighting and label colour; swipe card return." },
-      { "name": "seal", "value": "0.4s", "purpose": "Blind-review seals lighting together." },
-      { "name": "panel-in", "value": "0.45s, from opacity 0.25 and blur(3px)", "purpose": "Message-centre panel change." },
-      { "name": "needle", "value": "0.9s", "purpose": "Dial needle sweep to the active step." },
-      { "name": "bulb-check", "value": "1100ms", "purpose": "Ignition: all lamps amber, needles at the stop, then the loop starts. Skipped under reduced motion." },
-      { "name": "auto-advance", "value": "4200ms", "purpose": "Lamp loop interval; pauses on hover, focus, off-screen and user control; never starts under reduced motion." }
+      { "name": "press", "value": "0.2s", "purpose": "Button colour, border and press transitions." },
+      { "name": "lamp", "value": "0.3s", "purpose": "Bulb fill, rim and glyph changes; progress segments." },
+      { "name": "screen-settle", "value": "0.4s, from opacity 0.3 and blur(3px)", "purpose": "A demo screen settling in after a click." },
+      { "name": "card-swipe", "value": "0.35s transform", "purpose": "Swipe card return or fling." }
     ],
     "breakpoints": [
-      { "name": "mobile", "value": "640px" },
-      { "name": "sections-stack", "value": "1000px" },
-      { "name": "cluster-stack", "value": "1100px" }
+      { "name": "header", "value": "1100px", "purpose": "Lamp nav becomes menu toggle plus progress strip." },
+      { "name": "stack", "value": "1000px", "purpose": "Every split stacks to one column." },
+      { "name": "phone", "value": "640px", "purpose": "Header CTA hides; grids tighten; seal sequence turns vertical." }
     ]
   },
   "components": [
@@ -64,117 +69,128 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Backlit pill for the primary action (Open RevX, Join as a founding mechanic).",
+      "description": "Backlit sky push button; the main action.",
       "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Open RevX</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 3rem; padding: 0.7rem 1.4rem; border: 1px solid transparent; border-radius: 999px; background: none; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1.125rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; } .ds-btn-primary { background: var(--sky, #38bdf8); color: var(--sky-ink, #04131c); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 16px -6px rgb(0 0 0 / 0.8); } .ds-btn-primary:hover { background: var(--sky-soft, #7dd3fc); color: var(--sky-ink, #04131c); }"
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 3rem; padding: 0.7rem 1.4rem; border: 1px solid transparent; border-radius: 999px; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1.125rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary { background: var(--sky, #38bdf8); color: var(--sky-ink, #04131c); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 16px -6px rgb(0 0 0 / 0.8); } .ds-btn-primary:hover { background: var(--sky-soft, #7dd3fc); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Secondary pill for the mechanic path and in-panel toggles.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">I'm a mechanic</a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0.7rem 1.4rem; border: 1px solid var(--rule-strong, #2c3740); border-radius: 999px; background: none; color: var(--ink, #eceff1); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1.125rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: var(--sky, #38bdf8); } .ds-btn-ghost:active { transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; }"
+      "description": "Outlined compact button; the demo's Next.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Next: Swipe <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.6em; min-height: 2.75rem; padding: 0.7rem 1.4rem; border: 1px solid var(--rule-strong, #2c3740); border-radius: 999px; background: none; color: var(--ink, #eceff1); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: var(--sky, #38bdf8); } .ds-btn-ghost:active { transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; }"
     },
     {
-      "name": "Start Button",
-      "kind": "custom",
-      "refersTo": "start-button",
-      "description": "The round backlit ignition: the page's signature primary action.",
-      "html": "<a class=\"ds-start\" href=\"#\"><span class=\"ds-start-main\">Open</span><span class=\"ds-start-sub\">RevX</span></a>",
-      "css": ".ds-start { display: grid; place-content: center; width: 8.5rem; height: 8.5rem; border-radius: 50%; background: radial-gradient(circle at 50% 30%, #16212a, #0a0f13 70%) padding-box, linear-gradient(160deg, var(--sky-soft, #7dd3fc), var(--sky-deep, #0ea5e9)) border-box; border: 3px solid transparent; box-shadow: inset 0 0 0 6px #07090b, 0 18px 36px -12px rgb(0 0 0 / 0.95); text-align: center; text-decoration: none; transition: transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-start:hover { transform: scale(1.03); } .ds-start:active { transform: scale(0.98); } .ds-start:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; } .ds-start-main { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 800; font-size: 2rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink, #eceff1); line-height: 1; } .ds-start-sub { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sky, #38bdf8); }"
+      "name": "Lamp Header",
+      "kind": "nav",
+      "refersTo": "lamp-on",
+      "description": "Section lamps as navigation and scroll progress: done, on, off.",
+      "html": "<nav class=\"ds-lampnav\"><a href=\"#\" data-state=\"done\"><span class=\"ds-bulb\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 4h8v3H8zM6 5.5H5v15h14v-15h-1M8.5 12h7M8.5 16h4.5\"/></svg></span>How it works</a><a href=\"#\" data-state=\"on\" aria-current=\"location\"><span class=\"ds-bulb\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3\"/></svg></span>Trust</a><a href=\"#\" data-state=\"off\"><span class=\"ds-bulb\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 4.5a4 4 0 0 0-4.6 5.4L4 15.8 8.2 20l5.9-5.9a4 4 0 0 0 5.4-4.6l-2.6 2.6-2.8-.6-.6-2.8z\"/></svg></span>Mechanics</a></nav>",
+      "css": ".ds-lampnav { display: flex; gap: 1.25rem; padding: 0.75rem 1rem; background: rgb(7 9 11 / 0.94); border-bottom: 1px solid var(--rule, #1e272e); } .ds-lampnav a { display: flex; align-items: center; gap: 0.55rem; min-height: 2.75rem; padding-inline: 0.4rem; color: var(--muted, #9aa3ad); text-decoration: none; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.08em; text-transform: uppercase; } .ds-lampnav a:hover, .ds-lampnav a[data-state='on'] { color: var(--ink, #eceff1); } .ds-lampnav a:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; border-radius: 4px; } .ds-bulb { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; border: 1.5px solid var(--unlit, #2a333b); background: var(--bezel, #0d1216); color: var(--dim, #7a8590); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s cubic-bezier(0.16,1,0.3,1); } [data-state='done'] .ds-bulb { border-color: var(--sky-deep, #0ea5e9); color: var(--sky, #38bdf8); } [data-state='on'] .ds-bulb { border-color: var(--sky-soft, #7dd3fc); background: radial-gradient(circle at 50% 35%, #7dd3fc, #38bdf8 60%, #0ea5e9); color: var(--sky-ink, #04131c); }"
     },
     {
-      "name": "Tell-tale Lamp",
-      "kind": "custom",
-      "refersTo": "lamp-lit",
-      "description": "Circular bulb over a printed label, in its four states: off, done, on, warning on.",
-      "html": "<div class=\"ds-lamps\"><button class=\"ds-lamp\" data-state=\"done\"><span class=\"ds-bulb\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 4h8v3H8zM6 5.5H5v15h14v-15h-1M8.5 12h7M8.5 16h4.5\"/></svg></span><span class=\"ds-lamp-label\">Post</span></button><button class=\"ds-lamp\" data-state=\"on\" data-kind=\"warn\"><span class=\"ds-bulb\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 10v5.5M2.5 12.75h2.5M5 9h2.5V7h3.5V5h4.5M13.25 5v2M11 7h6.5l2 2.5H21.5v6.5h-2l-2 2.5H9.5L7.5 16H5V9\"/></svg></span><span class=\"ds-lamp-label\">Diagnose</span></button><button class=\"ds-lamp\" data-state=\"on\"><span class=\"ds-bulb\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 16a5 5 0 1 1 0-8M15 8a5 5 0 1 1 0 8M8.5 12h7\"/></svg></span><span class=\"ds-lamp-label\">Match</span></button><button class=\"ds-lamp\" data-state=\"off\"><span class=\"ds-bulb\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z\"/></svg></span><span class=\"ds-lamp-label\">Review</span></button></div>",
-      "css": ".ds-lamps { display: flex; gap: 1.5rem; } .ds-lamp { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; padding: 0.35rem; background: none; border: 0; color: var(--dim, #7a8590); cursor: pointer; font: inherit; } .ds-lamp:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; border-radius: 4px; } .ds-bulb { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1.5px solid var(--unlit, #2a333b); color: var(--unlit, #2a333b); background: var(--bezel, #0d1216); transition: background-color 0.35s cubic-bezier(0.16,1,0.3,1), color 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-lamp-label { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-lamp:hover .ds-bulb { border-color: var(--dim, #7a8590); color: var(--dim, #7a8590); } .ds-lamp[data-state='done'] .ds-bulb { border-color: var(--sky-deep, #0ea5e9); color: var(--sky, #38bdf8); } .ds-lamp[data-state='done'] .ds-lamp-label { color: var(--muted, #9aa3ad); } .ds-lamp[data-state='on'] .ds-bulb { background: radial-gradient(circle at 50% 35%, var(--sky-soft, #7dd3fc), var(--sky, #38bdf8) 60%, var(--sky-deep, #0ea5e9)); border-color: var(--sky-soft, #7dd3fc); color: var(--sky-ink, #04131c); } .ds-lamp[data-state='on'] .ds-lamp-label { color: var(--sky, #38bdf8); } .ds-lamp[data-state='on'][data-kind='warn'] .ds-bulb { background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber, #f5a524) 60%, #d98a0b); border-color: #ffd27a; color: var(--amber-ink, #1d1203); } .ds-lamp[data-state='on'][data-kind='warn'] .ds-lamp-label { color: var(--amber, #f5a524); }"
-    },
-    {
-      "name": "Unwired Lamp",
-      "kind": "custom",
-      "refersTo": "lamp-unlit",
-      "description": "Roadmap item: a dashed, dim lamp with no wire behind it.",
-      "html": "<div class=\"ds-unwired\"><span class=\"ds-dead\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18v12H3zM3 10h18M7 14.5h4\"/></svg></span><span class=\"ds-dead-label\">Payments &amp; escrow</span></div>",
-      "css": ".ds-unwired { display: flex; flex-direction: column; align-items: center; gap: 0.7rem; text-align: center; width: 8rem; } .ds-dead { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 50%; border: 1.5px dashed var(--unlit, #2a333b); color: var(--dim, #7a8590); background: var(--bezel, #0d1216); } .ds-dead-label { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.875rem; line-height: 1.25; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim, #7a8590); }"
-    },
-    {
-      "name": "Ranked Readings",
-      "kind": "custom",
-      "refersTo": "message-screen",
-      "description": "Causes inside an LCD screen: lead solid, lit and larger; alternates dashed, muted and stepping down.",
-      "html": "<div class=\"ds-screen\"><ol class=\"ds-causes\"><li class=\"ds-lead\">Worn front brake pads</li><li>Scored brake rotor</li><li>Sticking caliper slide pin</li></ol></div>",
-      "css": ".ds-screen { padding: 1rem 1.1rem; border-radius: 0.9rem; background: #060a0d; border: 1px solid var(--rule, #1e272e); } .ds-causes { list-style: none; counter-reset: cause; margin: 0; padding: 0; display: grid; gap: 0.3rem; } .ds-causes li { counter-increment: cause; display: flex; align-items: baseline; gap: 0.6rem; padding: 0.15rem 0.6rem; border: 1px dashed var(--rule-strong, #2c3740); border-radius: 0.4rem; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 1rem; color: var(--muted, #9aa3ad); } .ds-causes li::before { content: counter(cause); color: var(--dim, #7a8590); } .ds-causes li:nth-child(3) { font-size: 0.9375rem; } .ds-causes .ds-lead { border: 1px solid var(--sky, #38bdf8); font-size: 1.375rem; color: var(--ink, #eceff1); background: rgb(56 189 248 / 0.08); } .ds-causes .ds-lead::before { color: var(--sky, #38bdf8); }"
+      "name": "Menu Toggle and Progress Strip",
+      "kind": "nav",
+      "refersTo": "menu-toggle",
+      "description": "At 1100px and below: a pill naming the current section over a five-segment progress strip.",
+      "html": "<div class=\"ds-menubar\"><button class=\"ds-menu\" type=\"button\">Trust <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"><path d=\"M4 7h16M4 12h16M4 17h16\"/></svg></button><div class=\"ds-progress\"><span class=\"lit\"></span><span class=\"lit\"></span><span></span><span></span><span></span></div></div>",
+      "css": ".ds-menubar { display: grid; gap: 0.75rem; justify-items: end; width: 20rem; } .ds-menu { display: flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; padding-inline: 0.9rem; border: 1px solid var(--rule-strong, #2c3740); border-radius: 999px; background: none; color: var(--ink, #eceff1); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; } .ds-menu:hover { border-color: var(--sky, #38bdf8); } .ds-menu:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; } .ds-progress { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; height: 3px; width: 100%; } .ds-progress span { background: var(--unlit, #2a333b); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-progress .lit { background: var(--sky, #38bdf8); }"
     },
     {
       "name": "Instrument Panel",
       "kind": "card",
       "refersTo": "instrument-panel",
-      "description": "Glass bezel panel with a readout grid and an amber LCD strip.",
-      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-body\"><dl class=\"ds-stats\"><div><dt>Severity</dt><dd class=\"ds-warn\">High</dd></div><div><dt>Confidence</dt><dd>High</dd></div><div><dt>Cost range</dt><dd>$180–$350</dd></div></dl></div><p class=\"ds-lcd\">Not a substitute for a hands-on inspection</p></div>",
-      "css": ".ds-panel { border: 1px solid var(--rule-strong, #2c3740); border-radius: 1.75rem; overflow: hidden; background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(8 12 15 / 0.98)); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05), 0 40px 80px -30px rgb(0 0 0 / 0.95); color: var(--silver, #c8c8c8); } .ds-panel-body { padding: clamp(1.25rem, 3vw, 2.25rem); } .ds-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; } .ds-stats dt { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim, #7a8590); } .ds-stats dd { margin: 0.15rem 0 0; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: clamp(1.375rem, 2vw, 1.75rem); font-variant-numeric: tabular-nums; color: var(--ink, #eceff1); } .ds-stats .ds-warn { color: var(--amber, #f5a524); } .ds-lcd { margin: 0; padding: 1rem clamp(1.5rem, 3vw, 2.5rem); border-top: 1px solid var(--rule-strong, #2c3740); background: #060a0d; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber, #f5a524); }"
+      "description": "Glass panel with a muted title and a stat readout row.",
+      "html": "<figure class=\"ds-panel\"><p class=\"ds-panel-title\">Mia's post · example</p><dl class=\"ds-stats\"><div><dt>Severity</dt><dd>Medium</dd></div><div><dt>Urgency</dt><dd class=\"warn\">See someone soon</dd></div><div><dt>Cost range</dt><dd>$120–$300</dd></div></dl></figure>",
+      "css": ".ds-panel { margin: 0; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--rule-strong, #2c3740); border-radius: 1.5rem; background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(8 12 15 / 0.98)); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05), 0 24px 36px -24px rgb(0 0 0 / 0.9); color: var(--silver, #c8c8c8); font-family: var(--font-body, 'Barlow', sans-serif); } .ds-panel-title { margin: 0 0 1rem; color: var(--muted, #9aa3ad); font-size: 0.9375rem; } .ds-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; padding-top: 1.1rem; border-top: 1px solid var(--rule, #1e272e); } .ds-stats dt { color: var(--muted, #9aa3ad); font-size: 0.9375rem; } .ds-stats dd { margin: 0.1rem 0 0; font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: clamp(1.25rem, 1.8vw, 1.5rem); color: var(--ink, #eceff1); font-variant-numeric: tabular-nums; } .ds-stats .warn { color: var(--amber, #f5a524); }"
     },
     {
-      "name": "Intake Chip",
+      "name": "Ranked Readings",
+      "kind": "custom",
+      "refersTo": "reading-row-lead",
+      "description": "Lead solid and lit, alternates dashed and muted, ruled-out struck in dim.",
+      "html": "<ol class=\"ds-readings\"><li class=\"lead\"><span class=\"c\">Ignition coil misfire</span><span class=\"v\">Fits the uneven idle in the audio</span></li><li><span class=\"c\">Vacuum leak</span><span class=\"v\">Possible</span></li><li class=\"out\"><span class=\"c\">Weak battery</span><span class=\"v\">Ruled out: starts normally</span></li></ol>",
+      "css": ".ds-readings { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; font-family: var(--font-body, 'Barlow', sans-serif); } .ds-readings li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.2rem 1rem; padding: 0.4rem 0.9rem; border: 1px dashed var(--rule-strong, #2c3740); border-radius: 0.5rem; } .ds-readings .c { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 1.0625rem; color: var(--muted, #9aa3ad); } .ds-readings .v { font-size: 0.9375rem; color: var(--muted, #9aa3ad); } .ds-readings .lead { padding-block: 0.6rem; border: 1px solid var(--sky, #38bdf8); background: rgb(56 189 248 / 0.08); } .ds-readings .lead .c { font-size: clamp(1.25rem, 1.8vw, 1.5rem); color: var(--ink, #eceff1); } .ds-readings .lead .v { color: var(--sky, #38bdf8); } .ds-readings .out .c { text-decoration: line-through; color: var(--dim, #7a8590); }"
+    },
+    {
+      "name": "Chips",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Filled pill for facts the user supplied; dashed row chip for hypotheses.",
-      "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">Grinding noise</li><li class=\"ds-chip\">Front left</li><li class=\"ds-hyp\">Scored brake rotor</li></ul>",
-      "css": ".ds-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; } .ds-chip { padding: 0.2rem 0.65rem; border-radius: 999px; background: #1a232b; color: var(--ink, #eceff1); font-size: 0.9375rem; } .ds-hyp { padding: 0.2rem 0.65rem; border: 1px dashed var(--rule-strong, #2c3740); border-radius: 0.4rem; color: var(--muted, #9aa3ad); font-size: 0.9375rem; }"
+      "description": "Filled pill for supplied facts; dashed row-tight chip for hypotheses.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-chip\">Check-engine light on</span><span class=\"ds-chip\">1 photo</span><span class=\"ds-chip-hyp\">Vacuum leak</span></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; font-family: var(--font-body, 'Barlow', sans-serif); } .ds-chip, .ds-chip-hyp { padding: 0.2rem 0.7rem; font-size: 0.9375rem; } .ds-chip { border-radius: 999px; background: var(--chip-fill, #1a232b); color: var(--ink, #eceff1); } .ds-chip-hyp { border: 1px dashed var(--rule-strong, #2c3740); border-radius: 0.4rem; color: var(--muted, #9aa3ad); }"
     },
     {
-      "name": "Navigation",
-      "kind": "nav",
-      "refersTo": "button-primary",
-      "description": "Wordmark left, condensed caps anchors centre, compact primary button right.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\"><span class=\"ds-rev\">Rev</span><span class=\"ds-x\">X</span></a><ul><li><a href=\"#\">How it works</a></li><li><a href=\"#\">Diagnosis</a></li><li><a href=\"#\">Mechanics</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Open RevX</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1rem; } .ds-wordmark { display: inline-flex; align-items: baseline; font-family: var(--font-body, 'Barlow', sans-serif); font-size: 1.9rem; line-height: 1; letter-spacing: -0.03em; text-decoration: none; } .ds-rev { font-weight: 700; color: var(--silver, #c8c8c8); } .ds-x { font-weight: 800; color: var(--sky, #38bdf8); } .ds-nav ul { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; } .ds-nav ul a { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #9aa3ad); text-decoration: none; } .ds-nav ul a:hover { color: var(--ink, #eceff1); } .ds-nav a:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; border-radius: 4px; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 2.6rem; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--sky, #38bdf8); color: var(--sky-ink, #04131c); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 6px 16px -6px rgb(0 0 0 / 0.8); transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-nav-cta:hover { background: var(--sky-soft, #7dd3fc); }"
+      "name": "Review-release Lamps",
+      "kind": "custom",
+      "refersTo": "lamp-on",
+      "description": "Two released reviews lit sky, the third sealed with a dashed rim and amber lock.",
+      "html": "<div class=\"ds-release\"><span class=\"ds-rlamp on\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"><path d=\"m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z\"/></svg></span><span class=\"ds-rlamp on\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linejoin=\"round\"><path d=\"m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z\"/></svg></span><span class=\"ds-rlamp\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3\"/></svg></span><p>Rating stays hidden until the third review is released</p></div>",
+      "css": ".ds-release { display: flex; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-body, 'Barlow', sans-serif); } .ds-release p { flex-basis: 100%; margin: 0.6rem 0 0; color: var(--muted, #9aa3ad); font-size: 0.9375rem; } .ds-rlamp { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1.5px dashed var(--unlit, #2a333b); background: var(--bezel, #0d1216); color: var(--amber, #f5a524); } .ds-rlamp.on { border: 1.5px solid var(--sky-soft, #7dd3fc); background: radial-gradient(circle at 50% 35%, #7dd3fc, #38bdf8 60%, #0ea5e9); color: var(--sky-ink, #04131c); }"
+    },
+    {
+      "name": "LCD Strip",
+      "kind": "custom",
+      "refersTo": "lcd-strip",
+      "description": "Screen band at the base of a panel carrying the AI disclaimer in amber.",
+      "html": "<p class=\"ds-lcd\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 10v5.5M2.5 12.75h2.5M5 9h2.5V7h3.5V5h4.5M13.25 5v2M11 7h6.5l2 2.5H21.5v6.5h-2l-2 2.5H9.5L7.5 16H5V9\"/></svg><span>Every AI read comes with a confidence level and the app's own disclaimer.</span></p>",
+      "css": ".ds-lcd { display: flex; align-items: center; gap: 0.75rem; margin: 0; padding: 1rem clamp(1.5rem, 3vw, 2.5rem); border-top: 1px solid var(--rule-strong, #2c3740); background: var(--lcd-screen, #060a0d); color: var(--amber, #f5a524); font-family: var(--font-body, 'Barlow', sans-serif); font-weight: 500; } .ds-lcd svg { flex: none; }"
+    },
+    {
+      "name": "Not-wired Lamp",
+      "kind": "custom",
+      "refersTo": "lamp-not-wired",
+      "description": "Roadmap entry: dashed dim lamp beside a muted name.",
+      "html": "<ul class=\"ds-unwired\"><li><span class=\"ds-dead\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18v12H3zM3 10h18M7 14.5h4\"/></svg></span>Payments &amp; escrow</li></ul>",
+      "css": ".ds-unwired { list-style: none; margin: 0; padding: 0; } .ds-unwired li { display: flex; align-items: center; gap: 0.8rem; color: var(--muted, #9aa3ad); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 1.125rem; } .ds-dead { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1.5px dashed var(--dim, #7a8590); background: var(--bezel, #0d1216); color: var(--dim, #7a8590); }"
     },
     {
       "name": "Placeholder Tag",
       "kind": "chip",
       "refersTo": "placeholder-tag",
-      "description": "Dashed amber marker for content that must be replaced before launch.",
-      "html": "<p class=\"ds-placeholder\">Placeholder data · replace before launch</p>",
-      "css": ".ds-placeholder { display: inline-block; margin: 0; padding: 0.15rem 0.55rem; border: 1px dashed var(--amber, #f5a524); border-radius: 4px; color: var(--amber, #f5a524); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }"
+      "description": "Dashed amber caps marking content to replace before launch.",
+      "html": "<p class=\"ds-ph\">Placeholder · replace before launch</p>",
+      "css": ".ds-ph { display: inline-block; margin: 0; padding: 0.15rem 0.55rem; border: 1px dashed var(--amber, #f5a524); border-radius: 4px; color: var(--amber, #f5a524); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; }"
     }
   ],
   "narrative": {
     "northStar": "The Night-Lit Instrument Cluster",
-    "overview": "Every RevX surface is a dashboard seen from the driver's seat at night: smoked black glass, thin bezel rules, dial arcs with tick scales, and LCD message-centre screens, lit by one sky-blue backlight. Content is presented as readouts, not marketing blocks. A step in a process is a tell-tale lamp; a ranked list is a set of readings where the lead is lit and the alternates sit dashed and dim; something not built yet is a lamp with no wire behind it.\n\nThe system runs on a four-state vocabulary that every component speaks: **unlit** (bezel fill, dark glyph), **lit** (sky gradient bulb or solid sky rule), **warning** (amber), and **dimmed-not-wired** (dashed outline, dim glyph). Solid means chosen, confirmed, or live. Dashed means alternate, sealed, pending, placeholder, or not built. Density is that of a cluster: compact readouts inside generous dark margins, with condensed uppercase legends doing the labelling.\n\nPhotography is allowed only as a dim backdrop behind the glass (the hero garage at 0.42 opacity, masked to transparent) or as a framed image inside an instrument screen. Depth comes from soft, long, black drop shadows under glass panels, never from glow.",
+    "overview": "Every RevX surface is a dashboard seen from the driver's seat at night: smoked black glass, thin bezel rules, tick scales, and LCD message-centre screens, lit by one sky-blue backlight. Content is presented as readouts, not marketing blocks. A section of the page is a tell-tale lamp in the header; a step in a process is a lit bulb; a ranked list is a set of readings where the lead is lit and the alternates sit dashed and dim; something not built yet is a lamp with no wire behind it.\n\nThe system runs on a state vocabulary that every component speaks: off (bezel fill, unlit rim, dim glyph), done (bezel fill, sky-deep rim, sky glyph), on (sky radial bulb, sky-ink glyph), warning (amber radial bulb, amber-ink glyph), and not wired / sealed (dashed rim). Solid means chosen, confirmed, or live. Dashed means alternate, sealed, pending, placeholder, or not built. The page reads in one direction, top to bottom, with headings on one left edge; density is that of a cluster, compact readouts inside generous dark margins.\n\nPhotography is allowed only as a dim backdrop behind the glass (the hero garage at 0.32 opacity, masked to transparent below its midpoint) or as a framed image inside an instrument screen. Depth comes from soft, long, black drop shadows under glass panels, never from glow. Nothing moves on its own: every state change follows scroll position or a click.",
     "keyCharacteristics": [
       "Smoked black ground with a cool blue-grey neutral ramp; one sky backlight carries every lit state and the primary action.",
-      "Barlow Condensed for everything that is printed on the dash (headings, legends, numerals, buttons); Barlow for prose; tabular numerals everywhere.",
-      "Four light states (unlit, lit, warning, not-wired) and a solid/dashed distinction reused across lamps, lists, quotes, seals, avatars and roadmap.",
-      "Circles for anything that lights up (lamps, dials, start button, swipe buttons); rounded rectangles for glass and screens; pills for buttons and chips.",
-      "Motion is mechanical: needles sweep, bulbs light, panels fade in from a slight blur, all on one long ease-out."
+      "Barlow Condensed for everything printed on the dash (headings, legends, readings, numerals, buttons); Barlow for prose; tabular numerals everywhere.",
+      "Five lamp states (off, done, on, warning, not wired) and a solid/dashed distinction reused across the header, the demo, ranked readings, quotes, seals, roadmap and placeholders.",
+      "Circles for anything that lights up; nested rounded rectangles for glass and screens; pills for buttons, chips and the menu toggle.",
+      "Motion is mechanical and user-driven: bulbs light over 0.3s, screens settle from a slight blur over 0.4s, all on one long ease-out."
     ],
     "rules": [
-      { "name": "The One Backlight Rule", "body": "Sky is the only colour that means \"lit\". If something is on, chosen, or the primary action, it is sky; nothing else competes for that job.", "section": "colors" },
-      { "name": "The Signal Reserve Rule", "body": "Amber means caution or unresolved; red means stop. Neither is ever decoration, a brand accent, or a hover colour.", "section": "colors" },
-      { "name": "The Ink-On-Light Rule", "body": "Text on a lit surface uses that light's ink (sky-ink, amber-ink), not white.", "section": "colors" },
-      { "name": "The Printed Legend Rule", "body": "Uppercase condensed caps label a reading inside an instrument (a lamp, a dial, a readout term, a screen header). They never float above a section headline as a kicker.", "section": "typography" },
-      { "name": "The Billing Rule", "body": "Ranked readings are billed by rank: the lead reading is set larger, in ink, and lit; alternates are smaller and muted; where the order among alternates is known, size steps down again (1.375rem, 1rem, 0.9375rem in the hero cause list).", "section": "typography" },
-      { "name": "The No-Bloom Rule", "body": "Light lives inside a shape (gradient fill, coloured border, coloured glyph). Shadows are black and fall downward; they are never coloured.", "section": "elevation" }
+      { "name": "The One Backlight Rule", "body": "Sky is the only colour that means \"lit\". If something is on, chosen, current, or the primary action, it is sky; nothing else competes for that job.", "section": "colors" },
+      { "name": "The Signal Reserve Rule", "body": "Amber means caution or unresolved; red means private or stop. Neither is ever decoration, a brand accent, or a hover colour.", "section": "colors" },
+      { "name": "The Ink-On-Light Rule", "body": "Text and glyphs on a lit surface use that light's ink (sky-ink on sky, amber-ink on amber), never white.", "section": "colors" },
+      { "name": "The Printed Legend Rule", "body": "Uppercase condensed caps label a reading inside an instrument (a readout term, a lamp, the menu toggle, a placeholder tag). They never float above a section headline as a kicker.", "section": "typography" },
+      { "name": "The Billing Rule", "body": "Ranked readings are billed by rank: the lead is set a step larger, in ink, and lit; alternates are smaller and muted; a ruled-out reading is struck through in dim.", "section": "typography" },
+      { "name": "The Label Floor Rule", "body": "Label (0.875rem) is the smallest text role. No legend, caption or tag goes below it.", "section": "typography" },
+      { "name": "The No-Bloom Rule", "body": "Light lives inside a shape (gradient fill, coloured rim, coloured glyph). Shadows are black and fall downward; they are never coloured.", "section": "elevation" }
     ],
     "dos": [
-      "Do express every status through the four light states: unlit, lit (sky), warning (amber), not-wired (dashed, dim).",
+      "Do express every status through the lamp states: off, done (sky rim), on (sky bulb), warning (amber bulb), not wired (dashed, dim).",
       "Do draw the chosen or confirmed item solid and lit, and its alternates dashed and dim.",
       "Do bill ranked items by rank: the lead larger and in ink, alternates smaller and muted.",
       "Do put lit text in that light's ink (sky-ink #04131c on sky, amber-ink #1d1203 on amber).",
       "Do use Barlow Condensed caps for anything printed on an instrument and keep tabular numerals on for every readout and price.",
       "Do nest radii inward (1.75rem bezel, 0.9rem screen, 0.4rem row) and make anything that lights a circle.",
-      "Do keep motion on the one ease-out (cubic-bezier(0.16, 1, 0.3, 1)) and hold every auto-advance under reduced motion."
+      "Do keep every interactive target at least 2.75rem and every text role at least 0.875rem.",
+      "Do keep motion on the one ease-out (cubic-bezier(0.16, 1, 0.3, 1)) and drive every state change from scroll or a click."
     ],
     "donts": [
-      "Don't use amber or red for anything but caution and stop.",
+      "Don't use amber or red for anything but caution and private or stop.",
       "Don't add coloured glows or outer blooms; light fills shapes and shadows stay black.",
       "Don't use a dashed stroke as decoration; dashed always means alternate, sealed, placeholder or not built.",
       "Don't place uppercase legends above section headlines as kickers; legends label instrument readings only.",
       "Don't show photography at full strength behind content; it is a dim masked backdrop or an image framed inside a screen.",
-      "Don't put white text on a lit sky or amber surface."
+      "Don't put white text on a lit sky or amber surface.",
+      "Don't auto-advance or autoplay anything; the visitor drives the demo."
     ]
   }
 }

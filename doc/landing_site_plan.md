@@ -61,3 +61,14 @@ Assets: `src/assets/garage-hero.png` is copied unmodified from `RevX-App/RevX@pr
 - Captured at 1440 and 390 (Chrome via playwright-core). No horizontal scroll. All seven demo states and drag-to-match work, with no console errors.
 - The impeccable finish review ran two fix rounds and then scored **ship**, scoped to its fix list. The detector's 8 cramped-padding warnings are hairline dividers, and the reviewer judged them false positives.
 - Not run: Lighthouse, screen-reader pass.
+
+## Linear restructure (2026-10-22, user-approved)
+
+- **Trigger:** a ui-ux-pro-max review found the page non-linear and overwhelming. The user approved an 8-step order: hero → how it works (3 stages) → trust → mechanics → roadmap → UCSD → close → footer. The demo became click-to-advance only, the dials were removed, and the UCSD placeholders stay visible.
+- **Build:** new `SiteHeader.astro` (sticky lamps as scroll progress; menu plus progress strip at 1100px and below) and `Hero.astro`; `Cluster.astro` removed; `index.astro` rewritten. PRODUCT.md now records the AI facts from handoff §1: confidence level, opt-out, and that posting is non-blocking.
+- **Measured:**
+  - Page length went from 8.3 to 7.1 screens at 1440, and from 12.6 to 10.5 at 390.
+  - Visible CTAs went from 6–7 to 4. Text under 14px went from 31 to 0.
+  - No horizontal scroll; no console errors.
+- **Review:** the finish review ran two fix rounds, then scored **ship**, scoped to its fix list. DESIGN.md was re-recorded from the build.
+- **Drift the documenter left uncanonized:** see DESIGN.md (one-off sizes, `#0c1318` / `#050708`, unused `.legend` class).

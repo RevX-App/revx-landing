@@ -38,7 +38,7 @@ The core loop is Post → Diagnose → Swipe → Match → Chat & quote → Job 
 
 ## Capabilities and Constraints
 
-Built and live (v0.1.1): AI diagnosis (multimodal), structured intake, mechanic-only technical briefing, two-way swiping, multiple quotes per post, realtime chat, job tracking (honor system, both confirm), blind reviews, location privacy, map, community, push notifications (match, message, job completed), and iOS/Android/web builds.
+Built and live (v0.1.1): AI diagnosis (multimodal; on by default with an owner opt-out; returns explanation, ranked causes, severity, urgency up to "stop driving", a confidence level and a USD cost band; posting never waits on it, per handoff §1), structured intake, mechanic-only technical briefing, two-way swiping, multiple quotes per post, realtime chat, job tracking (honor system, both confirm), blind reviews, location privacy, map, community, push notifications (match, message, job completed), and iOS/Android/web builds.
 
 Not built. Never imply these exist; they may appear only as labelled roadmap: payments/escrow/Stripe, background checks, verified-mechanic badges, insurance, VIN scanner, OBD-II Bluetooth, scheduling, image/voice messages in chat, Pro subscriptions, Instant Book, e-bikes/scooters.
 
