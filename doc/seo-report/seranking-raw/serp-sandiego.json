@@ -1,0 +1,1362 @@
+{
+  "task_id": 250746781,
+  "polling_attempts": 13,
+  "elapsed_ms": 66532,
+  "result_type": "standard",
+  "results": {
+    "request_metadata": {
+      "keyword": "mobile mechanic near me",
+      "device": "desktop",
+      "location_id": 35822,
+      "language_code": "en",
+      "tag": null,
+      "crawled_at": "2026-10-22 21:24:51",
+      "serp_url": "https://www.google.com/search?q=mobile+mechanic+near+me&hl=en&gl=US&sourceid=chrome&ie=UTF-8&uule=w+CAIQIFISCUsekq0PU9mAEXnfFf39IToN&pws=0"
+    },
+    "summary": {
+      "total_results": 305000000,
+      "organic_items_count": 85,
+      "status": "success",
+      "SERP_features": [
+        "ai_overview",
+        "local_pack",
+        "reviews",
+        "people_also_ask",
+        "bads",
+        "related_searches",
+        "images",
+        "video"
+      ]
+    },
+    "items": [
+      {
+        "type": "organic",
+        "rank_absolute": 4,
+        "rank_group": 1,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicofsandiego.com",
+        "url": "https://www.mobilemechanicofsandiego.com/",
+        "title": "Mobile Mechanic | Diagnostics in San Diego, CA",
+        "description": "Mobile Mechanic San Diego offers on-site auto repairs in San Diego, CA. Certified techs with fast service. Call now for repairs!",
+        "breadcrumb": "https://www.mobilemechanicofsandiego.com",
+        "highlighted_terms": [
+          "on-site auto repairs in San Diego, CA"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 5,
+        "rank_group": 2,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/search?find_desc=Mobile+Mechanic&find_loc=San+Diego%2C+CA",
+        "title": "TOP 10 BEST Mobile Mechanic in San Diego, CA",
+        "description": "Top 10 Best Mobile Mechanic Near San Diego, California (Updated 2026) ; Strada Autocare · 22.4 mi · San Diego, CA 92127 ; Next Level Auto Body · Body Shops. 149.4 mi.Read more",
+        "breadcrumb": "https://www.yelp.com › Automotive",
+        "highlighted_terms": [
+          "Strada Autocare · 22.4 mi · San Diego, CA 92127"
+        ],
+        "review": {
+          "rating_value": 4.7,
+          "review_count": 8508
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 6,
+        "rank_group": 3,
+        "position": "center",
+        "serp_features": [],
+        "domain": "sandiegoproautorepair.com",
+        "url": "https://sandiegoproautorepair.com/",
+        "title": "Mobile Mechanic in San Diego, CA | San Diego Pro Mobile",
+        "description": "San Diego Pro Mobile is a trusted mobile mechanic serving Kearny Mesa and the greater San Diego area. Brakes, batteries, diagnostics, and more — at your ...",
+        "breadcrumb": "https://sandiegoproautorepair.com",
+        "highlighted_terms": [
+          "San Diego Pro Mobile"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 7,
+        "rank_group": 4,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yourmechanic.com",
+        "url": "https://www.yourmechanic.com/city/san-diego-ca",
+        "title": "Mobile Mechanics in San Diego, CA - Book Now",
+        "description": "Top-rated mobile mechanics in San Diego, CA come to you for auto repair, diagnostics & maintenance. Our specialists service all cars and provide instant ...",
+        "breadcrumb": "https://www.yourmechanic.com › Find a Mechanic",
+        "highlighted_terms": [
+          "Top-rated mobile mechanics in San Diego, CA"
+        ],
+        "review": {
+          "rating_value": 4.9,
+          "review_count": 3366
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 8,
+        "rank_group": 5,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.reddit.com",
+        "url": "https://www.reddit.com/r/sandiego/comments/1dbx8kz/mobile_mechanic_recommendations/",
+        "title": "Mobile mechanic recommendations? : r/sandiego",
+        "description": "Unless they're changing brakes pads, mobile mechanics are borderline scams. Not qualified enough to work in a real shop.Read more",
+        "breadcrumb": "7 comments  ·  2 years ago",
+        "highlighted_terms": [
+          "mobile mechanics are borderline scams"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 9,
+        "rank_group": 6,
+        "position": "center",
+        "serp_features": [],
+        "domain": "thecardoc619.com",
+        "url": "https://thecardoc619.com/",
+        "title": "The Car Doc Mobile Mechanic San Diego (24/7)",
+        "description": "The Car Doc is a 24/7 mobile mechanic in San Diego. On-site diagnostics, repairs, brakes, A/C, oil changes & more — all makes and models.",
+        "breadcrumb": "https://thecardoc619.com",
+        "highlighted_terms": [
+          "24/7 mobile mechanic in San Diego"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 10,
+        "rank_group": 7,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/mobile-mechanic-san-diego-ca/",
+        "title": "Mobile Mechanics in San Diego CA",
+        "description": "Wrench takes the hassle out of car maintenance, including oil changes, tuneups, and brake replacements by bringing certified mechanics to your door.",
+        "breadcrumb": "https://wrench.com › mobile-mechanic-san-diego-ca",
+        "highlighted_terms": [
+          "Wrench takes the hassle out of car maintenance"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 11,
+        "rank_group": 8,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.thumbtack.com",
+        "url": "https://www.thumbtack.com/ca/san-diego/mobile-auto-repair-services",
+        "title": "The Best Mobile Auto Repair Services in San Diego, CA",
+        "description": "There are 32 five star Mobile Mechanics in San Diego, CA on Thumbtack. Why hire professionals on Thumbtack? Free to use.Read more",
+        "breadcrumb": "https://www.thumbtack.com › CA › San Diego",
+        "highlighted_terms": [
+          "There are 32 five star Mobile Mechanics in San Diego, CA"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 12,
+        "rank_group": 9,
+        "serp_features": [
+          "bads"
+        ],
+        "position": "center",
+        "title": "Mobile Automotive Mechanic - Maintenance and Repair",
+        "links": [
+          {
+            "url": "https://jcsmobileservice.com/",
+            "title": "Mobile Automotive Mechanic - Maintenance and Repairjcsmobileservice.comhttp://www.jcsmobileservice.com"
+          }
+        ],
+        "displayUrl": "http://www.jcsmobileservice.com"
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 14,
+        "rank_group": 10,
+        "position": "center",
+        "serp_features": [],
+        "domain": "sandiegopromobilemechanic.com",
+        "url": "https://sandiegopromobilemechanic.com/",
+        "title": "San Diego Pro Mobile Mechanic - Auto Repair - San Diego, CA",
+        "description": "San Diego Pro Mobile Mechanic offers convenient and professional automotive repair services in San Diego, CA. Dial (619) 853-3823!",
+        "breadcrumb": "https://sandiegopromobilemechanic.com",
+        "highlighted_terms": [
+          "San Diego Pro Mobile Mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 15,
+        "rank_group": 11,
+        "position": "center",
+        "serp_features": [],
+        "domain": "sandiegosmobilemechanic.com",
+        "url": "https://sandiegosmobilemechanic.com/",
+        "title": "SAN DIEGO'S BEST MOBILE MECHANIC 619-363-0472 ...",
+        "description": "Having an issue with your car or auto? Need Auto Repair? San Diego's Best Mobile Mechanic will come to you, and help you get your vehicle back on the road.",
+        "breadcrumb": "https://sandiegosmobilemechanic.com",
+        "highlighted_terms": [
+          "Mobile Mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 16,
+        "rank_group": 12,
+        "position": "center",
+        "serp_features": [],
+        "domain": "dcmobileautorepair.com",
+        "url": "https://dcmobileautorepair.com/",
+        "title": "DC Mobile Auto Repair",
+        "description": "DC Mobile Auto Repair has been proudly serving San Diego since 2005, providing fast, reliable, and convenient auto repair services.",
+        "breadcrumb": "https://dcmobileautorepair.com",
+        "highlighted_terms": [
+          "DC Mobile Auto Repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 17,
+        "rank_group": 13,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.semperfix-it.com",
+        "url": "https://www.semperfix-it.com/mobile-mechanic-in-san-diego-county-ca",
+        "title": "Mobile Mechanic in San Diego County, CA",
+        "description": "Nov 28, 2024 — A professional mobile mechanic service not only saves you time but also helps avoid the frustration of long waits and unexpected costs at repair ...Read more",
+        "breadcrumb": "https://www.semperfix-it.com › mobile-mechanic-in-sa...",
+        "highlighted_terms": [
+          "saves you time"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 18,
+        "rank_group": 14,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/biz/mobile-mechanic-services-san-diego-9",
+        "title": "MOBILE MECHANIC SERVICES - Updated October 2026",
+        "description": "MOBILE MECHANIC SERVICES, Mission Valley, San Diego, CA 92108, 373 Photos, (619) 765-9319, Mon - 7:30 am - 8:30 pm, Tue - 7:30 am - 7:30 pm, Wed - 7:30 am ...",
+        "breadcrumb": "https://www.yelp.com › ... › Automotive › Auto Repair",
+        "highlighted_terms": [
+          "619) 765-9319"
+        ],
+        "review": {
+          "rating_value": 4.4,
+          "review_count": 174
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 19,
+        "rank_group": 15,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilemechanicsandiegoca.com",
+        "url": "https://mobilemechanicsandiegoca.com/",
+        "title": "Mobile Mechanics San Diego Call 619-346-4448 Auto Repair ...",
+        "description": "Mobile Mechanic San Diego, CA makes auto repair service mobile and brings the shop to you. Rely on experienced ASE certified technicians.",
+        "breadcrumb": "https://mobilemechanicsandiegoca.com",
+        "highlighted_terms": [
+          "makes auto repair service mobile"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 20,
+        "rank_group": 16,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.novorepairs.com",
+        "url": "https://www.novorepairs.com/",
+        "title": "Mobile Mechanic San Diego | Novo Repairs Auto Services",
+        "description": "Novo Repairs is San Diego's mobile mechanic — expert car repair and auto services at your doorstep, with fast, transparent pricing. Book today!",
+        "breadcrumb": "https://www.novorepairs.com",
+        "highlighted_terms": [
+          "expert car repair and auto services at your doorstep"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 21,
+        "rank_group": 17,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/san-diego-ca",
+        "title": "Mobile Mechanic in San Diego, CA",
+        "description": "Need a mobile mechanic in San Diego, CA? Instant Car Fix provides certified on-site car repair, diagnostics, battery replacement, brake service, ...",
+        "breadcrumb": "https://www.instantcarfix.com › ... › San Diego",
+        "highlighted_terms": [
+          "Instant Car Fix"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 23,
+        "rank_group": 18,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.wrenchmap.com",
+        "url": "https://www.wrenchmap.com/california/san-diego",
+        "title": "Mobile Mechanics in San Diego, CA",
+        "description": "32 mobile mechanics serve San Diego and the surrounding area — including 2 ASE certified and 10 available 24/7. They come to your home, office, or roadside — no ...Read more",
+        "breadcrumb": "https://www.wrenchmap.com › california › san-diego",
+        "highlighted_terms": [
+          "32 mobile mechanics serve San Diego and the surrounding area"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 25,
+        "rank_group": 19,
+        "position": "center",
+        "serp_features": [],
+        "domain": "onsitesandiegomobilemechanic.com",
+        "url": "https://onsitesandiegomobilemechanic.com/",
+        "title": "San Diego Mobile Mechanic, San Diego Mobile Auto Repair",
+        "description": "Welcome to Onsite San Diego Mobile Mechanic service in beautiful San Diego, California! Our experienced auto mechanics are here to help get you back on the ...Read more",
+        "breadcrumb": "https://onsitesandiegomobilemechanic.com",
+        "highlighted_terms": [
+          "Onsite San Diego Mobile Mechanic service"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 26,
+        "rank_group": 20,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.autonationmobileservice.com",
+        "url": "https://www.autonationmobileservice.com/i/locations/california/san-diego/",
+        "title": "San Diego Mobile Mechanic - Convenient Car Repair",
+        "description": "AutoNation Mobile Service offers convenient, at-home auto repair and maintenance services, upfront prices before booking, and five-star quality service, ...Read more",
+        "breadcrumb": "https://www.autonationmobileservice.com › california",
+        "highlighted_terms": [
+          "convenient, at-home auto repair and maintenance services"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 27,
+        "rank_group": 21,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/solana-beach-san-diegos-most-reliable/coFMkHr7svwbUZzjrExAJs",
+        "title": "⭐️ San Diego's Most Reliable Mobile Mechanic ⭐️",
+        "description": "3 hours ago — Mechanic shop owner for several years until 2019 when I started The Mobile Mechanic. •Call Ralph at 619-571-2030 to let me what your vehicle ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "3 hours ago"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 28,
+        "rank_group": 22,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.tiktok.com",
+        "url": "https://www.tiktok.com/discover/san-diego-mobile-mechanic-change-oil-rotate-align-tires",
+        "title": "San Diego Mobile Mechanic Change Oil Rotate Align Tires",
+        "description": "4 days ago — Meet Evan's Mobile Auto - a locally owned business offering honest, affordable mechanic work without the hassle of a shop. ✓ Oil changes ✓ ...Read more",
+        "breadcrumb": "https://www.tiktok.com › Discover",
+        "highlighted_terms": [
+          "honest, affordable mechanic work"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 29,
+        "rank_group": 23,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.affordablemobileautorepair.com",
+        "url": "https://www.affordablemobileautorepair.com/",
+        "title": "Mobile Auto Repair San Marcos, CA",
+        "description": "Don't pay for a tow truck to get the auto services you need! Call our local team today to get mobile auto repair in San Marcos, CA.",
+        "breadcrumb": "https://www.affordablemobileautorepair.com",
+        "highlighted_terms": [
+          "Call our local team today"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 30,
+        "rank_group": 24,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilecarmechanicsandiego.com",
+        "url": "https://mobilecarmechanicsandiego.com/",
+        "title": "Mobile Car Repair San Diego Mechanic – Mobile Mechanic ...",
+        "description": "Car Minded Mobile Mechanic in San Diego is a full service Auto Repair Shop that comes to your location and provides mobile car repair and maintenance services ...Read more",
+        "breadcrumb": "https://mobilecarmechanicsandiego.com",
+        "highlighted_terms": [
+          "Car Minded Mobile Mechanic in San Diego"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 31,
+        "rank_group": 25,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/san-diego-ca-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in San Diego CA",
+        "description": "Wrench can take care of simple jobs such as oil changes or even more complex issues like drivetrain repairs. Wrench offers you, the vehicle owner a choice.Read more",
+        "breadcrumb": "https://wrench.com › cities › san-diego-ca-mobile-mech...",
+        "highlighted_terms": [
+          "Wrench can take care of simple jobs such as oil changes or even more complex issues"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 32,
+        "rank_group": 26,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.expressmobilemechanic.com",
+        "url": "https://www.expressmobilemechanic.com/",
+        "title": "Mobile Mechanic San Diego County | A to Z Express Mobile ...",
+        "description": "A to Z Express Mobile Mechanics brings the repair service to your home, workplace or another safe location throughout San Diego County. **Call 858-231-7821 ...Read more",
+        "breadcrumb": "https://www.expressmobilemechanic.com",
+        "highlighted_terms": [
+          "Mobile Mechanics"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 33,
+        "rank_group": 27,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/san-diego-mobile-mechanic-quality-brake/5LVxf6z6PnqTPc528epeHL",
+        "title": "Quality Brake & Rotor Jobs, Starter,Alternator, Suspension",
+        "description": "1 day ago — I'm a Mobile Mechanic serving the San Diego area, offering fast, honest, auto repair wherever you are — home, work, or roadside. QUALITY ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "serving the San Diego area"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 34,
+        "rank_group": 28,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/biz/mobile-mechanic-of-san-diego-san-diego",
+        "title": "MOBILE MECHANIC OF SAN DIEGO",
+        "description": "MOBILE MECHANIC OF SAN DIEGO, 4438 Bancroft St, San Diego, CA 92116, 29 Photos, (619) 376-3215, Mon - Open 24 hours, Tue - Open 24 hours, ...",
+        "breadcrumb": "https://www.yelp.com › ... › Automotive › Auto Repair",
+        "highlighted_terms": [
+          "4438 Bancroft St, San Diego, CA 92116"
+        ],
+        "review": {
+          "rating_value": 1,
+          "review_count": 2
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 36,
+        "rank_group": 29,
+        "position": "center",
+        "serp_features": [],
+        "domain": "onthegomobilemechanic.com",
+        "url": "https://onthegomobilemechanic.com/",
+        "title": "Mobile Mechanic Summerville & Charleston SC | We Come To ...",
+        "description": "On The Go Mobile Mechanic comes to your home, work, or roadside in Summerville, Charleston & the Lowcountry. Diagnostics, brakes, no-start help.",
+        "breadcrumb": "https://onthegomobilemechanic.com",
+        "highlighted_terms": [
+          "On The Go Mobile Mechanic comes to your home, work, or roadside"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 37,
+        "rank_group": 30,
+        "position": "center",
+        "serp_features": [],
+        "domain": "oaklandmobileauto.com",
+        "url": "https://oaklandmobileauto.com/",
+        "title": "Oakland Mobile Auto — Mobile Mechanic Near Me | Oakland ...",
+        "description": "You Call Us. One call to 248-496-3173. Tell us where you are and what's wrong. 03. We Dispatch. We drive directly to your location ...Read more",
+        "breadcrumb": "https://oaklandmobileauto.com",
+        "highlighted_terms": [
+          "248-496-3173"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 38,
+        "rank_group": 31,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/",
+        "title": "Instant Car Fix: Mobile Car Mechanic Near Me | Same Day ...",
+        "description": "Need a mobile mechanic near you? Our certified mechanic come to your home or office for same day car repair. diagnostics, battery replacement, ...",
+        "breadcrumb": "https://www.instantcarfix.com",
+        "highlighted_terms": [
+          "Our certified mechanic come to your home or office for same day car repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 39,
+        "rank_group": 32,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.wrenchmap.com",
+        "url": "https://www.wrenchmap.com/california/san-diego/affordable-mobile-auto-repair-san-diego-ca",
+        "title": "Affordable Mobile Auto Repair - Mechanics in California",
+        "description": "Mar 24, 2026 — Bureau of Automotive Repair (BAR) certified technicians come to your location for starters, alternators, brakes, radiators, battery replacements ...Read more",
+        "breadcrumb": "https://www.wrenchmap.com › ... › San Diego",
+        "highlighted_terms": [
+          "Bureau of Automotive Repair (BAR) certified technicians come to your location"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 40,
+        "rank_group": 33,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/solana-beach-san-diegos-most-reliable/57E8LoJvWxJUL6T4UgngH8",
+        "title": "⭐️ San Diego's Most Reliable Mobile Mechanic ⭐️",
+        "description": "23 hours ago — Call Ralph at 619-571-2030 to let me what your vehicle needs are and I will provide you with Labor Quote. •Please call and If you happen to ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "619-571-2030"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 41,
+        "rank_group": 34,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.facebook.com",
+        "url": "https://www.facebook.com/groups/884803082849628/posts/1591795232150406/",
+        "title": "Mobile Mechanic Service – Quality Repairs You Can Trust!",
+        "description": "From diagnostics and maintenance to repairs and replacements, I bring the mechanic to you—saving you time and the hassle of a shop visit.Read more",
+        "breadcrumb": "1 day ago",
+        "highlighted_terms": [
+          "I bring the mechanic to you"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 42,
+        "rank_group": 35,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilemechanicathensga.com",
+        "url": "https://mobilemechanicathensga.com/",
+        "title": "Pete's Mobile Mechanic We are a mobile auto repair service in ...",
+        "description": "We are a mobile automotive repair service in Athens, GA We fix your car or truck at home or wherever it broke down. Our mechanics come to you and diagnose ...",
+        "breadcrumb": "https://mobilemechanicathensga.com",
+        "highlighted_terms": [
+          "We are a mobile automotive repair service in Athens, GA"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 43,
+        "rank_group": 36,
+        "position": "center",
+        "serp_features": [],
+        "domain": "baltimoremobilemechanic.com",
+        "url": "https://baltimoremobilemechanic.com/",
+        "title": "The Mobile Mechanic of Baltimore | We Come To You",
+        "description": "The Mobile Mechanic of Baltimore — full-service mobile auto repair. We come to you, anywhere in Baltimore & Howard County. Call or text (443) 379-4424.",
+        "breadcrumb": "https://baltimoremobilemechanic.com",
+        "highlighted_terms": [
+          "443) 379-4424"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 44,
+        "rank_group": 37,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicoforlando.com",
+        "url": "https://www.mobilemechanicoforlando.com/",
+        "title": "Mobile Mechanic | Car Repair in Orlando, FL",
+        "description": "Mobile Mechanic Orlando offers affordable auto repairs in Orlando, FL. Certified mechanics with fast service. Call now for quick repairs!",
+        "breadcrumb": "https://www.mobilemechanicoforlando.com",
+        "highlighted_terms": [
+          "ffordable auto repairs in Orlando, FL"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 45,
+        "rank_group": 38,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicsfortworth.com",
+        "url": "https://www.mobilemechanicsfortworth.com/",
+        "title": "Mobile Mechanic | Fast Repair in Fort Worth, TX",
+        "description": "Mobile Mechanics Fort Worth offers affordable auto repairs in Fort Worth, TX. Certified mechanics with fast, on-site service. Call now for quick repairs!",
+        "breadcrumb": "https://www.mobilemechanicsfortworth.com",
+        "highlighted_terms": [
+          "Certified mechanics with fast, on-site service"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 47,
+        "rank_group": 39,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilemechanicathensga.com",
+        "url": "https://mobilemechanicathensga.com/",
+        "title": "Pete's Mobile Mechanic We are a mobile auto repair service in ...",
+        "description": "We are a mobile automotive repair service in Athens, GA We fix your car or truck at home or wherever it broke down. Our mechanics come to you and diagnose ...",
+        "breadcrumb": "https://mobilemechanicathensga.com",
+        "highlighted_terms": [
+          "We are a mobile automotive repair service in Athens, GA"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 48,
+        "rank_group": 40,
+        "position": "center",
+        "serp_features": [],
+        "domain": "baltimoremobilemechanic.com",
+        "url": "https://baltimoremobilemechanic.com/",
+        "title": "The Mobile Mechanic of Baltimore | We Come To You",
+        "description": "The Mobile Mechanic of Baltimore — full-service mobile auto repair. We come to you, anywhere in Baltimore & Howard County. Call or text (443) 379-4424.",
+        "breadcrumb": "https://baltimoremobilemechanic.com",
+        "highlighted_terms": [
+          "443) 379-4424"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 49,
+        "rank_group": 41,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicoforlando.com",
+        "url": "https://www.mobilemechanicoforlando.com/",
+        "title": "Mobile Mechanic | Car Repair in Orlando, FL",
+        "description": "Mobile Mechanic Orlando offers affordable auto repairs in Orlando, FL. Certified mechanics with fast service. Call now for quick repairs!",
+        "breadcrumb": "https://www.mobilemechanicoforlando.com",
+        "highlighted_terms": [
+          "ffordable auto repairs in Orlando, FL"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 50,
+        "rank_group": 42,
+        "position": "center",
+        "serp_features": [],
+        "domain": "theocmobile.com",
+        "url": "https://theocmobile.com/",
+        "title": "theocmobile.com",
+        "description": "The OC Mobile. The OC MobileThe OC MobileThe OC Mobile · The OC Mobile. The OC MobileThe OC MobileThe OC Mobile. More. Launching Soon.Read more",
+        "breadcrumb": "https://theocmobile.com",
+        "highlighted_terms": [
+          "The OC Mobile"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 51,
+        "rank_group": 43,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicsfortworth.com",
+        "url": "https://www.mobilemechanicsfortworth.com/",
+        "title": "Mobile Mechanic | Fast Repair in Fort Worth, TX",
+        "description": "Mobile Mechanic in Fort Worth, TX Affordable and Reliable Car Service ... Auto repair made easy. We come to you trusted, skilled, and local. We are available 24/7 ...Read more",
+        "breadcrumb": "https://www.mobilemechanicsfortworth.com",
+        "highlighted_terms": [
+          "Mobile Mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 52,
+        "rank_group": 44,
+        "position": "center",
+        "serp_features": [],
+        "domain": "brand.site",
+        "url": "https://brand.site/juansautomotiverepair",
+        "title": "Mobile auto repair",
+        "description": "Mobile auto repair. Expert service, guaranteed results. Call Us. Close modal. modal-image. image. Our Experts. providing top quality auto repair services you ...Read more",
+        "breadcrumb": "https://brand.site › juansautomotiverepair",
+        "highlighted_terms": [
+          "Mobile auto repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 53,
+        "rank_group": 45,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.youtube.com",
+        "url": "https://www.youtube.com/watch?v=29o_bKzMczc",
+        "title": "Smog Check Auto Repair | Clairemont Auto Care | San Diego, CA",
+        "description": "Smog Check Testing, Smog Check Repairs, State Safety Inspection, Steering, Suspension Repairs ... Why It's So Expensive To Run An Auto Repair Shop.",
+        "breadcrumb": "590+ views  ·  6 years ago",
+        "highlighted_terms": [
+          "Repairs"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 54,
+        "rank_group": 46,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.mobilemechanicofhoustontx.com",
+        "url": "https://www.mobilemechanicofhoustontx.com/",
+        "title": "Mobile Mechanic | Diagnostics in Houston, TX",
+        "description": "The closest mobile grease monkey can be with you and have your AC repair completed without adding too much time to your journey.Read more",
+        "breadcrumb": "https://www.mobilemechanicofhoustontx.com",
+        "highlighted_terms": [
+          "closest mobile"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 55,
+        "rank_group": 47,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.centralohiomobilemechanic.com",
+        "url": "https://www.centralohiomobilemechanic.com/",
+        "title": "Mobile Mechanic Columbus Ohio, Central Ohio Mobile ...",
+        "description": "Most mobile mechanics offer competitive prices for repair service compared to traditional garages and shops. Plus, because our mechanic is coming directly to ...Read more",
+        "breadcrumb": "https://www.centralohiomobilemechanic.com",
+        "highlighted_terms": [
+          "mobile mechanics"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 56,
+        "rank_group": 48,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilebuddy1.com",
+        "url": "https://mobilebuddy1.com/",
+        "title": "Auto Repair - MOBILE BUDDY",
+        "description": "Very prompt and professional. Very knowledgeable with over 20 years in the industry, we will get the job done!. Quality work for affordable prices.",
+        "breadcrumb": "https://mobilebuddy1.com"
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 58,
+        "rank_group": 49,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/biz/mobile-mechanic-san-diego-4",
+        "title": "MOBILE MECHANIC - Auto Repair",
+        "description": "Mobile mechanic - Nice! - Auto Repair Near Me · Mobile mechanic - Hello - Auto Repair Near Me. +4. Mobile mechanic - Te puedo ayudar - Auto Repair Near Me. You ...Read more",
+        "breadcrumb": "https://www.yelp.com › ... › Automotive › Auto Repair",
+        "highlighted_terms": [
+          "Mobile mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 59,
+        "rank_group": 50,
+        "position": "center",
+        "serp_features": [],
+        "domain": "fastandreliablemobilemechanic.com",
+        "url": "https://fastandreliablemobilemechanic.com/mobile-mechanic-nearme-lake-worth-beach-fl/",
+        "title": "Mobile Mechanic Lake Worth Beach — We Come to You",
+        "description": "Need auto repair in Lake Worth Beach without leaving your car at a shop for two days?",
+        "breadcrumb": "https://fastandreliablemobilemechanic.com › mobile-me...",
+        "highlighted_terms": [
+          "auto repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 60,
+        "rank_group": 51,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.thorntonmobilemechanics.com",
+        "url": "https://www.thorntonmobilemechanics.com/",
+        "title": "Mobile Mechanics serving Thornton CO and surrounding.",
+        "description": "Running to a shop isn't an option without an appointment, and towing is expensive and doesn't get your car fixed when you need it. That's where mobile mechanics ...Read more",
+        "breadcrumb": "https://www.thorntonmobilemechanics.com",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 61,
+        "rank_group": 52,
+        "position": "center",
+        "serp_features": [],
+        "domain": "365towing-recovery.com",
+        "url": "https://365towing-recovery.com/automotive-services/auto-repair/",
+        "title": "Light-Duty Auto Repair & Mobile Mechanic | Little Rock, AR",
+        "description": "Whether you need a mobile mechanic to fix your car in the driveway or full diagnostics in our repair shop, our certified technicians are here to help. We ...Read more",
+        "breadcrumb": "https://365towing-recovery.com › automotive-services",
+        "highlighted_terms": [
+          "mobile mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 62,
+        "rank_group": 53,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.youtube.com",
+        "url": "https://www.youtube.com/watch?v=IItXoB50VUc",
+        "title": "Inside Today's Auto Repair Industry",
+        "description": "... shops operate and how customers maintain their vehicles. Key topics covered: • Why modern vehicles are more expensive to repair • The ...",
+        "breadcrumb": "50+ views  ·  6 months ago",
+        "highlighted_terms": [
+          "shops"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 63,
+        "rank_group": 54,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.apexcompleteauto.com",
+        "url": "https://www.apexcompleteauto.com/Auto-Repair/cat/mobile",
+        "title": "https://www.apexcompleteauto.com/Auto-Repair/cat/m...",
+        "description": "No information is available for this page.",
+        "breadcrumb": "https://www.apexcompleteauto.com › cat › mobile"
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 64,
+        "rank_group": 55,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/solana-beach-san-diegos-most-reliable/u3ESmtAoMXMqEb3WgNpKcs",
+        "title": "⭐️ San Diego's Most Reliable Mobile Mechanic ⭐️",
+        "description": "22 hours ago — Mechanic shop owner for several years until 2019 when I started The Mobile Mechanic. •Call Ralph at 619-571-2030 to let me what your vehicle ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 65,
+        "rank_group": 56,
+        "position": "center",
+        "serp_features": [],
+        "domain": "tallymobilemechanic.com",
+        "url": "https://tallymobilemechanic.com/",
+        "title": "Mobile Mechanic Tallahassee FL | Same-Day Service",
+        "description": "Our Mobile Auto Services. Professional repairs and maintenance delivered to your driveway, parking lot, or roadside — no shop visit required.Read more",
+        "breadcrumb": "https://tallymobilemechanic.com",
+        "highlighted_terms": [
+          "Mobile"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 66,
+        "rank_group": 57,
+        "position": "center",
+        "serp_features": [],
+        "domain": "easyroadassist.com",
+        "url": "http://easyroadassist.com/",
+        "title": "easyroadassist.com is registered at Namecheap",
+        "description": "Domain registration has expired. If you own easyroadassist.com, you may still be able to renew it through your Namecheap account. To renew: sign in, ...Read more",
+        "breadcrumb": "http://easyroadassist.com"
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 67,
+        "rank_group": 58,
+        "position": "center",
+        "serp_features": [],
+        "domain": "upandauto.com",
+        "url": "https://upandauto.com/services/area/dripping-springs",
+        "title": "Mobile Mechanic in Dripping Springs, TX",
+        "description": "Hill Country Reliable — Auto Service at Your Front Door — Dripping Springs residents shouldn't have to make the long drive to an Austin shop for auto ...",
+        "breadcrumb": "https://upandauto.com › services › area › dripping-spri...",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 70,
+        "rank_group": 59,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.facebook.com",
+        "url": "https://www.facebook.com/p/Justins-Mobile-Mechanic-Service-LLC-61567304460294/",
+        "title": "Justin's Mobile Mechanic Service, LLC | Elkhart IN",
+        "description": "If you have used Justin's Mobile Mechanic Service, LLC please leave me a review. ... shop your merch right from their phone. ✓ BRANDS ...Read more",
+        "breadcrumb": "810+ followers",
+        "highlighted_terms": [
+          "Mobile Mechanic"
+        ],
+        "review": {
+          "rating_value": 5,
+          "review_count": 39
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 71,
+        "rank_group": 60,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.youtube.com",
+        "url": "https://www.youtube.com/watch?v=ZubFkjQKMLE",
+        "title": "Trusted Auto Repair in San Diego | West Automotive Group ...",
+        "description": "Looking for reliable, expert auto repair in San Diego? Meet West Automotive Group — your local, trusted shop for everything from oil ...",
+        "breadcrumb": "190+ views  ·  1 year ago",
+        "highlighted_terms": [
+          "auto repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 72,
+        "rank_group": 61,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/prescott-az",
+        "title": "Mobile Mechanic in Prescott, AZ",
+        "description": "Mobile Mechanic Performing On-Site Repair ... Skip the shop. Our certified mobile mechanics perform most repairs right where your car is parked, saving you time ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Arizona › Yavapai",
+        "highlighted_terms": [
+          "Mobile Mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 73,
+        "rank_group": 62,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yourmechanic.com",
+        "url": "https://www.yourmechanic.com/city/flat-rock-mi",
+        "title": "Mobile Mechanics in Flat Rock, MI - Book Now",
+        "description": "Welcome to YourMechanic, where we're all about making vehicle service easy and accessible. No need to worry about towing or going to a shop - our mobile ...Read more",
+        "breadcrumb": "https://www.yourmechanic.com › Find a Mechanic",
+        "highlighted_terms": [
+          "YourMechanic"
+        ],
+        "review": {
+          "rating_value": 5,
+          "review_count": 15
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 74,
+        "rank_group": 63,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.youtube.com",
+        "url": "https://www.youtube.com/watch?v=9rNGezqFwsE",
+        "title": "Trusted Auto Repair Experts in San Diego | The LOCAList SD",
+        "description": "In this FOX 5 San Diego feature, learn more about West Automotive Group and why so many local drivers trust them for their automotive repair ...",
+        "breadcrumb": "20+ views  ·  6 months ago",
+        "highlighted_terms": [
+          "local"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 75,
+        "rank_group": 64,
+        "position": "center",
+        "serp_features": [],
+        "domain": "totaltoolmobile.com",
+        "url": "https://totaltoolmobile.com/service-areas/lakewood",
+        "title": "Lakewood - Total Tool Mobile Mechanic",
+        "description": "Professional mobile auto repair in Lakewood, CO. Brakes, tune-ups, diagnostics, oil changes and more. We come to you 24/7. Call (720) 413-2661.",
+        "breadcrumb": "https://totaltoolmobile.com › service-areas › lakewood",
+        "highlighted_terms": [
+          "mobile auto repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 76,
+        "rank_group": 65,
+        "position": "center",
+        "serp_features": [],
+        "domain": "mobilemechanics.ws",
+        "url": "https://mobilemechanics.ws/locations/alaska/anchorage",
+        "title": "Mobile Mechanics In Anchorage, AK",
+        "description": "Mobile mechanics that come to you — nationwide on-site auto repair. Brakes, batteries & diagnostics. Book online or call (346) 266-0849.",
+        "breadcrumb": "https://mobilemechanics.ws › ... › Alaska › Anchorage",
+        "highlighted_terms": [
+          "Mobile mechanics"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 77,
+        "rank_group": 66,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/san-diego-cheap-repair-mobile-mechanic/pykvaP1VKcC6ZQFpAdcUkS",
+        "title": "CHEAP REPAIR MOBILE MECHANIC 🚘Affordable Rates ...",
+        "description": "1 day ago — Don't waste money on towing or expensive shop fees-that seem to always pile up! I provide flat rate pricing, if you tell me what you want ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 78,
+        "rank_group": 67,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/north-little-rock-ar",
+        "title": "Mobile Mechanic in North Little Rock, AR",
+        "description": "Peak-hour congestion in North Little Rock, AR means a shop trip costs 2–3 hours minimum. We Come to You with Same-Day Service. Save $80–$200 per service. No ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Arkansas › Pulaski",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 81,
+        "rank_group": 68,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yourmechanic.com",
+        "url": "https://www.yourmechanic.com/city/shawnee-ok",
+        "title": "Mobile Mechanics in Shawnee, OK - Book Now",
+        "description": "Then, he walked me around noting a couple of long-range issues that he had found. He didn't try to sell me on needing immediate repairs but instead gave me ...Read more",
+        "breadcrumb": "https://www.yourmechanic.com › Find a Mechanic",
+        "highlighted_terms": [
+          "me around"
+        ],
+        "review": {
+          "rating_value": 5,
+          "review_count": 2
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 82,
+        "rank_group": 69,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.instagram.com",
+        "url": "https://www.instagram.com/reel/DH_hpD3hBTg/",
+        "title": "Get Your Car Ready for the Road at Miramar Auto Repair ...",
+        "description": "POV: You ask a group of technicians what a torque wrench sounds like $20,000 worth of tools in the shop and apparently the most accurate ...",
+        "breadcrumb": "10+ likes  ·  1 year ago",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 83,
+        "rank_group": 70,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/troy-mi-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in Troy MI",
+        "description": "Servicing your car and truck does not have to cost a fortune anymore. The same quality of service provided by dealerships is available at Wrench mobile mechanic ...Read more",
+        "breadcrumb": "https://wrench.com › cities › troy-mi-mobile-mechanic",
+        "highlighted_terms": [
+          "mobile mechanic"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 84,
+        "rank_group": 71,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/myrtle-beach-sc",
+        "title": "Mobile Mechanic in Myrtle Beach, SC",
+        "description": "Looking for a reliable mobile mechanic near me? Instant Car Fix brings certified mechanics directly to your home, workplace, or roadside, making professional ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Horry",
+        "highlighted_terms": [
+          "mobile mechanic near me"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 85,
+        "rank_group": 72,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/san-diego-mobile-auto-mechanic/bnditJsbQwcksKPMEQ6w8u",
+        "title": "Mobile auto mechanic - automotive services - craigslist",
+        "description": "1 day ago — Forget about towing trucks and waiting forever at the shop. At Mobile Mechanic, we bring the shop right to your driveway. Being fully mobile ...Read more",
+        "breadcrumb": "https://www.craigslist.org › view › s...",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 86,
+        "rank_group": 73,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/boise-id-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in Boise ID",
+        "description": "Wrench mobile mechanics will save you time and money by eliminating a trip to the shop. We offer full car repair service and we will come to you! Why Choose ...Read more",
+        "breadcrumb": "https://wrench.com › cities › boise-id-mobile-mechanic",
+        "highlighted_terms": [
+          "mobile mechanics"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 87,
+        "rank_group": 74,
+        "position": "center",
+        "serp_features": [
+          "video"
+        ],
+        "domain": "www.youtube.com",
+        "url": "https://www.youtube.com/watch?v=fNQyiWfFy1I",
+        "title": "Trusted Auto Repair Experts | The LOCAList SD",
+        "description": "segment, we showcase what makes a modern auto repair shop stand out—from advanced diagnostic tools and experienced technicians to a strong ...",
+        "breadcrumb": "30+ views  ·  6 months ago",
+        "highlighted_terms": [
+          "auto repair shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 88,
+        "rank_group": 75,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/fort-smith-ar",
+        "title": "Mobile Mechanic in Fort Smith, AR",
+        "description": "Mobile mechanic near me performing on-site vehicle diagnostics. Looking for a reliable mobile mechanic near me? Instant Car Fix brings certified mechanics ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Arkansas › Sebastian",
+        "highlighted_terms": [
+          "Mobile mechanic near me"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 89,
+        "rank_group": 76,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/biz/mobile-mechanic-nearby-westminster",
+        "title": "MOBILE MECHANIC NEARBY - Updated September 2026",
+        "description": "Specialties: Welcome to Mobile Mechanic Nearby! Your one stop shop for reliable, trustworthy, MOBILE auto repair. We are THE premier auto repor service ...",
+        "breadcrumb": "https://www.yelp.com › ... › Automotive › Auto Repair",
+        "highlighted_terms": [
+          "Mobile Mechanic Nearby"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 92,
+        "rank_group": 77,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/san-diego-mobile-mechanic-best-price-in/uFtGg84tzboabxfFbawyJb",
+        "title": "MOBILE MECHANIC - Best Price in Town, Same Day / Next ...",
+        "description": "1 day ago — Many of my repeat customers cane to me after bad experiences with other mobile mechanics. When you contact me please shoot me a text that ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "me"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 93,
+        "rank_group": 78,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/port-richey-fl",
+        "title": "Mobile Mechanic in Port Richey, FL",
+        "description": "The warm climate can lead to battery drain and cooling system failures, while moisture can cause rust and corrosion. No shop wait, no lost workday. Peak-hour ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Florida › Pasco",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 94,
+        "rank_group": 79,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/waco-tx-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in Waco TX",
+        "description": "If you are wanting customized care for your vehicle, Wrench is the place to call. The mobile mechanics offer a full line up of car repairs from oil changes to ...Read more",
+        "breadcrumb": "https://wrench.com › cities › waco-tx-mobile-mechanic",
+        "highlighted_terms": [
+          "mobile mechanics"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 95,
+        "rank_group": 80,
+        "position": "center",
+        "serp_features": [
+          "reviews"
+        ],
+        "domain": "www.yelp.com",
+        "url": "https://www.yelp.com/search?find_desc=Mobile+Mechanic&find_near=a-and-f-towing-renton",
+        "title": "Best Mobile Mechanic near A & F Towing in Renton, WA",
+        "description": "Special offers for you · Sponsored Result · C&K Performance Auto - Mobile Mechanic near me - Renton, Washington ...Read more",
+        "breadcrumb": "https://www.yelp.com › Automotive › Mobile Mechanic",
+        "highlighted_terms": [
+          "Mobile Mechanic near me"
+        ],
+        "review": {
+          "rating_value": 3.9,
+          "review_count": 4230
+        }
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 96,
+        "rank_group": 81,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/burleson-tx",
+        "title": "Mobile Mechanic in Burleson, TX",
+        "description": "No shop wait, no lost workday. Peak-hour congestion in Burleson, TX means a shop trip costs 2–3 hours minimum. We Come to You with Same-Day Service ...Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Texas › Johnson",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 97,
+        "rank_group": 82,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.craigslist.org",
+        "url": "https://www.craigslist.org/view/d/santee-eddie-the-auto-mechanic-30yrs/wYg7Yvb17t6LyaavZbEgiq",
+        "title": "EDDIE THE AUTO MECHANIC 30YRS EXP FREE CHECKS",
+        "description": "22 hours ago — ... shop, automotive service ,glass replacement, windshield repair ... mobile mechanic in san diego, mobile mechanics san diego, san diego ...Read more",
+        "breadcrumb": "https://www.craigslist.org › ... › automotive services",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 98,
+        "rank_group": 83,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/huntsville-al-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in Huntsville AL",
+        "description": "Our team is a leader in offering name brand tires, wheels, different makes and models auto repair services for customers located in and around the Madison, ...Read more",
+        "breadcrumb": "https://wrench.com › cities › huntsville-al-mobile-mech...",
+        "highlighted_terms": [
+          "auto repair"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 99,
+        "rank_group": 84,
+        "position": "center",
+        "serp_features": [],
+        "domain": "www.instantcarfix.com",
+        "url": "https://www.instantcarfix.com/mobile-mechanic/nearme/reno-nv",
+        "title": "Mobile Mechanic in Reno, NV",
+        "description": "No shop wait, no lost workday · Save $80–$200 per service · ASE-certified, fully warranted · Home, office, or roadside.Read more",
+        "breadcrumb": "https://www.instantcarfix.com › ... › Nevada › Washoe",
+        "highlighted_terms": [
+          "shop"
+        ]
+      },
+      {
+        "type": "organic",
+        "rank_absolute": 100,
+        "rank_group": 85,
+        "position": "center",
+        "serp_features": [],
+        "domain": "wrench.com",
+        "url": "https://wrench.com/cities/rochester-ny-mobile-mechanic/",
+        "title": "Mobile Mechanic and Auto Repair in Rochester NY",
+        "description": "Our mechanics are well trained and use high-tech diagnostic equipment to guarantee your vehicle is repaired and serviced correctly the first time around. We ...Read more",
+        "breadcrumb": "https://wrench.com › cities › rochester-ny-mobile-mech...",
+        "highlighted_terms": [
+          "mechanics"
+        ]
+      }
+    ]
+  }
+}

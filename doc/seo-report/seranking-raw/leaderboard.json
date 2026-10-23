@@ -1,0 +1,177 @@
+{
+  "sov_components": [
+    "brand_presence",
+    "link_presence"
+  ],
+  "partial": true,
+  "request_metadata": {
+    "primary": "yourmechanic.com",
+    "engines": [
+      "ai-overview",
+      "ai-mode",
+      "chatgpt",
+      "perplexity",
+      "gemini"
+    ],
+    "competitors": [
+      "wrench.com",
+      "motorfyx.com",
+      "repairpal.com"
+    ],
+    "source": "us",
+    "scope_applied": "base_domain",
+    "scope_requested": "base_domain"
+  },
+  "leaderboard": [
+    {
+      "brand_presence": 1221,
+      "brand": "Wrench",
+      "brand_origin": "request",
+      "rank": 1,
+      "domain": "wrench.com",
+      "share_of_voice": 0.4992,
+      "link_presence": 2899,
+      "is_primary_target": false
+    },
+    {
+      "brand_presence": 12,
+      "brand": "repairpal",
+      "brand_origin": "request",
+      "rank": 2,
+      "domain": "repairpal.com",
+      "share_of_voice": 0.4173,
+      "link_presence": 135620,
+      "is_primary_target": false
+    },
+    {
+      "brand_presence": 12,
+      "brand": "Your Mechanic",
+      "brand_origin": "request",
+      "rank": 3,
+      "domain": "yourmechanic.com",
+      "share_of_voice": 0.0835,
+      "link_presence": 25873,
+      "is_primary_target": true
+    },
+    {
+      "brand_presence": null,
+      "share_of_voice": 0,
+      "brand": "MotorFyx",
+      "brand_origin": "request",
+      "rank": 4,
+      "domain": "motorfyx.com",
+      "is_primary_target": false,
+      "link_presence": 1,
+      "missing_metrics": [
+        "brand_presence"
+      ]
+    }
+  ],
+  "results": {
+    "wrench.com": {
+      "chatgpt": {
+        "brand_presence": 52,
+        "link_presence": 6
+      },
+      "gemini": {
+        "brand_presence": 62,
+        "link_presence": 8
+      },
+      "perplexity": {
+        "brand_presence": 3,
+        "link_presence": 51
+      },
+      "ai-overview": {
+        "brand_presence": 862,
+        "link_presence": 2206
+      },
+      "ai-mode": {
+        "brand_presence": 242,
+        "link_presence": 628
+      }
+    },
+    "repairpal.com": {
+      "chatgpt": {
+        "brand_presence": null,
+        "link_presence": 4805
+      },
+      "gemini": {
+        "brand_presence": null,
+        "link_presence": 73
+      },
+      "perplexity": {
+        "brand_presence": 9,
+        "link_presence": 346
+      },
+      "ai-overview": {
+        "brand_presence": 3,
+        "link_presence": 112445
+      },
+      "ai-mode": {
+        "brand_presence": null,
+        "link_presence": 17951
+      }
+    },
+    "motorfyx.com": {
+      "chatgpt": {
+        "brand_presence": null,
+        "link_presence": null
+      },
+      "gemini": {
+        "brand_presence": null,
+        "link_presence": null
+      },
+      "perplexity": {
+        "brand_presence": null,
+        "link_presence": 0
+      },
+      "ai-overview": {
+        "brand_presence": null,
+        "link_presence": null
+      },
+      "ai-mode": {
+        "brand_presence": null,
+        "link_presence": 1
+      }
+    },
+    "yourmechanic.com": {
+      "chatgpt": {
+        "brand_presence": 0,
+        "link_presence": 390
+      },
+      "gemini": {
+        "brand_presence": 0,
+        "link_presence": 176
+      },
+      "perplexity": {
+        "brand_presence": null,
+        "link_presence": 1340
+      },
+      "ai-overview": {
+        "brand_presence": 11,
+        "link_presence": 19644
+      },
+      "ai-mode": {
+        "brand_presence": 1,
+        "link_presence": 4323
+      }
+    }
+  },
+  "unavailable": [
+    {
+      "domain": "motorfyx.com",
+      "reason": "no_data",
+      "engine": "ai-overview"
+    },
+    {
+      "domain": "motorfyx.com",
+      "reason": "no_data",
+      "engine": "chatgpt"
+    },
+    {
+      "domain": "motorfyx.com",
+      "reason": "no_data",
+      "engine": "gemini"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "archetype": "keyword-table",
+  "title": "Question keywords for \"noise when braking\"",
+  "subtitle": "US • 12 of 154",
+  "summary": "Question keywords for \"noise when braking\" (US): 12 of 154 question keywords.",
+  "columns": [
+    {
+      "key": "volume",
+      "label": "Volume",
+      "format": "integer"
+    },
+    {
+      "key": "cpc",
+      "label": "CPC",
+      "format": "currency"
+    },
+    {
+      "key": "difficulty",
+      "label": "Difficulty",
+      "format": "integer"
+    },
+    {
+      "key": "competition",
+      "label": "Competition",
+      "format": "decimal"
+    },
+    {
+      "key": "intents",
+      "label": "Intent",
+      "format": "intents"
+    },
+    {
+      "key": "serp_features",
+      "label": "SERP features",
+      "format": "serp_features"
+    }
+  ],
+  "rows": [
+    {
+      "keyword": "grinding noise when braking",
+      "cells": {
+        "volume": 6600,
+        "cpc": 0.65,
+        "difficulty": 49,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "images",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "scraping noise when braking at low speed",
+      "cells": {
+        "volume": 590,
+        "cpc": 1.72,
+        "difficulty": 6,
+        "competition": 0.04,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "images",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "creaking noise when braking",
+      "cells": {
+        "volume": 480,
+        "cpc": 0,
+        "difficulty": 6,
+        "competition": 0.01,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "car making grinding noise when braking",
+      "cells": {
+        "volume": 390,
+        "cpc": 0.12,
+        "difficulty": 6,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "car making scraping noise when braking",
+      "cells": {
+        "volume": 390,
+        "cpc": 0.12,
+        "difficulty": 6,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "car makes scraping noise when braking",
+      "cells": {
+        "volume": 390,
+        "cpc": 0.12,
+        "difficulty": 7,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "car making a grinding noise when braking",
+      "cells": {
+        "volume": 390,
+        "cpc": 0.12,
+        "difficulty": 6,
+        "competition": 0.07,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "brakes making grinding noise when stopping",
+      "cells": {
+        "volume": 320,
+        "cpc": 1.57,
+        "difficulty": 17,
+        "competition": 0.09,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "rubbing noise when braking",
+      "cells": {
+        "volume": 320,
+        "cpc": 1.21,
+        "difficulty": 6,
+        "competition": 0.04,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "images",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "brakes make grinding noise when stopping",
+      "cells": {
+        "volume": 320,
+        "cpc": 1.57,
+        "difficulty": 6,
+        "competition": 0.09,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "people_also_ask",
+          "images",
+          "find_results_on",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "noise when i brake",
+      "cells": {
+        "volume": 270,
+        "cpc": 0.04,
+        "difficulty": 7,
+        "competition": 0.04,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "video",
+          "images",
+          "find_results_on",
+          "sge"
+        ]
+      },
+      "sparkline": []
+    },
+    {
+      "keyword": "noise when braking at low speed",
+      "cells": {
+        "volume": 260,
+        "cpc": 2.67,
+        "difficulty": 12,
+        "competition": 0.04,
+        "intents": [
+          "I"
+        ],
+        "serp_features": [
+          "reviews",
+          "video",
+          "people_also_ask",
+          "sge",
+          "related_searches"
+        ]
+      },
+      "sparkline": []
+    }
+  ],
+  "total": 154,
+  "notes": [
+    "Pass history_trend=true for per-row monthly search-volume sparklines."
+  ]
+}
