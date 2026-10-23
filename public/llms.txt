@@ -19,6 +19,10 @@
 - Privacy: exact coordinates stay on RevX's servers; others see an area of about 0.7 miles, and only the matched mechanic gets the job-site location.
 - Not yet available: payments and escrow, verified mechanics, OBD-II fault codes, VIN scanning, scheduling, insurance.
 
+## Team
+
+Founded by UC San Diego students: Stephanie Kovalchuk-Lum (Founder), Mustaqim Bin Burhanuddin (Co-founder, product lead), Eliot Boda (Founding Engineer) and Daniel Zhang (Founding Engineer, AI diagnosis).
+
 ## Pages
 
-- [Home](https://revx.website/): how RevX works, trust and privacy, mechanics, roadmap, FAQ
+- [Home](https://revx.website/): how RevX works, trust and privacy, mechanics, roadmap, team, contact, FAQ

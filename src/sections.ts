@@ -6,5 +6,6 @@ export const SECTIONS: { id: string; label: string; icon: IconName }[] = [
   { id: 'trust', label: 'Trust', icon: 'lock' },
   { id: 'mechanics', label: 'Mechanics', icon: 'job' },
   { id: 'vision', label: 'Roadmap', icon: 'obd' },
-  { id: 'ucsd', label: 'UCSD', icon: 'pin' },
+  { id: 'about', label: 'About', icon: 'community' },
+  { id: 'contact', label: 'Contact', icon: 'chat' },
 ];
