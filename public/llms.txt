@@ -1,0 +1,24 @@
+# RevX
+
+> RevX is a San Diego car-repair marketplace built at UCSD. Car and motorcycle owners describe a problem, get an AI mechanic's read on it, and match with a mobile mechanic who wants the job. Not to be confused with other companies or products named "RevX".
+
+## What it does
+
+- Owners post a problem in five steps: vehicle, category, symptoms, a photo, and an optional recording of the noise.
+- A rule engine turns the answers into a shortlist of likely causes; AI checks each one against the photo and audio. The owner gets a plain-English read with ranked causes, severity, urgency, a confidence level and a cost range. It is not a substitute for a hands-on inspection.
+- Owners and mechanics both swipe; a mutual right swipe is a match. They chat in real time, and the owner can collect several quotes before picking one.
+- When the job is done, both sides confirm and leave blind five-star reviews, released together.
+- Covers cars and motorcycles across four categories: mechanical, computer/ECU, modification and cosmetic.
+
+## Facts
+
+- Location: launching in San Diego, CA, starting around UCSD and nearby neighborhoods.
+- Platform: runs in the browser today; iOS and Android apps are coming.
+- Pricing: mechanics send their own quotes. No in-app payments yet; owners pay the mechanic directly.
+- Mechanics pay no lead fees and there are no pay-to-rank listings. The first 100 mechanics are free forever.
+- Privacy: exact coordinates stay on RevX's servers; others see an area of about 0.7 miles, and only the matched mechanic gets the job-site location.
+- Not yet available: payments and escrow, verified mechanics, OBD-II fault codes, VIN scanning, scheduling, insurance.
+
+## Pages
+
+- [Home](https://revx.website/): how RevX works, trust and privacy, mechanics, roadmap, FAQ
