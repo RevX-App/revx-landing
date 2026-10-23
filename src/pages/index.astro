@@ -75,6 +75,62 @@ const faq = [
   },
 ];
 
+// Milestones are a separate route from the feature lamps: no feature is promised to a stop.
+const milestones: { name: string; state: 'done' | 'now' | 'next' }[] = [
+  { name: 'Pitching', state: 'done' },
+  { name: 'Soft test', state: 'now' },
+  { name: 'Promotion', state: 'next' },
+  { name: 'Launch on App Store & Google Play', state: 'next' },
+  { name: 'Beyond San Diego', state: 'next' },
+];
+const stateLabel = { done: 'Done', now: 'Now', next: 'Next' };
+
+// Visible About/Contact and the founder markup come from this one list.
+const founders: {
+  name: string;
+  initials: string;
+  title: string;
+  line: string;
+  linkedin: string;
+  site?: string;
+  email?: string;
+}[] = [
+  {
+    name: 'Stephanie Kovalchuk-Lum',
+    initials: 'SK',
+    title: 'Founder',
+    line: 'Bridging the gap between drivers and the mechanics they can trust.',
+    linkedin: 'https://www.linkedin.com/in/stephaniekovalchuk-lum/',
+    email: 'stefania.ua04@gmail.com',
+  },
+  {
+    name: 'Mustaqim Bin Burhanuddin',
+    initials: 'MB',
+    title: 'Co-founder',
+    line: 'Product lead; built the RevX app.',
+    linkedin: 'https://www.linkedin.com/in/piqim/',
+    site: 'https://piqim.com',
+    email: 'mbinburhanuddin@gmail.com',
+  },
+  {
+    name: 'Eliot Boda',
+    initials: 'EB',
+    title: 'Founding Engineer',
+    line: 'Polishes the RevX app: the UI details, fixes and finish.',
+    linkedin: 'https://www.linkedin.com/in/eliotboda/',
+    site: 'https://eliotboda.dev/',
+  },
+  {
+    name: 'Daniel Zhang',
+    initials: 'DZ',
+    title: 'Founding Engineer',
+    line: 'Builds the AI diagnosis: rule engine plus multimodal model.',
+    linkedin: 'https://www.linkedin.com/in/daniel-zhang-78a2773a4/',
+  },
+];
+const contacts = founders.filter((f) => f.email);
+const UCSD = { '@type': 'CollegeOrUniversity', name: 'University of California San Diego', url: 'https://ucsd.edu' };
+
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -86,6 +142,16 @@ const schema = [
     logo: new URL('/icon-512.png', Astro.site).href,
     description: SITE.description,
     areaServed: { '@type': 'City', name: 'San Diego', containedInPlace: { '@type': 'State', name: 'California' } },
+    foundingLocation: { '@type': 'Place', name: 'San Diego, California' },
+    sameAs: ['https://github.com/RevX-App'],
+    founder: founders.map((f) => ({
+      '@type': 'Person',
+      name: f.name,
+      jobTitle: f.title,
+      description: f.line,
+      sameAs: [f.linkedin, f.site].filter(Boolean),
+      alumniOf: UCSD,
+    })),
   },
   {
     '@context': 'https://schema.org',
@@ -101,8 +167,6 @@ const schema = [
   },
 ];
 
-const traction = ['Pitch results', 'Founding mechanics signed', 'Beta users'];
-const team = ['Founder', 'Founder', 'Founder', 'Founder'];
 ---
 
 <Base schema={schema}>
@@ -393,49 +457,96 @@ const team = ['Founder', 'Founder', 'Founder', 'Founder'];
             ))
           }
         </ul>
+
+        <h3 class="route-head">The road to launch.</h3>
+        <ol class="route">
+          {
+            milestones.map((m) => (
+              <li class={m.state} aria-current={m.state === 'now' ? 'step' : undefined}>
+                <span class="stop" aria-hidden="true">
+                  {m.state === 'done' && <Icon name="check" size={18} />}
+                  {m.state === 'now' && <Icon name="pin" size={18} />}
+                </span>
+                <span class="stop-name">{m.name}</span>
+                <span class="stop-state">{stateLabel[m.state]}</span>
+              </li>
+            ))
+          }
+        </ol>
       </div>
     </section>
 
-    <!-- 5. UCSD: launch, traction and team in one place -->
-    <section id="ucsd">
+    <!-- 5. About: the founding team, linked to the profiles that vouch for them -->
+    <section id="about">
       <div class="wrap">
         <header class="sec-head">
-          <h2>Built at UCSD. Launching in San Diego.</h2>
+          <h2>Founded by UC San Diego students.</h2>
           <p class="lede">
-            Mechanics first: we're signing up local mechanics, then opening RevX to UCSD students and
-            the neighborhoods around campus.
+            RevX started at <a href="https://ucsd.edu">UC San Diego</a>. We're signing up local
+            mechanics first, then opening RevX to UCSD students and the neighborhoods around campus.
           </p>
         </header>
 
-        <div class="ucsd-grid">
-          <div class="panel-glass trip">
-            <p class="placeholder-tag">Placeholder · replace before launch</p>
-            <dl>
+        <ul class="crew">
+          {
+            founders.map((f) => (
+              <li>
+                <span class="monogram" aria-hidden="true">{f.initials}</span>
+                <h3 class="crew-name">{f.name}</h3>
+                <p class="crew-title">{f.title}</p>
+                <p class="crew-line">{f.line}</p>
+                <p class="crew-links">
+                  <a href={f.linkedin} aria-label={`${f.name} on LinkedIn`}>LinkedIn</a>
+                  {f.site && (
+                    <a href={f.site} aria-label={`${f.name}'s website`}>
+                      {new URL(f.site).hostname}
+                    </a>
+                  )}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Contact: investors first, straight to the founders' inboxes -->
+    <section id="contact">
+      <div class="wrap split contact">
+        <header class="sec-head">
+          <h2>Talk to the founders.</h2>
+          <p class="lede">
+            Investing, partnering or writing about RevX? Email us directly; a founder reads every
+            message. Mechanics can sign up straight from the app.
+          </p>
+        </header>
+
+        <figure class="panel-glass">
+          <div class="msg-screen">
+            <p class="msg-head">Incoming · founders' line</p>
+            <ul class="lines">
               {
-                traction.map((t) => (
-                  <div>
-                    <dt>{t}</dt>
-                    <dd>— —</dd>
-                  </div>
-                ))
-              }
-            </dl>
-          </div>
-          <div class="panel-glass trip">
-            <p class="placeholder-tag">Placeholder · team names coming</p>
-            <ul class="roster">
-              {
-                team.map((role) => (
+                contacts.map((c) => (
                   <li>
-                    <span class="avatar" aria-hidden="true" />
-                    <span class="who">Team member</span>
-                    <span class="role">{role}</span>
+                    <span class="line-who">
+                      {c.name} · {c.title}
+                    </span>
+                    <a class="line-mail" href={`mailto:${c.email}`}>
+                      {c.email}
+                    </a>
+                    <button class="btn btn-ghost copy" type="button" data-copy={c.email}>
+                      <span class="copy-lamp" aria-hidden="true">
+                        <Icon name="check" size={16} />
+                      </span>
+                      <span data-copy-label>Copy email</span>
+                    </button>
                   </li>
                 ))
               }
             </ul>
           </div>
-        </div>
+          <p class="sr-only" aria-live="polite" data-copy-status />
+        </figure>
       </div>
     </section>
 
@@ -490,6 +601,26 @@ const team = ['Founder', 'Founder', 'Founder', 'Founder'];
     </div>
   </footer>
 </Base>
+
+<script>
+  // Copy a founder's email; the lamp lights only on a click, per the no-autonomous-motion rule.
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    const label = btn.querySelector<HTMLElement>('[data-copy-label]')!;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy!);
+      } catch {
+        // Clipboard blocked: the address stays a mailto link, so say so instead of failing silently.
+        label.textContent = 'Select to copy';
+        return;
+      }
+      btn.classList.add('is-copied');
+      label.textContent = 'Copied';
+      if (status) status.textContent = `Copied ${btn.dataset.copy}`;
+    });
+  });
+</script>
 
 <style>
   section {
@@ -1129,71 +1260,250 @@ const team = ['Founder', 'Founder', 'Founder', 'Founder'];
     color: var(--dim);
   }
 
-  /* UCSD */
-  .ucsd-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
+  /* Roadmap route: milestones on one wire, solid where travelled, dashed ahead. */
+  .route-head {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    margin-bottom: 1.75rem;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
   }
 
-  .trip dl {
-    margin: 1rem 0 0;
-    display: grid;
-  }
-
-  .trip dl div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-block: 0.75rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .trip dt {
-    color: var(--silver);
-  }
-
-  .trip dd {
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--dim);
-  }
-
-  .roster {
+  .route {
+    --stop: 2.75rem;
     list-style: none;
-    margin: 1rem 0 0;
+    margin: 0;
     padding: 0;
     display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
   }
 
-  .roster li {
+  .route li {
+    position: relative;
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 0.9rem;
-    padding-block: 0.6rem;
-    border-bottom: 1px solid var(--rule);
+    gap: 0.35rem;
+    justify-items: start;
+    align-content: start;
   }
 
-  .avatar {
-    width: 2.25rem;
-    height: 2.25rem;
+  /* The wire to the next stop. */
+  .route li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: calc(var(--stop) / 2);
+    left: calc(var(--stop) + 0.5rem);
+    right: -0.5rem;
+    border-top: 1.5px dashed var(--unlit);
+  }
+
+  .route li.done::after {
+    border-top: 1.5px solid var(--sky-deep);
+  }
+
+  .stop {
+    display: grid;
+    place-items: center;
+    width: var(--stop);
+    height: var(--stop);
+    margin-bottom: 0.4rem;
     border-radius: 50%;
-    border: 1.5px dashed var(--dim);
+    border: 1.5px dashed var(--unlit);
     background: var(--bezel);
   }
 
-  .who {
+  .done .stop {
+    border: 1.5px solid var(--sky-deep);
+    color: var(--sky);
+  }
+
+  .now .stop {
+    border: 1.5px solid var(--sky-soft);
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
+  }
+
+  .stop-name {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
     color: var(--ink);
   }
 
-  .role {
+  .next .stop-name {
     color: var(--muted);
+  }
+
+  .stop-state {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .now .stop-state {
+    color: var(--sky);
+  }
+
+  /* About: four gauges on one rule, no boxes. */
+  .crew {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.5rem clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .crew li {
+    display: grid;
+    align-content: start;
+    gap: 0.35rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule-strong);
+  }
+
+  /* "Done" lamp; swap for a framed photo when one arrives. */
+  .monogram {
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.9rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--sky-deep);
+    background: var(--bezel);
+    color: var(--sky);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .crew-name {
+    font-size: 1.625rem;
+  }
+
+  .crew-title {
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+  }
+
+  .crew-line {
+    margin-top: 0.4rem;
+    color: var(--silver);
+    max-width: 32ch;
+  }
+
+  .crew-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
+    margin-top: 0.3rem;
+  }
+
+  .crew-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+
+  /* Contact: the message centre, one line per founder. */
+  .contact {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+  }
+
+  .contact .sec-head {
+    margin-bottom: 0;
+  }
+
+  .msg-screen {
+    padding: 1.1rem 1.2rem;
+    border-radius: 0.9rem;
+    border: 1px solid var(--rule);
+    background: #060a0d;
+  }
+
+  .msg-head {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .lines {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lines li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .lines li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0.2rem;
+  }
+
+  .line-who {
+    grid-column: 1 / -1;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .line-mail {
+    min-width: 0;
+    overflow-wrap: break-word;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.375rem, 2.4vw, 2rem);
+    line-height: 1.15;
+    color: var(--sky);
+    text-decoration: none;
+  }
+
+  .line-mail:hover {
+    color: var(--sky-soft);
+    text-decoration: underline;
+  }
+
+  .copy {
+    min-height: 2.75rem;
+    padding: 0.4rem 1rem 0.4rem 0.45rem;
+    font-size: 1rem;
+  }
+
+  .copy-lamp {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--unlit);
+    background: var(--bezel);
+    color: transparent;
+    transition:
+      background 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out),
+      color 0.3s var(--ease-out);
+  }
+
+  .copy.is-copied .copy-lamp {
+    border-color: var(--sky-soft);
+    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
+    color: var(--sky-ink);
   }
 
   /* FAQ */
@@ -1290,9 +1600,44 @@ const team = ['Founder', 'Founder', 'Founder', 'Founder'];
     .stage,
     .faq-grid,
     .split,
-    .ucsd-grid,
     .close-inner {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .crew {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* The route turns vertical: stops stack and the wire runs down the left. */
+    .route {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    .route li {
+      grid-template-columns: var(--stop) minmax(0, 1fr);
+      column-gap: 1rem;
+      row-gap: 0.1rem;
+      align-items: center;
+    }
+
+    .route .stop {
+      grid-row: span 2;
+      margin-bottom: 0;
+    }
+
+    .route li:not(:last-child)::after {
+      top: calc(var(--stop) + 0.25rem);
+      bottom: -1.25rem;
+      left: calc(var(--stop) / 2);
+      right: auto;
+      border-top: 0;
+      border-left: 1.5px dashed var(--unlit);
+    }
+
+    .route li.done::after {
+      border-top: 0;
+      border-left: 1.5px solid var(--sky-deep);
     }
 
     .display {
@@ -1349,6 +1694,15 @@ const team = ['Founder', 'Founder', 'Founder', 'Founder'];
     .unwired li {
       font-size: 1rem;
       line-height: 1.2;
+    }
+
+    .crew {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lines li {
+      grid-template-columns: minmax(0, 1fr);
+      justify-items: start;
     }
 
     .close-actions {
