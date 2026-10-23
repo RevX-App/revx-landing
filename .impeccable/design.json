@@ -34,7 +34,7 @@
       "readout": { "displayName": "Readout", "purpose": "Stat values and the lead verdict." },
       "reading-lead": { "displayName": "Reading Lead", "purpose": "Lead cause, match pair, mechanic job title." },
       "value": { "displayName": "Value", "purpose": "Quote prices and spec-sheet terms." },
-      "item": { "displayName": "Item", "purpose": "Roadmap lamp names and roster names." },
+      "item": { "displayName": "Item", "purpose": "Roadmap lamp names, route stop names and the founder title line." },
       "reading": { "displayName": "Reading", "purpose": "Alternate causes and trace step names." },
       "lede": { "displayName": "Lede", "purpose": "Paragraph under a section headline; muted, 52ch." },
       "body": { "displayName": "Body", "purpose": "Prose in silver or muted." },
@@ -93,7 +93,7 @@
       "name": "Menu Toggle and Progress Strip",
       "kind": "nav",
       "refersTo": "menu-toggle",
-      "description": "At 1100px and below: a pill naming the current section over a five-segment progress strip.",
+      "description": "At 1100px and below: a pill naming the current section over a six-segment progress strip.",
       "html": "<div class=\"ds-menubar\"><button class=\"ds-menu\" type=\"button\">Trust <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\"><path d=\"M4 7h16M4 12h16M4 17h16\"/></svg></button><div class=\"ds-progress\"><span class=\"lit\"></span><span class=\"lit\"></span><span></span><span></span><span></span></div></div>",
       "css": ".ds-menubar { display: grid; gap: 0.75rem; justify-items: end; width: 20rem; } .ds-menu { display: flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; padding-inline: 0.9rem; border: 1px solid var(--rule-strong, #2c3740); border-radius: 999px; background: none; color: var(--ink, #eceff1); font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; } .ds-menu:hover { border-color: var(--sky, #38bdf8); } .ds-menu:focus-visible { outline: 2px solid var(--sky, #38bdf8); outline-offset: 3px; } .ds-progress { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; height: 3px; width: 100%; } .ds-progress span { background: var(--unlit, #2a333b); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-progress .lit { background: var(--sky, #38bdf8); }"
     },

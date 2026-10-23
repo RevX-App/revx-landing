@@ -270,7 +270,7 @@ A smoked-glass dark palette with one cool backlight and two signal colours held 
 
 ### Neutral
 - **Smoked Glass** (glass): page ground, the header at 94 percent opacity, the browser theme colour, the inner ring of the start button.
-- **Bezel** (bezel): unlit and sealed bulb fills, round swipe buttons, placeholder avatars.
+- **Bezel** (bezel): unlit and sealed bulb fills, round swipe buttons, founder monogram fills, unvisited route stops.
 - **Panel** (panel): the top stop of instrument glass gradients and the menu sheet fill.
 - **LCD Screen** (lcd-screen): the near-black screen inset in the message centre and the disclaimer strip.
 - **Chip Fill** (chip-fill): filled intake chips and the mechanic's chat bubble.
@@ -304,7 +304,7 @@ A smoked-glass dark palette with one cool backlight and two signal colours held 
 - **Readout** (700, clamp(1.25rem, 1.8vw, 1.5rem)): stat values and the lead verdict on a readout.
 - **Reading Lead** (700, 1.375rem): the lead cause in the demo, the match pair, the mechanic job title.
 - **Value** (700, 1.25rem): quote prices and spec-sheet terms.
-- **Item** (600 to 700, 1.125rem): roadmap lamp names and roster names.
+- **Item** (600 to 700, 1.125rem): roadmap lamp names, route stop names and the founder title line.
 - **Reading** (600 to 700, 1.0625rem): alternate causes and trace step names; the size a lead steps down from.
 - **Lede** (400, clamp(1.0625rem, 1.3vw, 1.25rem), muted, 52ch max): the paragraph under a section headline. The hero lede sits in silver over the photo, 40ch max.
 - **Body** (400, 1.0625rem, 1.6): prose in silver or muted, 52 to 56ch.
@@ -322,9 +322,9 @@ A smoked-glass dark palette with one cool backlight and two signal colours held 
 
 ## Layout
 
-One centred container (82rem max, fluid gutter clamp(1rem, 4vw, 3.5rem)) and a fluid section rhythm (clamp(4rem, 8vw, 7rem) block padding). Sections are separated by 1px rules, not background blocks; the only tinted bands are the roadmap (a slightly darker glass) and the close (a sky radial rising from the lower right). Section heads sit on one left edge, 46rem max, with clamp(2.5rem, 5vw, 4rem) below them. The page reads in one order: hero, how it works, trust, mechanics, roadmap, UCSD, close.
+One centred container (82rem max, fluid gutter clamp(1rem, 4vw, 3.5rem)) and a fluid section rhythm (clamp(4rem, 8vw, 7rem) block padding). Sections are separated by 1px rules, not background blocks; the only tinted bands are the roadmap (a slightly darker glass) and the close (a sky radial rising from the lower right). Section heads sit on one left edge, 46rem max, with clamp(2.5rem, 5vw, 4rem) below them. The page reads in one order: hero, how it works, trust, mechanics, roadmap, about, contact, FAQ, close.
 
-**Header.** Sticky, 4.25rem tall: wordmark left, the five section lamps centred, compact Open RevX right.
+**Header.** Sticky, 4.25rem tall: wordmark left, the six section lamps centred, compact Open RevX right.
 
 **Hero.** A 5/6 split, copy left (H1, lede, actions, platforms line) and the message centre right, vertically centred, gap clamp(2rem, 5vw, 5rem). The garage photo fills the section behind both.
 
@@ -334,12 +334,12 @@ One centred container (82rem max, fluid gutter clamp(1rem, 4vw, 3.5rem)) and a f
 
 **Mechanics.** A 7/5 split; the mechanic's-side panel is sticky at 6rem from the top.
 
-**Roadmap.** An auto-fill grid of not-wired lamps, 13rem minimum columns. **UCSD.** Two equal placeholder panels. **Close.** Headline left, start button right.
+**Roadmap.** An auto-fill grid of not-wired lamps, 13rem minimum columns, then the milestone route in five equal columns. **About.** Four founder gauges in four equal columns, each topped by a strong rule, no boxes. **Contact.** A 5/7 split: section head left, message-centre screen right, vertically centred. **Close.** Headline left, start button right.
 
 **Breakpoints.**
-- **1100px:** the header lamps give way to a menu toggle (labelled with the current section) and a 3px five-segment progress strip along the header's base.
-- **1000px:** every split stacks to one column: hero (message centre capped at 40rem), stages, mechanics (panel unstuck, 28rem max), UCSD and close. The trust panel stacks and its divider turns horizontal.
-- **640px:** the header CTA hides (the menu sheet carries Open RevX), hero actions stretch, demo field grids go to one column and readout grids to two, the Next label drops its destination, the seal sequence turns vertical, spec rows stack, and the roadmap goes to two columns.
+- **1100px:** the header lamps give way to a menu toggle (labelled with the current section) and a 3px six-segment progress strip along the header's base.
+- **1000px:** every split stacks to one column: hero (message centre capped at 40rem), stages, mechanics (panel unstuck, 28rem max), contact and close. The founder gauges go to two columns and the route turns vertical, its wire running down the left. The trust panel stacks and its divider turns horizontal.
+- **640px:** the header CTA hides (the menu sheet carries Open RevX), hero actions stretch, demo field grids go to one column and readout grids to two, the Next label drops its destination, the seal sequence turns vertical, spec rows stack, the roadmap goes to two columns, founder gauges and contact lines go to one.
 
 ## Elevation & Depth
 
@@ -357,7 +357,7 @@ Depth is glass over a dark cabin. Panels sit forward on soft, long, fully black 
 
 ## Shapes
 
-Anything that lights up or turns is a circle: header lamps (2rem), demo step lamps (2.25rem bulbs in 2.75rem targets), stage lamps (2.5rem), seals, rating lamps, roadmap lamps and swipe buttons (2.75rem), avatars (2.25rem), the 8.5rem start button. Glass is a softly rounded rectangle, nested so the radius tightens inward: the message-centre bezel (1.75rem) holds a screen (0.9rem) holds reading rows (0.4rem). Below the hero, instrument panels round at 1.5rem; the menu sheet and founding-mechanic frame at 1.25rem; padded reading rows, quotes and seals at 0.5rem; single-line rows and hypothesis chips at 0.4rem. Buttons, filled chips and the menu toggle are full pills. Placeholder tags and focus rings use a 4px corner.
+Anything that lights up or turns is a circle: header lamps (2rem), demo step lamps (2.25rem bulbs in 2.75rem targets), stage lamps (2.5rem), seals, rating lamps, roadmap lamps and swipe buttons (2.75rem), route stops (2.75rem), copy lamps (1.9rem), founder monograms (5rem), the 8.5rem start button. Glass is a softly rounded rectangle, nested so the radius tightens inward: the message-centre bezel (1.75rem) holds a screen (0.9rem) holds reading rows (0.4rem). Below the hero, instrument panels round at 1.5rem; the menu sheet and founding-mechanic frame at 1.25rem; padded reading rows, quotes and seals at 0.5rem; single-line rows and hypothesis chips at 0.4rem. Buttons, filled chips and the menu toggle are full pills. Placeholder tags and focus rings use a 4px corner.
 
 Strokes are thin: 1px rules and panel outlines, 1.5px lamp rims and scale lines, 1.75px icon strokes on a 24px grid with round caps. Dashed strokes carry meaning (alternate, sealed, placeholder, not wired) and are never ornament.
 
@@ -372,7 +372,7 @@ Strokes are thin: 1px rules and panel outlines, 1.5px lamp rims and scale lines,
 - **Focus:** a 2px sky outline offset 3px with a 4px corner, global to every focusable element.
 
 ### Navigation: Lamp Header (signature)
-The section lamps are both the navigation and the scroll progress. Each is a 2rem bulb with a section glyph and a nav-label caption, in a 2.75rem target. Sections already passed are **done** (sky-deep rim, sky glyph); the section in view is **on** (sky radial bulb, ink label, `aria-current`); the rest are **off**. At 1100px and below the lamps collapse into a pill menu toggle that names the current section, a 3px five-segment strip (unlit, turning sky as sections pass), and a menu sheet with the same lamps beside silver links and a full-width Open RevX.
+The section lamps are both the navigation and the scroll progress. Each is a 2rem bulb with a section glyph and a nav-label caption, in a 2.75rem target. Sections already passed are **done** (sky-deep rim, sky glyph); the section in view is **on** (sky radial bulb, ink label, `aria-current`); the rest are **off**. At 1100px and below the lamps collapse into a pill menu toggle that names the current section, a 3px six-segment strip (unlit, turning sky as sections pass), and a menu sheet with the same lamps beside silver links and a full-width Open RevX.
 
 ### Message Centre (signature)
 The hero instrument: a bezel-radius glass panel holding a seven-lamp step row, the step title with an "n of 7" counter, an LCD screen, and a footer with the demo note and Next. It rests on Diagnose (the one warning lamp, amber). Advancing is click-only: a lamp, Next, arrow keys, or a drag of the swipe card. Each screen fades in from a 3px blur over 0.4s. Inside the screen: printed legends over ink values, ranked causes, a swipe card with two round buttons (pass in muted, right in sky), chat bubbles with a 0.2rem speech tail, quote rows, sky checks, and dashed sealed reviews with amber locks.
@@ -404,7 +404,16 @@ Causes, verdicts and quotes. The lead row has a solid 1px sky border, an 8 perce
 A full-width screen band at the base of a panel: lcd-screen fill, strong-rule top border, amber text with a leading glyph. Carries the AI disclaimer.
 
 ### Not-wired Lamps
-Roadmap entries: a 2.75rem bezel circle with a dashed dim rim and dim glyph beside a muted item name. Placeholder avatars use the same dashed dim rim at 2.25rem.
+Roadmap entries: a 2.75rem bezel circle with a dashed dim rim and dim glyph beside a muted item name.
+
+### Milestone Route
+The road to launch, under the not-wired lamps and never tied to them. Each stop is a 2.75rem circle in a lamp state: **done** (sky-deep rim, sky check), **now** (lit sky bulb, sky-ink pin, `aria-current="step"`), **next** (bezel fill, dashed unlit rim, no glyph). A wire joins each stop to the next: solid sky-deep after a done stop, dashed unlit ahead. Below each stop, the name in display weight (muted when next) and a printed legend (Done / Now / Next, sky on Now), so state never rests on colour alone.
+
+### Founder Gauges
+About section entries: a 5rem done-lamp monogram (bezel fill, sky-deep rim, sky initials in display 800), then name (display, 1.625rem), title (muted display), one line of silver prose (32ch max) and text links to LinkedIn and a personal site in 2.75rem targets. A real photo replaces the monogram inside the same circle, in grayscale with a slight sky tint. No card boxes.
+
+### Founders' Line (contact screen)
+A message-centre screen (lcd-screen fill, rule border, 0.9rem corner) inside instrument glass. One row per founder: a printed legend (name and title), the email in sky display type as a mailto link, and a ghost pill copy button with a 1.9rem lamp. The lamp is unlit at rest and lights sky only on a successful click; the label changes to Copied and a polite live region announces it. Nothing in the panel moves on its own.
 
 ### Placeholder Tag
 Dashed amber 1px border, 4px corner, amber label caps. Marks content that must be replaced before launch.
