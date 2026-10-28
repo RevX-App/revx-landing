@@ -270,7 +270,7 @@ A smoked-glass dark palette with one cool backlight and two signal colours held 
 
 ### Neutral
 - **Smoked Glass** (glass): page ground, the header at 94 percent opacity, the browser theme colour, the inner ring of the start button.
-- **Bezel** (bezel): unlit and sealed bulb fills, round swipe buttons, founder monogram fills, unvisited route stops.
+- **Bezel** (bezel): unlit and sealed bulb fills, round swipe buttons, unvisited route stops.
 - **Panel** (panel): the top stop of instrument glass gradients and the menu sheet fill.
 - **LCD Screen** (lcd-screen): the near-black screen inset in the message centre and the disclaimer strip.
 - **Chip Fill** (chip-fill): filled intake chips and the mechanic's chat bubble.
@@ -357,7 +357,7 @@ Depth is glass over a dark cabin. Panels sit forward on soft, long, fully black 
 
 ## Shapes
 
-Anything that lights up or turns is a circle: header lamps (2rem), demo step lamps (2.25rem bulbs in 2.75rem targets), stage lamps (2.5rem), seals, rating lamps, roadmap lamps and swipe buttons (2.75rem), route stops (2.75rem), copy lamps (1.9rem), founder monograms (5rem), the 8.5rem start button. Glass is a softly rounded rectangle, nested so the radius tightens inward: the message-centre bezel (1.75rem) holds a screen (0.9rem) holds reading rows (0.4rem). Below the hero, instrument panels round at 1.5rem; the menu sheet and founding-mechanic frame at 1.25rem; padded reading rows, quotes and seals at 0.5rem; single-line rows and hypothesis chips at 0.4rem. Buttons, filled chips and the menu toggle are full pills. Placeholder tags and focus rings use a 4px corner.
+Anything that lights up or turns is a circle: header lamps (2rem), demo step lamps (2.25rem bulbs in 2.75rem targets), stage lamps (2.5rem), seals, rating lamps, roadmap lamps and swipe buttons (2.75rem), route stops (2.75rem), copy lamps (1.9rem), founder portraits (5rem), the 8.5rem start button. Glass is a softly rounded rectangle, nested so the radius tightens inward: the message-centre bezel (1.75rem) holds a screen (0.9rem) holds reading rows (0.4rem). Below the hero, instrument panels round at 1.5rem; the menu sheet and founding-mechanic frame at 1.25rem; padded reading rows, quotes and seals at 0.5rem; single-line rows and hypothesis chips at 0.4rem. Buttons, filled chips and the menu toggle are full pills. Placeholder tags and focus rings use a 4px corner.
 
 Strokes are thin: 1px rules and panel outlines, 1.5px lamp rims and scale lines, 1.75px icon strokes on a 24px grid with round caps. Dashed strokes carry meaning (alternate, sealed, placeholder, not wired) and are never ornament.
 
@@ -410,7 +410,7 @@ Roadmap entries: a 2.75rem bezel circle with a dashed dim rim and dim glyph besi
 The road to launch, under the not-wired lamps and never tied to them. Each stop is a 2.75rem circle in a lamp state: **done** (sky-deep rim, sky check), **now** (lit sky bulb, sky-ink pin, `aria-current="step"`), **next** (bezel fill, dashed unlit rim, no glyph). A wire joins each stop to the next: solid sky-deep after a done stop, dashed unlit ahead. Below each stop, the name in display weight (muted when next) and a printed legend (Done / Now / Next, sky on Now), so state never rests on colour alone.
 
 ### Founder Gauges
-About section entries: a 5rem done-lamp monogram (bezel fill, sky-deep rim, sky initials in display 800), then name (display, 1.625rem), title (muted display), one line of silver prose (32ch max) and text links to LinkedIn and a personal site in 2.75rem targets. A real photo replaces the monogram inside the same circle, in grayscale with a slight sky tint. No card boxes.
+About section entries: a 5rem done-lamp portrait (sky-deep rim around the founder's photo, grayscale with a slight sky tint), then name (display, 1.625rem), title (muted display), one line of silver prose (32ch max) and text links to LinkedIn and a personal site in 2.75rem targets. No card boxes.
 
 ### Founders' Line (contact screen)
 A message-centre screen (lcd-screen fill, rule border, 0.9rem corner) inside instrument glass. One row per founder: a printed legend (name and title), the email in sky display type as a mailto link, and a ghost pill copy button with a 1.9rem lamp. The lamp is unlit at rest and lights sky only on a successful click; the label changes to Copied and a polite live region announces it. Nothing in the panel moves on its own.

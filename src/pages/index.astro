@@ -6,6 +6,10 @@ import Hero from '../components/Hero.astro';
 import Icon, { type IconName } from '../components/Icon.astro';
 import Wordmark from '../components/Wordmark.astro';
 import discBrake from '../assets/disc-brake.jpg';
+import stephPhoto from '../assets/steph.jpg';
+import piqimPhoto from '../assets/piqim.jpg';
+import eliotPhoto from '../assets/eliot.jpg';
+import danielPhoto from '../assets/daniel.jpg';
 import { APP_URL, SITE } from '../config';
 
 // Stage 1 uses a different demo post from the hero, so the page moves forward
@@ -88,7 +92,7 @@ const stateLabel = { done: 'Done', now: 'Now', next: 'Next' };
 // Visible About/Contact and the founder markup come from this one list.
 const founders: {
   name: string;
-  initials: string;
+  photo: ImageMetadata;
   title: string;
   line: string;
   linkedin: string;
@@ -97,7 +101,7 @@ const founders: {
 }[] = [
   {
     name: 'Stephanie Kovalchuk-Lum',
-    initials: 'SK',
+    photo: stephPhoto,
     title: 'Founder',
     line: 'Bridging the gap between drivers and the mechanics they can trust.',
     linkedin: 'https://www.linkedin.com/in/stephaniekovalchuk-lum/',
@@ -105,7 +109,7 @@ const founders: {
   },
   {
     name: 'Mustaqim Bin Burhanuddin',
-    initials: 'MB',
+    photo: piqimPhoto,
     title: 'Co-founder',
     line: 'Product lead; built the RevX app.',
     linkedin: 'https://www.linkedin.com/in/piqim/',
@@ -114,7 +118,7 @@ const founders: {
   },
   {
     name: 'Eliot Boda',
-    initials: 'EB',
+    photo: eliotPhoto,
     title: 'Founding Engineer',
     line: 'Polishes the RevX app: the UI details, fixes and finish.',
     linkedin: 'https://www.linkedin.com/in/eliotboda/',
@@ -122,7 +126,7 @@ const founders: {
   },
   {
     name: 'Daniel Zhang',
-    initials: 'DZ',
+    photo: danielPhoto,
     title: 'Founding Engineer',
     line: 'Builds the AI diagnosis: rule engine plus multimodal model.',
     linkedin: 'https://www.linkedin.com/in/daniel-zhang-78a2773a4/',
@@ -491,7 +495,9 @@ const schema = [
           {
             founders.map((f) => (
               <li>
-                <span class="monogram" aria-hidden="true">{f.initials}</span>
+                <span class="portrait">
+                  <Image src={f.photo} alt={`Portrait of ${f.name}`} widths={[80, 160, 240]} sizes="5rem" format="webp" quality={80} />
+                </span>
                 <h3 class="crew-name">{f.name}</h3>
                 <p class="crew-title">{f.title}</p>
                 <p class="crew-line">{f.line}</p>
@@ -1364,21 +1370,33 @@ const schema = [
     border-top: 1px solid var(--rule-strong);
   }
 
-  /* "Done" lamp; swap for a framed photo when one arrives. */
-  .monogram {
-    display: grid;
-    place-items: center;
+  /* "Done" lamp framing a photo: grayscale, with a slight sky tint laid over it. */
+  .portrait {
+    position: relative;
     width: 5rem;
     height: 5rem;
     margin-bottom: 0.9rem;
     border-radius: 50%;
     border: 1.5px solid var(--sky-deep);
     background: var(--bezel);
-    color: var(--sky);
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.75rem;
-    letter-spacing: 0.02em;
+    overflow: hidden;
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+  }
+
+  .portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--sky);
+    mix-blend-mode: color;
+    opacity: 0.18;
   }
 
   .crew-name {
