@@ -1,17 +1,11 @@
 ---
 import LegalPage from '../components/LegalPage.astro';
+import { Content } from '../legal/privacy.md';
 ---
 
 <LegalPage
-  title="Privacy"
-  description="How RevX handles privacy. The full policy is in progress; precise location never leaves RevX's servers."
+  title="Privacy Policy"
+  description="What RevX collects, who receives it, how location and AI diagnosis work, and how to delete your data."
 >
-  <p>
-    RevX's privacy policy is being written and will appear here before public launch. This landing
-    site sets no cookies and runs no analytics.
-  </p>
-  <p>
-    In the app, precise location never leaves our servers: other users see a snapped area and a
-    rounded distance, and only your matched mechanic receives the job-site location.
-  </p>
+  <Content />
 </LegalPage>
