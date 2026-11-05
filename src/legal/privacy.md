@@ -1,4 +1,4 @@
-**Effective date:** November 4, 2026
+**Effective date:** November 5, 2026
 
 RevX connects vehicle owners with mechanics. It is run by Mustaqim Bin Burhanuddin, in
 California ("RevX", "we"). Contact: revxtheapp@gmail.com. RevX is for adults 18 and over
@@ -8,13 +8,18 @@ in the United States.
 
 - **Account:** email, password (stored by our provider in protected form), display name,
   account type, optional photo, bio and ZIP code.
-- **Mechanic details:** business name, service area and radius, specialties, pricing text.
+- **Mechanic details:** business name, service area and radius, specialties, repairs and makes
+  offered, year started, where you work, stated prices and pricing text.
 - **Vehicles:** make, model, year, color, nickname, type, engine type, mileage and photos.
 - **Problems:** descriptions, your answers, urgency, photos and any sound recording you
   add. A recording can capture nearby voices, so please avoid talking during it.
 - **Location:** see below.
 - **Activity:** swipes, matches, messages, estimates, appointments, jobs, reviews,
   Community posts, replies, votes and groups, blocks and reports.
+- **End-of-job answers, if you give them:** what you paid or charged, how the price compared
+  with the quote, whether only necessary work was done, whether the repair was explained, and
+  the repairs done. Mechanic profiles show totals across several owners, never one job. What a
+  mechanic says they did is shown to that job's owner. Amounts are not shown to anyone else.
 - **Device:** a push notification token and your notification settings.
 
 We do not use advertising or analytics tools, track you across other companies' apps or

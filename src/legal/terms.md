@@ -1,4 +1,4 @@
-**Effective date:** November 4, 2026
+**Effective date:** November 5, 2026
 
 These terms are an agreement between you and Mustaqim Bin Burhanuddin, who runs RevX
 ("RevX", "we"). Contact: revxtheapp@gmail.com. By using RevX, you agree to them and to
@@ -24,7 +24,8 @@ estimate and insurance rules. Owners are responsible for deciding whether to acc
 
 RevX is free and doesn't process payments. Prices, estimates, payment, warranties and
 disputes are between the owner and mechanic. Estimates in the app are records between you, and
-we don't guarantee them.
+we don't guarantee them. Amounts you enter at the end of a job are your own record. They are not
+an invoice or a receipt, and we don't check them.
 
 ## AI diagnosis
 
