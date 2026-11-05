@@ -239,7 +239,7 @@ Every RevX surface is a dashboard: thin bezel rules, tick scales, and message-ce
 
 The system runs on a state vocabulary that every component speaks: **off** (sand fill, unlit rim, muted glyph), **done** (sand fill, accent-text rim and glyph), **on** (flat lime bulb, on-accent glyph), **warning** (flat urgent bulb, on-urgent glyph), and **not wired / sealed** (dashed rim). Solid means chosen, confirmed, or live. Dashed means alternate, sealed, pending, placeholder, or not built. The page reads in one direction, top to bottom, with headings on one left edge; density is that of a cluster, compact readouts inside generous margins.
 
-Photography is allowed only as a dim backdrop behind the glass (the hero garage at 0.32 opacity, masked to transparent below its midpoint) or as a framed image inside an instrument screen. Depth comes from soft, long drop shadows under panels, never from glow. Nothing moves on its own: every state change follows scroll position or a click.
+Photography is allowed only as a dim backdrop behind the glass (the hero garage at 0.4 opacity over black, masked to transparent below its midpoint) or as a framed image inside an instrument screen. Depth comes from soft, long drop shadows under panels, never from glow. Nothing moves on its own: every state change follows scroll position or a click.
 
 **Key Characteristics:**
 - The app's warm neutral ramp in light and dark; lime carries every lit state and the primary action.
@@ -272,7 +272,7 @@ The palette mirrors `src/theme/palette.js` in the RevX app repo, which stays the
 | on-urgent | #172c29 | #172c29 | Glyphs on urgent |
 | urgent-text | #c74424 | #ff8a68 | Warning readouts, locks, the AI disclaimer strip, placeholder tags |
 | error | #b91c1c | #f87171 | The exact-location point in the privacy grid |
-| brand-deep | #172c29 | #172c29 | Hero ground, favicon tile |
+| brand-deep | #172c29 | #172c29 | Favicon tile |
 
 ### Named Rules
 **The Lime Is A Fill Rule.** Lime carries dark text and never appears as text on a light ground. Anything that needs lime's meaning as a line or letter uses accent-text.
@@ -281,7 +281,7 @@ The palette mirrors `src/theme/palette.js` in the RevX app repo, which stays the
 
 **The Signal Reserve Rule.** Urgent means caution or unresolved; error means private or stop. Neither is ever decoration, a brand accent, or a hover colour.
 
-**The Dark Hero Rule.** The hero sets `color-scheme: dark` on a brand-deep ground in both themes, because the garage photo needs a dark backdrop.
+**The Dark Hero Rule.** The hero sets `color-scheme: dark` on a black ground in both themes, because the garage photo needs a dark backdrop.
 
 ## Typography
 
@@ -316,7 +316,7 @@ The palette mirrors `src/theme/palette.js` in the RevX app repo, which stays the
 
 ## Layout
 
-One centred container (82rem max, fluid gutter clamp(1rem, 4vw, 3.5rem)) and a fluid section rhythm (clamp(4rem, 8vw, 7rem) block padding). Sections are separated by 1px rules, not background blocks; the only tinted bands are the hero (brand-deep), the roadmap (sand) and the close (an accent-wash radial rising from the lower right). Section heads sit on one left edge, 46rem max, with clamp(2.5rem, 5vw, 4rem) below them. The page reads in one order: hero, how it works, trust, mechanics, roadmap, about, contact, FAQ, close.
+One centred container (82rem max, fluid gutter clamp(1rem, 4vw, 3.5rem)) and a fluid section rhythm (clamp(4rem, 8vw, 7rem) block padding). Sections are separated by 1px rules, not background blocks; the only tinted bands are the hero (black), the roadmap (sand) and the close (an accent-wash radial rising from the lower right). Section heads sit on one left edge, 46rem max, with clamp(2.5rem, 5vw, 4rem) below them. The page reads in one order: hero, how it works, trust, mechanics, roadmap, about, contact, FAQ, close.
 
 **Header.** Sticky, 4.25rem tall: wordmark left, the six section lamps centred, compact Open RevX right.
 
