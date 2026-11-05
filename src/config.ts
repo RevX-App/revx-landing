@@ -1,9 +1,8 @@
 /**
- * Site-wide constants. Until the web app is served at revx.website/app (doc/domain_setup.md),
- * buttons link straight to its current deployment. When the /app proxy goes live, change
- * the default to '/app' or set PUBLIC_APP_URL.
+ * Site-wide constants. The web app is served at revx.website/app through the proxy in
+ * vercel.json. Set PUBLIC_APP_URL to override.
  */
-export const APP_URL: string = import.meta.env.PUBLIC_APP_URL || 'https://rev-x-dev-build.vercel.app';
+export const APP_URL: string = import.meta.env.PUBLIC_APP_URL || '/app';
 
 export const SITE = {
   name: 'RevX',

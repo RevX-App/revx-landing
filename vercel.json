@@ -6,6 +6,16 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/app",
+      "destination": "https://revx-build.vercel.app/"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://revx-build.vercel.app/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/app",
