@@ -183,7 +183,7 @@ const initial = 1;
   /* The garage photo needs a dark ground, so the hero stays dark in both themes. */
   .hero {
     color-scheme: dark;
-    background: var(--brand-deep);
+    background: #000;
     position: relative;
     isolation: isolate;
     padding-block: clamp(2.5rem, 6vw, 5.5rem);
@@ -203,7 +203,7 @@ const initial = 1;
     height: 100%;
     object-fit: cover;
     object-position: 50% 42%;
-    opacity: 0.32;
+    opacity: 0.4; /* 60% black overlay; a lighter one lets the headlight glare break up the headline */
   }
 
   .hero-grid {
