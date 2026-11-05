@@ -1,26 +1,8 @@
-/* RevX landing — instrument cluster tokens and base styles. */
+/* RevX landing — instrument cluster base styles. Colours live in palette.css. */
+
+@import './palette.css';
 
 :root {
-  --glass: #07090b;
-  --bezel: #0d1216;
-  --panel: #10161b;
-  --rule: #1e272e;
-  --rule-strong: #2c3740;
-  --unlit: #2a333b;
-
-  --ink: #eceff1;
-  --silver: #c8c8c8;
-  --muted: #9aa3ad;
-  --dim: #7a8590;
-
-  --sky: #38bdf8;
-  --sky-deep: #0ea5e9;
-  --sky-soft: #7dd3fc;
-  --sky-ink: #04131c;
-  --amber: #f5a524;
-  --amber-ink: #1d1203;
-  --red: #f0524f;
-
   --font-body: 'Barlow', system-ui, sans-serif;
   --font-display: 'Barlow Condensed', 'Barlow', system-ui, sans-serif;
 
@@ -28,8 +10,6 @@
   --max: 82rem;
   --section: clamp(4rem, 8vw, 7rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-
-  color-scheme: dark;
 }
 
 *,
@@ -46,8 +26,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--glass);
-  color: var(--silver);
+  background: var(--bg);
+  color: var(--body);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -61,7 +41,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  color: var(--ink);
+  color: var(--heading);
   line-height: 1.02;
   letter-spacing: -0.01em;
   margin: 0;
@@ -74,13 +54,13 @@ p {
 }
 
 a {
-  color: var(--sky-soft);
+  color: var(--accent-text);
   text-underline-offset: 0.2em;
   text-decoration-thickness: 1px;
 }
 
 a:hover {
-  color: var(--ink);
+  color: var(--heading);
 }
 
 img,
@@ -90,18 +70,18 @@ svg {
 }
 
 ::selection {
-  background: var(--sky);
-  color: var(--sky-ink);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 :focus-visible {
-  outline: 2px solid var(--sky);
+  outline: 2px solid var(--accent-text);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 html {
-  scrollbar-color: var(--rule-strong) var(--glass);
+  scrollbar-color: var(--rule-strong) var(--bg);
 }
 
 .wrap {
@@ -158,26 +138,26 @@ html {
 }
 
 .btn-primary {
-  background: var(--sky);
-  color: var(--sky-ink);
+  background: var(--accent);
+  color: var(--on-accent);
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.35),
-    0 6px 16px -6px rgb(0 0 0 / 0.8);
+    0 6px 16px -6px var(--shadow);
 }
 
 .btn-primary:hover {
-  background: var(--sky-soft);
-  color: var(--sky-ink);
+  background: var(--accent-edge);
+  color: var(--on-accent);
 }
 
 .btn-ghost {
   border: 1px solid var(--rule-strong);
-  color: var(--ink);
+  color: var(--heading);
 }
 
 .btn-ghost:hover {
-  border-color: var(--sky);
-  color: var(--ink);
+  border-color: var(--accent-text);
+  color: var(--heading);
 }
 
 /* Round backlit start button: the page's ignition. */
@@ -188,12 +168,12 @@ html {
   height: 8.5rem;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 30%, #16212a, #0a0f13 70%) padding-box,
-    linear-gradient(160deg, var(--sky-soft), var(--sky-deep)) border-box;
+    linear-gradient(var(--panel), var(--panel)) padding-box,
+    linear-gradient(160deg, var(--accent), var(--accent-text)) border-box;
   border: 3px solid transparent;
   box-shadow:
-    inset 0 0 0 6px #07090b,
-    0 18px 36px -12px rgb(0 0 0 / 0.95);
+    inset 0 0 0 6px var(--bg),
+    0 18px 36px -12px var(--shadow);
   text-align: center;
   text-decoration: none;
   transition: transform 0.2s var(--ease-out);
@@ -213,7 +193,7 @@ html {
   font-size: 2rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--heading);
   line-height: 1;
 }
 
@@ -223,7 +203,7 @@ html {
   font-size: 0.9375rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--sky);
+  color: var(--accent-text);
 }
 
 
@@ -231,9 +211,9 @@ html {
 .placeholder-tag {
   display: inline-block;
   padding: 0.15rem 0.55rem;
-  border: 1px dashed var(--amber);
+  border: 1px dashed var(--urgent-text);
   border-radius: 4px;
-  color: var(--amber);
+  color: var(--urgent-text);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.875rem;

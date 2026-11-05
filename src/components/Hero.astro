@@ -180,7 +180,10 @@ const initial = 1;
 </section>
 
 <style>
+  /* The garage photo needs a dark ground, so the hero stays dark in both themes. */
   .hero {
+    color-scheme: dark;
+    background: var(--brand-deep);
     position: relative;
     isolation: isolate;
     padding-block: clamp(2.5rem, 6vw, 5.5rem);
@@ -220,7 +223,7 @@ const initial = 1;
   .lede {
     margin-top: 1.25rem;
     font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
-    color: var(--silver);
+    color: var(--body);
     max-width: 40ch;
   }
 
@@ -243,11 +246,11 @@ const initial = 1;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .quiet:hover {
-    color: var(--sky-soft);
+    color: var(--accent-text);
   }
 
   .platforms {
@@ -264,10 +267,10 @@ const initial = 1;
     padding: clamp(1.1rem, 2.2vw, 1.75rem);
     border: 1px solid var(--rule-strong);
     border-radius: 1.75rem;
-    background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(10 14 17 / 0.97));
+    background: var(--panel);
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.05),
-      0 30px 60px -24px rgb(0 0 0 / 0.95);
+      0 30px 60px -24px var(--shadow);
   }
 
   .steps {
@@ -293,8 +296,8 @@ const initial = 1;
     height: 2.25rem;
     border-radius: 50%;
     border: 1.5px solid var(--unlit);
-    background: var(--bezel);
-    color: var(--dim);
+    background: var(--sand);
+    color: var(--muted);
     transition:
       background-color 0.3s var(--ease-out),
       color 0.3s var(--ease-out),
@@ -307,20 +310,20 @@ const initial = 1;
   }
 
   .step[data-state='done'] .bulb {
-    border-color: var(--sky-deep);
-    color: var(--sky);
+    border-color: var(--accent-text);
+    color: var(--accent-text);
   }
 
   .step[data-state='on'] .bulb {
-    border-color: var(--sky-soft);
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    border-color: var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .step[data-state='on'][data-kind='warn'] .bulb {
-    border-color: #ffd27a;
-    background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber) 60%, #d98a0b);
-    color: var(--amber-ink);
+    border-color: var(--urgent-text);
+    background: var(--urgent);
+    color: var(--on-urgent);
   }
 
   .step-title {
@@ -331,7 +334,7 @@ const initial = 1;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .step-count {
@@ -345,7 +348,7 @@ const initial = 1;
     min-height: 14.5rem;
     padding: 1.1rem 1.2rem;
     border-radius: 0.9rem;
-    background: #060a0d;
+    background: var(--bg);
     border: 1px solid var(--rule);
   }
 
@@ -384,19 +387,19 @@ const initial = 1;
     font-size: 0.875rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .fields dd,
   .readouts dd {
     margin: 0;
-    color: var(--ink);
+    color: var(--heading);
     font-weight: 500;
     line-height: 1.3;
   }
 
   .read {
-    color: var(--ink);
+    color: var(--heading);
     font-size: 1.0625rem;
     line-height: 1.4;
   }
@@ -426,18 +429,18 @@ const initial = 1;
 
   .causes li::before {
     content: counter(cause);
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .causes .lead {
-    border: 1px solid var(--sky);
-    background: rgb(56 189 248 / 0.08);
+    border: 1px solid var(--accent-text);
+    background: var(--accent-wash);
     font-size: 1.375rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .causes .lead::before {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .readouts {
@@ -448,7 +451,7 @@ const initial = 1;
   }
 
   .readouts .warn {
-    color: var(--amber);
+    color: var(--urgent-text);
   }
 
   .deck {
@@ -466,7 +469,7 @@ const initial = 1;
     padding: 0.9rem 1.2rem;
     border-radius: 0.5rem;
     border: 1px solid var(--rule-strong);
-    background: linear-gradient(135deg, #18212a, #0f151a);
+    background: var(--panel);
     cursor: grab;
     touch-action: pan-y;
     user-select: none;
@@ -486,16 +489,16 @@ const initial = 1;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.75rem;
-    color: var(--ink);
+    color: var(--heading);
     line-height: 1.05;
   }
 
   .mcard-shop {
-    color: var(--silver);
+    color: var(--body);
   }
 
   .mcard-tags {
-    color: var(--sky-soft);
+    color: var(--accent-text);
     font-size: 0.9375rem;
   }
 
@@ -518,26 +521,26 @@ const initial = 1;
     height: 2.75rem;
     border-radius: 50%;
     border: 1px solid var(--rule-strong);
-    background: var(--bezel);
+    background: var(--sand);
     color: var(--muted);
     cursor: pointer;
   }
 
   .round:hover {
-    color: var(--ink);
+    color: var(--heading);
     border-color: var(--muted);
   }
 
   .round.yes {
-    color: var(--sky);
-    border-color: var(--sky-deep);
+    color: var(--accent-text);
+    border-color: var(--accent-text);
   }
 
   .big {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: clamp(2rem, 3.2vw, 2.75rem);
-    color: var(--sky);
+    color: var(--accent-text);
     line-height: 1;
   }
 
@@ -549,11 +552,11 @@ const initial = 1;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.375rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .pair :global(svg) {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .note {
@@ -575,15 +578,15 @@ const initial = 1;
   }
 
   .them {
-    background: #1a232b;
-    color: var(--ink);
+    background: var(--sand);
+    color: var(--heading);
     border-bottom-left-radius: 0.2rem;
   }
 
   .me {
     align-self: flex-end;
-    background: var(--sky);
-    color: var(--sky-ink);
+    background: var(--accent);
+    color: var(--on-accent);
     border-bottom-right-radius: 0.2rem;
   }
 
@@ -604,14 +607,14 @@ const initial = 1;
   }
 
   .quote.lead {
-    border: 1px solid var(--sky);
-    color: var(--ink);
+    border: 1px solid var(--accent-text);
+    color: var(--heading);
   }
 
   .quote b {
     font-family: var(--font-display);
     font-size: 1.25rem;
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .checks {
@@ -620,7 +623,7 @@ const initial = 1;
     padding: 0;
     display: grid;
     gap: 0.45rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .checks li {
@@ -630,7 +633,7 @@ const initial = 1;
   }
 
   .checks :global(svg) {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .sealed {
@@ -645,11 +648,11 @@ const initial = 1;
     padding: 0.6rem 0.8rem;
     border: 1px dashed var(--rule-strong);
     border-radius: 0.5rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .sealed :global(svg) {
-    color: var(--amber);
+    color: var(--urgent-text);
   }
 
   .mc-foot {

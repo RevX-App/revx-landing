@@ -665,10 +665,10 @@ const schema = [
     padding: clamp(1.25rem, 3vw, 2rem);
     border: 1px solid var(--rule-strong);
     border-radius: 1.5rem;
-    background: linear-gradient(180deg, rgb(16 22 27 / 0.94), rgb(8 12 15 / 0.98));
+    background: var(--panel);
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.05),
-      0 24px 36px -24px rgb(0 0 0 / 0.9);
+      0 24px 36px -24px var(--shadow);
   }
 
   .panel-title {
@@ -704,7 +704,7 @@ const schema = [
   }
 
   .stage-copy p:not(.stage-lamps) {
-    color: var(--silver);
+    color: var(--body);
     max-width: 52ch;
   }
 
@@ -719,13 +719,13 @@ const schema = [
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .stage-lamps .warn {
-    background: radial-gradient(circle at 50% 35%, #ffd27a, var(--amber) 60%, #d98a0b);
-    color: var(--amber-ink);
+    background: var(--urgent);
+    color: var(--on-urgent);
   }
 
   .trace {
@@ -749,14 +749,14 @@ const schema = [
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--sky);
+    background: var(--accent);
   }
 
   .trace-name {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.0625rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .chips,
@@ -777,8 +777,8 @@ const schema = [
 
   .chips li {
     border-radius: 999px;
-    background: #1a232b;
-    color: var(--ink);
+    background: var(--sand);
+    color: var(--heading);
   }
 
   .shortlist li {
@@ -820,22 +820,22 @@ const schema = [
 
   .verdicts .lead {
     padding-block: 0.6rem;
-    border: 1px solid var(--sky);
-    background: rgb(56 189 248 / 0.08);
+    border: 1px solid var(--accent-text);
+    background: var(--accent-wash);
   }
 
   .verdicts .lead .cause {
     font-size: clamp(1.25rem, 1.8vw, 1.5rem);
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .verdicts .lead .verdict {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .verdicts .out .cause {
     text-decoration: line-through;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .stats {
@@ -857,11 +857,11 @@ const schema = [
     font-family: var(--font-display);
     font-weight: 700;
     font-size: clamp(1.25rem, 1.8vw, 1.5rem);
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .stats .warn {
-    color: var(--amber);
+    color: var(--urgent-text);
   }
 
   .readout figcaption {
@@ -892,19 +892,19 @@ const schema = [
   .quotes b {
     font-family: var(--font-display);
     font-size: 1.25rem;
-    color: var(--silver);
+    color: var(--body);
   }
 
   .quotes .lead {
     padding-block: 0.8rem;
-    border: 1px solid var(--sky);
-    background: rgb(56 189 248 / 0.08);
-    color: var(--ink);
+    border: 1px solid var(--accent-text);
+    background: var(--accent-wash);
+    color: var(--heading);
   }
 
   .quotes .lead b {
     font-size: 1.625rem;
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .checks {
@@ -913,7 +913,7 @@ const schema = [
     padding: 0;
     display: grid;
     gap: 0.5rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .checks li {
@@ -923,7 +923,7 @@ const schema = [
   }
 
   .checks :global(svg) {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   .seals {
@@ -955,19 +955,19 @@ const schema = [
     height: 2.75rem;
     border-radius: 50%;
     border: 1.5px dashed var(--unlit);
-    background: var(--bezel);
-    color: var(--amber);
+    background: var(--sand);
+    color: var(--urgent-text);
   }
 
   .seal.open {
-    border: 1.5px solid var(--sky-soft);
-    background: var(--sky);
-    color: var(--sky-ink);
+    border: 1.5px solid var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .seals :global(.seal-arrow) {
     flex: none;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   /* Trust */
@@ -994,7 +994,7 @@ const schema = [
 
   .trust-panel h3 + p {
     margin-top: 0.5rem;
-    color: var(--silver);
+    color: var(--body);
     max-width: 52ch;
   }
 
@@ -1014,13 +1014,13 @@ const schema = [
   }
 
   .snapped {
-    fill: rgb(56 189 248 / 0.18);
-    stroke: var(--sky);
+    fill: var(--accent-wash);
+    stroke: var(--accent-text);
     stroke-width: 1.5;
   }
 
   .exact {
-    fill: var(--red);
+    fill: var(--error);
   }
 
   .band-gauge {
@@ -1055,7 +1055,7 @@ const schema = [
 
   .band-needle {
     fill: none;
-    stroke: var(--sky);
+    stroke: var(--accent-text);
     stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -1086,14 +1086,14 @@ const schema = [
     height: 2.75rem;
     border-radius: 50%;
     border: 1.5px dashed var(--unlit);
-    background: var(--bezel);
-    color: var(--amber);
+    background: var(--sand);
+    color: var(--urgent-text);
   }
 
   .rlamp.on {
-    border: 1.5px solid var(--sky-soft);
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    border: 1.5px solid var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .lcd {
@@ -1103,8 +1103,8 @@ const schema = [
     gap: 0.75rem;
     padding: 1rem clamp(1.5rem, 3vw, 2.5rem);
     border-top: 1px solid var(--rule-strong);
-    background: #060a0d;
-    color: var(--amber);
+    background: var(--bg);
+    color: var(--urgent-text);
     font-weight: 500;
   }
 
@@ -1141,20 +1141,20 @@ const schema = [
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .spec dd {
     margin: 0;
-    color: var(--silver);
+    color: var(--body);
   }
 
   .founding {
     margin-top: 2.5rem;
     padding: clamp(1.25rem, 3vw, 2rem);
     border-radius: 1.25rem;
-    border: 1px solid var(--sky-deep);
-    background: linear-gradient(135deg, rgb(56 189 248 / 0.1), rgb(56 189 248 / 0.02));
+    border: 1px solid var(--accent-text);
+    background: var(--accent-wash);
     display: grid;
     gap: 0.8rem;
     justify-items: start;
@@ -1165,11 +1165,11 @@ const schema = [
     font-weight: 800;
     font-size: clamp(1.625rem, 2.6vw, 2.25rem);
     line-height: 1.05;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .founding p:not(.founding-head) {
-    color: var(--silver);
+    color: var(--body);
     max-width: 56ch;
   }
 
@@ -1181,8 +1181,8 @@ const schema = [
   .job-card {
     overflow: hidden;
     border-radius: 0.9rem;
-    border: 1px solid var(--sky-deep);
-    background: #0c1318;
+    border: 1px solid var(--accent-text);
+    background: var(--bg);
   }
 
   .job-photo {
@@ -1202,7 +1202,7 @@ const schema = [
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 1.1;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .job-meta {
@@ -1215,7 +1215,7 @@ const schema = [
     align-items: center;
     gap: 0.4rem;
     margin-top: 0.5rem;
-    color: var(--sky-soft);
+    color: var(--accent-text);
   }
 
   .credit {
@@ -1227,12 +1227,12 @@ const schema = [
   .credit a {
     display: inline-block;
     padding-block: 0.3rem;
-    color: var(--silver);
+    color: var(--body);
   }
 
   /* Roadmap */
   .vision {
-    background: #050708;
+    background: var(--sand);
   }
 
   .unwired {
@@ -1261,9 +1261,9 @@ const schema = [
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
-    border: 1.5px dashed var(--dim);
-    background: var(--bezel);
-    color: var(--dim);
+    border: 1.5px dashed var(--muted);
+    background: var(--sand);
+    color: var(--muted);
   }
 
   /* Roadmap route: milestones on one wire, solid where travelled, dashed ahead. */
@@ -1302,7 +1302,7 @@ const schema = [
   }
 
   .route li.done::after {
-    border-top: 1.5px solid var(--sky-deep);
+    border-top: 1.5px solid var(--accent-text);
   }
 
   .stop {
@@ -1313,18 +1313,18 @@ const schema = [
     margin-bottom: 0.4rem;
     border-radius: 50%;
     border: 1.5px dashed var(--unlit);
-    background: var(--bezel);
+    background: var(--sand);
   }
 
   .done .stop {
-    border: 1.5px solid var(--sky-deep);
-    color: var(--sky);
+    border: 1.5px solid var(--accent-text);
+    color: var(--accent-text);
   }
 
   .now .stop {
-    border: 1.5px solid var(--sky-soft);
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    border: 1.5px solid var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .stop-name {
@@ -1332,7 +1332,7 @@ const schema = [
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.1;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .next .stop-name {
@@ -1345,11 +1345,11 @@ const schema = [
     font-size: 0.875rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .now .stop-state {
-    color: var(--sky);
+    color: var(--accent-text);
   }
 
   /* About: four gauges on one rule, no boxes. */
@@ -1377,8 +1377,8 @@ const schema = [
     height: 5rem;
     margin-bottom: 0.9rem;
     border-radius: 50%;
-    border: 1.5px solid var(--sky-deep);
-    background: var(--bezel);
+    border: 1.5px solid var(--accent-text);
+    background: var(--sand);
     overflow: hidden;
   }
 
@@ -1388,15 +1388,6 @@ const schema = [
     height: 100%;
     object-fit: cover;
     filter: grayscale(1);
-  }
-
-  .portrait::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--sky);
-    mix-blend-mode: color;
-    opacity: 0.18;
   }
 
   .crew-name {
@@ -1412,7 +1403,7 @@ const schema = [
 
   .crew-line {
     margin-top: 0.4rem;
-    color: var(--silver);
+    color: var(--body);
     max-width: 32ch;
   }
 
@@ -1443,7 +1434,7 @@ const schema = [
     padding: 1.1rem 1.2rem;
     border-radius: 0.9rem;
     border: 1px solid var(--rule);
-    background: #060a0d;
+    background: var(--bg);
   }
 
   .msg-head {
@@ -1478,7 +1469,7 @@ const schema = [
     font-size: 0.875rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--dim);
+    color: var(--muted);
   }
 
   .line-mail {
@@ -1488,12 +1479,12 @@ const schema = [
     font-weight: 700;
     font-size: clamp(1.375rem, 2.4vw, 2rem);
     line-height: 1.15;
-    color: var(--sky);
+    color: var(--accent-text);
     text-decoration: none;
   }
 
   .line-mail:hover {
-    color: var(--sky-soft);
+    color: var(--accent-text);
     text-decoration: underline;
   }
 
@@ -1510,7 +1501,7 @@ const schema = [
     height: 1.9rem;
     border-radius: 50%;
     border: 1.5px solid var(--unlit);
-    background: var(--bezel);
+    background: var(--sand);
     color: transparent;
     transition:
       background 0.3s var(--ease-out),
@@ -1519,9 +1510,9 @@ const schema = [
   }
 
   .copy.is-copied .copy-lamp {
-    border-color: var(--sky-soft);
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    border-color: var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   /* FAQ */
@@ -1547,18 +1538,18 @@ const schema = [
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 1.15;
-    color: var(--ink);
+    color: var(--heading);
   }
 
   .faq dd {
     margin: 0.5rem 0 0;
-    color: var(--silver);
+    color: var(--body);
     max-width: 62ch;
   }
 
   /* Close */
   .close {
-    background: radial-gradient(ellipse at 80% 130%, rgb(56 189 248 / 0.14), transparent 60%);
+    background: radial-gradient(ellipse at 80% 130%, var(--accent-wash), transparent 60%);
   }
 
   .close-inner {
@@ -1655,7 +1646,7 @@ const schema = [
 
     .route li.done::after {
       border-top: 0;
-      border-left: 1.5px solid var(--sky-deep);
+      border-left: 1.5px solid var(--accent-text);
     }
 
     .display {

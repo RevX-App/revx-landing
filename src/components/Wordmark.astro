@@ -1,5 +1,5 @@
 ---
-/** Split silver-and-sky brand mark, recreated from the app's RevXLogo. */
+/** Two-tone brand mark, recreated from the app's RevXLogo. */
 interface Props {
   size?: string;
 }
@@ -23,11 +23,12 @@ const { size = '2rem' } = Astro.props;
 
   .rev {
     font-weight: 700;
-    color: var(--silver);
+    color: var(--heading);
   }
 
   .x {
     font-weight: 800;
-    color: var(--sky);
+    /* Matches the app's RevXLogo: all ink on light, lime X on dark. */
+    color: light-dark(var(--on-accent), var(--accent));
   }
 </style>

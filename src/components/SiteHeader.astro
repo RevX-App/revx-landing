@@ -71,7 +71,7 @@ import { APP_URL } from '../config';
     position: sticky;
     top: 0;
     z-index: 30;
-    background: rgb(7 9 11 / 0.94);
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -117,8 +117,8 @@ import { APP_URL } from '../config';
     height: 2rem;
     border-radius: 50%;
     border: 1.5px solid var(--unlit);
-    background: var(--bezel);
-    color: var(--dim);
+    background: var(--sand);
+    color: var(--muted);
     transition:
       background-color 0.3s var(--ease-out),
       border-color 0.3s var(--ease-out),
@@ -134,23 +134,23 @@ import { APP_URL } from '../config';
   }
 
   .lamp-nav a:hover {
-    color: var(--ink);
+    color: var(--heading);
   }
 
   [data-state='done'] .bulb {
-    border-color: var(--sky-deep);
-    color: var(--sky);
+    border-color: var(--accent-text);
+    color: var(--accent-text);
   }
 
   .lamp-nav a[data-state='on'],
   .menu-sheet a[data-state='on'] {
-    color: var(--ink);
+    color: var(--heading);
   }
 
   [data-state='on'] .bulb {
-    border-color: var(--sky-soft);
-    background: radial-gradient(circle at 50% 35%, var(--sky-soft), var(--sky) 60%, var(--sky-deep));
-    color: var(--sky-ink);
+    border-color: var(--accent-text);
+    background: var(--accent);
+    color: var(--on-accent);
   }
 
   .bar-cta {
@@ -186,7 +186,7 @@ import { APP_URL } from '../config';
 
     .progress [data-state='done'],
     .progress [data-state='on'] {
-      background: var(--sky);
+      background: var(--accent);
     }
 
     .menu {
@@ -204,7 +204,7 @@ import { APP_URL } from '../config';
       border-radius: 999px;
       list-style: none;
       cursor: pointer;
-      color: var(--ink);
+      color: var(--heading);
       font-family: var(--font-display);
       font-weight: 600;
       font-size: 0.9375rem;
@@ -225,7 +225,7 @@ import { APP_URL } from '../config';
       border: 1px solid var(--rule-strong);
       border-radius: 1.25rem;
       background: var(--panel);
-      box-shadow: 0 24px 50px -20px rgb(0 0 0 / 0.95);
+      box-shadow: 0 24px 50px -20px var(--shadow);
     }
 
     .menu-sheet ol {
@@ -236,7 +236,7 @@ import { APP_URL } from '../config';
 
     .menu-sheet a:not(.btn) {
       font-size: 1.0625rem;
-      color: var(--silver);
+      color: var(--body);
     }
 
     .menu-sheet .btn {

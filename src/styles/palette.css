@@ -1,0 +1,34 @@
+/*
+ * RevX colours, mirrored from src/theme/palette.js in the RevX app repo. Change them there first.
+ * light-dark() follows color-scheme, so setting `color-scheme: dark` on any element flips its subtree.
+ */
+:root {
+  /* shortcut: dark only for now, set to `light dark` after the light-mode redesign. */
+  color-scheme: dark;
+
+  --bg: light-dark(#fbfbf8, #121413);
+  --panel: light-dark(#ffffff, #1c1f1e);
+  --sand: light-dark(#eceee9, #2a2e2c);
+  --rule: light-dark(#e0e3dc, #3a3f3c);
+  --rule-strong: light-dark(#d4d8d4, #4a504d);
+  --unlit: light-dark(#b4bab5, #5c635f);
+
+  --heading: light-dark(#172c29, #edefeb);
+  --body: light-dark(#28463f, #cdd3cf);
+  --muted: light-dark(#5c6762, #a6aea9);
+
+  /* Lime is a fill with dark text on it. Text, icons and rims use --accent-text. */
+  --accent: #d9f266;
+  --on-accent: #172c29;
+  --accent-edge: #c5de4a;
+  --accent-text: light-dark(#3d6554, #d9f266);
+  --accent-wash: light-dark(#f5f9e3, #2a3015);
+
+  --urgent: #ff6b42;
+  --on-urgent: #172c29;
+  --urgent-text: light-dark(#c74424, #ff8a68);
+  --error: light-dark(#b91c1c, #f87171);
+
+  --brand-deep: #172c29;
+  --shadow: light-dark(rgb(23 44 41 / 0.2), rgb(0 0 0 / 0.9));
+}

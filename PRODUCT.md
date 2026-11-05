@@ -51,9 +51,9 @@ Constraints:
 
 ## Brand Commitments
 
-- Name **RevX**. Wordmark: "Rev" bold in silver `#C8C8C8` + "X" extra-bold in sky `#38BDF8`, tight tracking. It is text, recreated in HTML/CSS.
+- Name **RevX**. Wordmark: "Rev" bold + "X" extra-bold with tight tracking, heading colour + accent text (lime on dark). It is text, recreated in HTML/CSS. The favicon is a lime `#D9F266` X on `#172C29`.
 - Tagline in the app: *"The mechanic at your door."*
-- App palette ("dark garage + sky-blue accent"): brand `#38BDF8` / `#0EA5E9` / `#7DD3FC`; chrome `#0A0A0A`, bg `#121212`, surface `#1A1A1A`, field `#262626`, border `#3A3A3E`, silver `#C8C8C8`, muted `#9CA3AF`. There is no recorded rationale for it. Whether the site matches or departs is a visual-direction decision.
+- App palette: lime `#D9F266` with `#172C29` ink, warm neutrals, urgent `#FF6B42`, in light and dark. `src/theme/palette.js` in the app repo is the source of truth, its dark values are drafts until the designer decides, and the site mirrors it in `src/styles/palette.css`.
 - Voice: direct and plain-English, car-culture literate, honest about limits.
 
 ## Evidence on Hand
